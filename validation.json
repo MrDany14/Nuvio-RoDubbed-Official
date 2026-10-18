@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "sha256": "3de06ba75c54dc9395ef83cb5d15f219e6f6c7bf5226265af24a1dd46bbed162",
+  "bytes": 24356,
+  "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
+  "unitTests": "PASS: language declarations, foreign/unknown rejection, older bare labels, exact joined VOE labels, strict title/year matching, independent AES and VOE encoding fixtures",
+  "runs": [
+    {
+      "title": "Avatar",
+      "tmdbId": 19995,
+      "sources": [
+        "VOE",
+        "Byse"
+      ],
+      "lookupMs": 1616,
+      "playlistAndInitialSegmentChecks": "PASS"
+    },
+    {
+      "title": "Toy Story 5",
+      "tmdbId": 1084244,
+      "sources": [
+        "Byse",
+        "SeekStreaming",
+        "StreamP2P"
+      ],
+      "lookupMs": 3998,
+      "playlistAndInitialSegmentChecks": "PASS"
+    },
+    {
+      "title": "Aventura tenisilor / Sneaks",
+      "tmdbId": 1084153,
+      "sources": [
+        "Byse"
+      ],
+      "lookupMs": 1679,
+      "playlistAndInitialSegmentChecks": "PASS",
+      "otherHosts": "HTTP404, excluded"
+    }
+  ],
+  "voeStandaloneAndroidMs": 830,
+  "exactReleasePhysicalTvPlaybackVerified": false,
+  "netu": "Deferred; excluded",
+  "websites": [
+    "desenefaine.com"
+  ]
+}

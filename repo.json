@@ -1,0 +1,8 @@
+{
+  "name": "RoDubbed",
+  "description": "Romanian dubbed streams for Nuvio TV: Byse, SeekStreaming, StreamP2P and VOE.",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/MrDany14/Nuvio-RoDubbed-Official/main/plugins.json"
+  ]
+}

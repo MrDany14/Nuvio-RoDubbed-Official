@@ -1,0 +1,5 @@
+src/*.class
+src/*.jar
+src/*.zip
+src/*.cs3
+src/stubs/

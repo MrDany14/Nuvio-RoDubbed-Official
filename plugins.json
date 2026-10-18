@@ -1,0 +1,20 @@
+[
+  {
+    "name": "RoDubbed",
+    "internalName": "RoDubbedOfficial",
+    "description": "One native TV provider with up to three distinct Romanian dubbed streams. Byse, SeekStreaming, StreamP2P and VOE. Netu deferred.",
+    "version": 1,
+    "apiVersion": 1,
+    "status": 1,
+    "authors": [
+      "MrDany14"
+    ],
+    "tvTypes": [
+      "Movie",
+      "TvSeries"
+    ],
+    "url": "https://raw.githubusercontent.com/MrDany14/Nuvio-RoDubbed-Official/main/RoDubbed.cs3",
+    "fileSize": 24356,
+    "repositoryUrl": "https://github.com/MrDany14/Nuvio-RoDubbed-Official"
+  }
+]
