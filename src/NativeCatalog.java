@@ -16,6 +16,10 @@ final class NativeCatalog {
     }
     final Set<String> visited=new HashSet<>();final Set<String> titles=new LinkedHashSet<>();
     int year,season,episode;boolean series;
+    static final class Located {
+        final String titleUrl,pageUrl;final Document page;
+        Located(String titleUrl,String pageUrl,Document page){this.titleUrl=titleUrl;this.pageUrl=pageUrl;this.page=page;}
+    }
     String get(String url)throws Exception{return NativeHttp.text(url,Collections.<String,String>emptyMap());}
     static String normalize(String s){return Normalizer.normalize(s,Normalizer.Form.NFD).replaceAll("\\p{M}","").toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]+"," ").trim();}
     static String kind(String url){
@@ -31,27 +35,64 @@ final class NativeCatalog {
     static String labelKind(String label){String s=normalize(label);if(s.contains("byse")||s.contains("filemoon"))return "Byse";if(s.contains("streamp2p")||s.contains("p2pplay"))return "StreamP2P";if(s.contains("seekstream")||s.contains("seeksreaming"))return "SeekStreaming";if(s.replaceFirst("^server \\d+ ?","").matches("voe(?: .*)?"))return "VOE";return "";}
     static boolean catalogUrl(String url){try{URL u=new URL(url);return "https".equals(u.getProtocol())&&"desenefaine.com".equals(u.getHost());}catch(Exception e){return false;}}
     boolean matches(Document page,String url){
-        if(series&&!url.matches(".*(?:sezonul-|sezon-|s0?)"+season+"-(?:episodul-|ep|e0?)"+episode+"(?:-|/|$).*"))return false;
+        if(!url.startsWith(SITE+(series?"/serial/":"/film/")))return false;
         Set<String> pageNames=new HashSet<>();
-        for(Element h:page.select("h1")){
-            String name=normalize(h.text());if(series)name=name.replaceFirst("\\s+(?:sezonul|sezon|season) \\d+ episodul \\d+.*$","");
+        Element heading=page.select("h1").first();
+        for(Element h:heading==null?Collections.<Element>emptyList():Collections.singletonList(heading)){
+            String name=normalize(h.text());
             pageNames.add(name.replaceFirst(" (?:19|20)\\d{2}$",""));
         }
-        for(Element li:page.select(".details-lst li")){
+        Element article=heading==null?null:heading.closest("article.post.single");
+        Element details=(article==null?page:article).select(".details-lst").first();
+        for(Element li:details==null?Collections.<Element>emptyList():details.select("li")){
             String text=normalize(li.text());
             if(text.startsWith("titlu secundar")||text.startsWith("titlu original")){
                 Element last=li.select("span").last();if(last!=null)pageNames.add(normalize(last.text()));
             }
         }
         boolean title=false;for(String name:titles)if(pageNames.contains(normalize(name)))title=true;
+        // A publisher's exact movie slug may use the short original name while
+        // its heading adds a Romanian subtitle (for example, "Ozzy: ...").
+        if(!series&&!title&&heading!=null){
+            String raw=heading.text();int colon=raw.indexOf(':');
+            if(colon>0){String shortName=normalize(raw.substring(0,colon));String slug=url.replaceFirst("/+$","");slug=slug.substring(slug.lastIndexOf('/')+1);
+                for(String name:titles)if(shortName.equals(normalize(name))&&slug.equals(normalize(name).replace(' ','-')))title=true;
+            }
+        }
         if(!title)return false;
-        Matcher m=Pattern.compile("\\b(?:19|20)\\d{2}\\b").matcher(page.select(".year").first()==null?"":page.select(".year").first().text());
-        return series||year==0||!m.find()||Integer.parseInt(m.group())==year;
+        Element header=heading==null?null:heading.closest(".entry-header");
+        Element yearElement=(header==null?(article==null?page:article):header).select(".year").first();
+        Matcher m=Pattern.compile("\\b(?:19|20)\\d{2}\\b").matcher(yearElement==null?"":yearElement.text());
+        return year==0||(m.find()&&Integer.parseInt(m.group())==year);
     }
-    List<Candidate> inspect(String url)throws Exception{
-        if(!visited.add(url))return Collections.emptyList();
-        String html;try{html=get(url);}catch(Exception e){if(e.getMessage()!=null&&e.getMessage().contains("HTTP 404"))return Collections.emptyList();throw e;}
-        Document page=Jsoup.parse(html,url);if(!matches(page,url))return Collections.emptyList();
+    static String canonical(Document page,String fallback){Element e=page.select("link[rel=canonical]").first();return e!=null&&catalogUrl(e.attr("href"))?e.attr("href"):fallback;}
+    static int[] episodeNumber(String url){
+        Matcher m=Pattern.compile("(?:-(?:sezonul-|sezon-|s)(\\d+)-(?:episodul-|ep|e)(\\d+)|-(\\d+)x(\\d+))(?:-|/|$)").matcher(url);
+        if(!m.find())return null;return new int[]{Integer.parseInt(m.group(1)==null?m.group(3):m.group(1)),Integer.parseInt(m.group(2)==null?m.group(4):m.group(2))};
+    }
+    Located locateAt(String url)throws Exception{
+        if(!catalogUrl(url)||!visited.add(url))return null;
+        String html;try{html=get(url);}catch(Exception e){if(e.getMessage()!=null&&e.getMessage().contains("HTTP 404"))return null;throw e;}
+        Document page=Jsoup.parse(html,url);if(!matches(page,url))return null;
+        String parent=canonical(page,url);if(!parent.startsWith(SITE+(series?"/serial/":"/film/")))return null;
+        if(!series)return new Located(parent,parent,page);
+        Element h=page.select("h1").first();String parentName=normalize(h.text()).replaceFirst(" (?:19|20)\\d{2}$","");
+        for(Element link:page.select(".seasons-lst a[href]")){
+            String target=link.absUrl("href");if(!catalogUrl(target)||!target.startsWith(SITE+"/epi/"))continue;
+            int[] number=episodeNumber(target);if(number==null||number[0]!=season||number[1]!=episode)continue;
+            Document ep=Jsoup.parse(get(target),target);Element epHeading=ep.select("h1").first();if(epHeading==null)return null;
+            String name=normalize(epHeading.text()).replaceFirst(" (?:sezonul|sezon|season) \\d+ episodul \\d+.*$","").replaceFirst(" \\d+x\\d+.*$","");
+            if(!name.equals(parentName))return null;
+            // Episode years may differ from the series premiere year. The
+            // verified parent, its own episode list and exact numbering bind it.
+            String actual=canonical(ep,target);int[] actualNumber=episodeNumber(actual);
+            if(actualNumber==null||actualNumber[0]!=season||actualNumber[1]!=episode)return null;
+            return new Located(parent,actual,ep);
+        }
+        return null;
+    }
+    List<Candidate> candidates(Located located){
+        if(located==null)return Collections.emptyList();Document page=located.page;String url=located.pageUrl;
         List<Candidate> found=new ArrayList<>();Set<String> seen=new HashSet<>();
         for(Element server:page.select("a[data-src]")){
             String label=server.text();if(!RomanianAudio.acceptServer(label,page.select("title").text()))continue;
@@ -62,25 +103,29 @@ final class NativeCatalog {
         }
         return found;
     }
-    List<Candidate> discover(JSONObject data)throws Exception{
+    Located locate(JSONObject data)throws Exception{
+        visited.clear();titles.clear();
         season=data.optInt("season",0);episode=data.optInt("episode",0);series=season>0&&episode>0;year=data.optInt("releaseYear",0);
-        for(String key:Arrays.asList("movieName","localTitle","originalTitle"))if(!data.optString(key,"").isEmpty())titles.add(data.getString(key));
-        if(titles.isEmpty())return Collections.emptyList();
-        List<String> order=new ArrayList<>(titles);Collections.reverse(order);
-        for(String title:order){
-            String base=SITE+(series?"/epi/":"/film/")+normalize(title).replace(' ','-');
-            List<String> urls=series?Arrays.asList(base+"-sezonul-"+season+"-episodul-"+episode+"/",base+"-s"+season+"-ep"+episode+"/"):Collections.singletonList(base+"/");
-            for(String url:urls){List<Candidate> found=inspect(url);if(!found.isEmpty())return found;}
+        for(String key:Arrays.asList("localTitle","movieName","originalTitle"))if(!normalize(data.optString(key,"")).isEmpty())titles.add(data.getString(key));
+        Located found=searchTitles(new ArrayList<>(titles));if(found!=null)return found;
+        if(data.optInt("tmdbID",0)>0){
+            JSONObject english=new JSONObject(NativeHttp.text("https://api.themoviedb.org/3/"+(series?"tv/":"movie/")+data.getInt("tmdbID")+"?language=en-US&api_key="+TMDB_KEY,Collections.<String,String>emptyMap()));
+            String title=english.optString(series?"name":"title");if(!normalize(title).isEmpty()&&titles.add(title))return searchTitles(Collections.singletonList(title));
         }
+        return null;
+    }
+    Located searchTitles(List<String> order)throws Exception{
+        for(String title:order){Located found=locateAt(SITE+(series?"/serial/":"/film/")+normalize(title).replace(' ','-')+"/");if(found!=null)return found;}
         for(String title:order){
             Document search=Jsoup.parse(get(SITE+"/?s="+URLEncoder.encode(title,"UTF-8")),SITE);int count=0;
             for(Element a:search.select("article a[href], .search-page a[href]")){
-                String url=a.absUrl("href");if(!url.startsWith(SITE+(series?"/epi/":"/film/"))||visited.contains(url))continue;
-                if(++count>6)break;List<Candidate> found=inspect(url);if(!found.isEmpty())return found;
+                String url=a.absUrl("href");if(!url.startsWith(SITE+(series?"/serial/":"/film/"))||visited.contains(url))continue;
+                if(++count>8)break;Located found=locateAt(url);if(found!=null)return found;
             }
         }
-        return Collections.emptyList();
+        return null;
     }
+    List<Candidate> discover(JSONObject data)throws Exception{return candidates(locate(data));}
     static Candidate resolveWrapper(Candidate candidate)throws Exception{
         if(candidate.embed!=null)return candidate;
         String html=NativeHttp.text(candidate.wrapper,NativeHttp.headers(candidate.page));Document page=Jsoup.parse(html,candidate.wrapper);

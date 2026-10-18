@@ -1,0 +1,655 @@
+{
+  "seed": 1247742965,
+  "fixtures": [
+    {
+      "type": "movie",
+      "websiteTitle": "Kung Fu Panda 4",
+      "expectedPage": "https://desenefaine.com/film/kung-fu-panda-4/",
+      "data": {
+        "tmdbID": 1011985,
+        "movieName": "Kung Fu Panda 4",
+        "localTitle": "Kung Fu Panda 4",
+        "originalTitle": "Kung Fu Panda 4",
+        "releaseYear": 2024
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Fantome singuratice",
+      "expectedPage": "https://desenefaine.com/film/fantome-singuratice/",
+      "data": {
+        "tmdbID": 32428,
+        "movieName": "Lonesome Ghosts",
+        "localTitle": "Lonesome Ghosts",
+        "originalTitle": "Lonesome Ghosts",
+        "releaseYear": 1937
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Misiune: Imposibilă – Răfuială finală",
+      "expectedPage": "https://desenefaine.com/film/misiune-imposibila-rafuiala-finala/",
+      "data": {
+        "tmdbID": 575265,
+        "movieName": "Misiune: Imposibilă - Răfuială finală",
+        "localTitle": "Misiune: Imposibilă - Răfuială finală",
+        "originalTitle": "Mission: Impossible - The Final Reckoning",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Iepurele-Găină și Hamsterul Întunericului",
+      "expectedPage": "https://desenefaine.com/film/iepurele-gaina-si-hamsterul-intunericului/",
+      "data": {
+        "tmdbID": 778855,
+        "movieName": "Iepurele-Găină și Hamsterul Întunericului",
+        "localTitle": "Iepurele-Găină și Hamsterul Întunericului",
+        "originalTitle": "Chickenhare and the Hamster of Darkness",
+        "releaseYear": 2022
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Jocul terorii",
+      "expectedPage": "https://desenefaine.com/film/jocul-terorii/",
+      "data": {
+        "tmdbID": 1249213,
+        "movieName": "Jocul terorii",
+        "localTitle": "Jocul terorii",
+        "originalTitle": "Drop",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Batman and Superman: Battle of the Super Sons",
+      "expectedPage": "https://desenefaine.com/film/batman-and-superman-battle-of-the-super-sons/",
+      "data": {
+        "tmdbID": 886396,
+        "movieName": "Batman și Superman: Lupta superfiilor",
+        "localTitle": "Batman și Superman: Lupta superfiilor",
+        "originalTitle": "Batman and Superman: Battle of the Super Sons",
+        "releaseYear": 2022
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Domnița",
+      "expectedPage": "https://desenefaine.com/film/domnita/",
+      "data": {
+        "tmdbID": 763215,
+        "movieName": "Domnița",
+        "localTitle": "Domnița",
+        "originalTitle": "Damsel",
+        "releaseYear": 2024
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Dincolo de Lună",
+      "expectedPage": "https://desenefaine.com/film/dincolo-de-luna/",
+      "data": {
+        "tmdbID": 560050,
+        "movieName": "Dincolo de Lună",
+        "localTitle": "Dincolo de Lună",
+        "originalTitle": "Over the Moon",
+        "releaseYear": 2020
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Highlander: Endgame",
+      "expectedPage": "https://desenefaine.com/film/highlander-runda-finala/",
+      "data": {
+        "tmdbID": 12211,
+        "movieName": "Highlander: Runda Finală",
+        "localTitle": "Highlander: Runda Finală",
+        "originalTitle": "Highlander: Endgame",
+        "releaseYear": 2000
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Balto",
+      "expectedPage": "https://desenefaine.com/film/balto/",
+      "data": {
+        "tmdbID": 21032,
+        "movieName": "Balto",
+        "localTitle": "Balto",
+        "originalTitle": "Balto",
+        "releaseYear": 1995
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Monstrul din camera mea",
+      "expectedPage": "https://desenefaine.com/film/monstrul-din-camera-mea/",
+      "data": {
+        "tmdbID": 1043197,
+        "movieName": "Monstrul din camera mea",
+        "localTitle": "Monstrul din camera mea",
+        "originalTitle": "Dust Bunny",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Scooby Doo si monstrul de pe Luna",
+      "expectedPage": "https://desenefaine.com/film/scooby-doo-si-monstrul-de-pe-luna/",
+      "data": {
+        "tmdbID": 302960,
+        "movieName": "Scooby-Doo! Moon Monster Madness",
+        "localTitle": "Scooby-Doo! Moon Monster Madness",
+        "originalTitle": "Scooby-Doo! Moon Monster Madness",
+        "releaseYear": 2015
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "The Book of Eli",
+      "expectedPage": "https://desenefaine.com/film/the-book-of-eli/",
+      "data": {
+        "tmdbID": 20504,
+        "movieName": "Cartea lui Eli",
+        "localTitle": "Cartea lui Eli",
+        "originalTitle": "The Book of Eli",
+        "releaseYear": 2010
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Pinocchio",
+      "expectedPage": "https://desenefaine.com/film/pinocchio/",
+      "data": {
+        "tmdbID": 532639,
+        "movieName": "Pinocchio",
+        "localTitle": "Pinocchio",
+        "originalTitle": "Pinocchio",
+        "releaseYear": 2022
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Scooby-Doo! Ii Intalneste Pe Fratii Boo",
+      "expectedPage": "https://desenefaine.com/film/scooby-doo-ii-intalneste-pe-fratii-boo/",
+      "data": {
+        "tmdbID": 24787,
+        "movieName": "Scooby-Doo! Meets the Boo Brothers",
+        "localTitle": "Scooby-Doo! Meets the Boo Brothers",
+        "originalTitle": "Scooby-Doo! Meets the Boo Brothers",
+        "releaseYear": 1987
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Tocilarul fermecător",
+      "expectedPage": "https://desenefaine.com/film/tocilarul-fermecator/",
+      "data": {
+        "tmdbID": 81250,
+        "movieName": "Tocilarul fermecător",
+        "localTitle": "Tocilarul fermecător",
+        "originalTitle": "Geek Charming",
+        "releaseYear": 2011
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Libertate",
+      "expectedPage": "https://desenefaine.com/film/libertate/",
+      "data": {
+        "tmdbID": 1140259,
+        "movieName": "Libertate",
+        "localTitle": "Libertate",
+        "originalTitle": "Libertate",
+        "releaseYear": 2023
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Ozzy: Marea Evadare",
+      "expectedPage": "https://desenefaine.com/film/ozzy/",
+      "data": {
+        "tmdbID": 411221,
+        "movieName": "Ozzy",
+        "localTitle": "Ozzy",
+        "originalTitle": "Ozzy",
+        "releaseYear": 2016
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Lego Regatul de Gheață: Operațiunea Pufini",
+      "expectedPage": "https://desenefaine.com/film/lego-regatul-de-gheata-operatiunea-pufini/",
+      "data": {
+        "tmdbID": 1549292,
+        "movieName": "Lego Regatul de Gheață: Operațiunea Pufini",
+        "localTitle": "Lego Regatul de Gheață: Operațiunea Pufini",
+        "originalTitle": "LEGO Frozen: Operation Puffins",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Barbie în povestea unei sirene",
+      "expectedPage": "https://desenefaine.com/film/barbie-in-povestea-unei-sirene/",
+      "data": {
+        "tmdbID": 34134,
+        "movieName": "Barbie în povestea unei sirene",
+        "localTitle": "Barbie în povestea unei sirene",
+        "originalTitle": "Barbie in A Mermaid Tale",
+        "releaseYear": 2010
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Ruby Gillman, adolescenta kraken",
+      "expectedPage": "https://desenefaine.com/film/ruby-gillman-adolescenta-kraken/",
+      "data": {
+        "tmdbID": 1040148,
+        "movieName": "Ruby Gillman, adolescenta kraken",
+        "localTitle": "Ruby Gillman, adolescenta kraken",
+        "originalTitle": "Ruby Gillman, Teenage Kraken",
+        "releaseYear": 2023
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Tom și Jerry: O aventură gigantică",
+      "expectedPage": "https://desenefaine.com/film/tom-si-jerry-o-aventura-gigantica/",
+      "data": {
+        "tmdbID": 199753,
+        "movieName": "Tom and Jerry's Giant Adventure",
+        "localTitle": "Tom and Jerry's Giant Adventure",
+        "originalTitle": "Tom and Jerry's Giant Adventure",
+        "releaseYear": 2013
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "100 Meters",
+      "expectedPage": "https://desenefaine.com/film/100-meters/",
+      "data": {
+        "tmdbID": 1295026,
+        "movieName": "100 Meters",
+        "localTitle": "100 Meters",
+        "originalTitle": "ひゃくえむ。",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Mașini 2",
+      "expectedPage": "https://desenefaine.com/film/masini-2/",
+      "data": {
+        "tmdbID": 49013,
+        "movieName": "Mașini 2",
+        "localTitle": "Mașini 2",
+        "originalTitle": "Cars 2",
+        "releaseYear": 2011
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "The Crow: Iubire și răzbunare",
+      "expectedPage": "https://desenefaine.com/film/the-crow-iubire-si-razbunare/",
+      "data": {
+        "tmdbID": 957452,
+        "movieName": "The Crow: Iubire și răzbunare",
+        "localTitle": "The Crow: Iubire și răzbunare",
+        "originalTitle": "The Crow",
+        "releaseYear": 2024
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "LEGO Războiul Stelelor: Reconstrucția galaxiei",
+      "expectedPage": "https://desenefaine.com/epi/lego-razboiul-stelelor-reconstructia-galaxiei-sezonul-1-episodul-1/",
+      "data": {
+        "tmdbID": 253760,
+        "movieName": "LEGO Războiul Stelelor: Reconstrucția galaxiei",
+        "localTitle": "LEGO Războiul Stelelor: Reconstrucția galaxiei",
+        "originalTitle": "LEGO Star Wars: Rebuild the Galaxy",
+        "releaseYear": 2024,
+        "season": 1,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Dinozaurii",
+      "expectedPage": "https://desenefaine.com/epi/dinozaurii-1x1/",
+      "data": {
+        "tmdbID": 313298,
+        "movieName": "Dinozaurii",
+        "localTitle": "Dinozaurii",
+        "originalTitle": "The Dinosaurs",
+        "releaseYear": 2026,
+        "season": 1,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Echipa Mighty Ducks: Sezonul Schimbărilor",
+      "expectedPage": "https://desenefaine.com/epi/echipa-mighty-ducks-sezonul-schimbarilor-sezonul-2-episodul-5/",
+      "data": {
+        "tmdbID": 114621,
+        "movieName": "Echipa Mighty Ducks: Sezonul Schimbărilor",
+        "localTitle": "Echipa Mighty Ducks: Sezonul Schimbărilor",
+        "originalTitle": "The Mighty Ducks: Game Changers",
+        "releaseYear": 2021,
+        "season": 2,
+        "episode": 5
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Micile Genii",
+      "expectedPage": "https://desenefaine.com/epi/micile-genii-sezonul-2-episodul-28/",
+      "data": {
+        "tmdbID": 3090,
+        "movieName": "Little Einsteins",
+        "localTitle": "Little Einsteins",
+        "originalTitle": "Little Einsteins",
+        "releaseYear": 2005,
+        "season": 2,
+        "episode": 28
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "X-Men: Evoluție",
+      "expectedPage": "https://desenefaine.com/epi/x-men-evolutie-sezonul-3-episodul-10/",
+      "data": {
+        "tmdbID": 668,
+        "movieName": "Oamenii X: Evoluție",
+        "localTitle": "Oamenii X: Evoluție",
+        "originalTitle": "X-Men: Evolution",
+        "releaseYear": 2000,
+        "season": 3,
+        "episode": 10
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Tinerii justițiari",
+      "expectedPage": "https://desenefaine.com/epi/tinerii-justitiari-sezonul-3-episodul-18/",
+      "data": {
+        "tmdbID": 33217,
+        "movieName": "Tinerii justițiari",
+        "localTitle": "Tinerii justițiari",
+        "originalTitle": "Young Justice",
+        "releaseYear": 2010,
+        "season": 3,
+        "episode": 18
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Miraculous: Buburuza și Motan Noir",
+      "expectedPage": "https://desenefaine.com/epi/miraculous-buburuza-si-motan-noir-s1-ep4/",
+      "data": {
+        "tmdbID": 65334,
+        "movieName": "Miraculous: Buburuza și Motan Noir",
+        "localTitle": "Miraculous: Buburuza și Motan Noir",
+        "originalTitle": "Miraculous, les aventures de Ladybug et Chat Noir",
+        "releaseYear": 2015,
+        "season": 1,
+        "episode": 4
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Strada Dalmațieni 101",
+      "expectedPage": "https://desenefaine.com/epi/strada-dalmatieni-101-s1-ep15/",
+      "data": {
+        "tmdbID": 75523,
+        "movieName": "Strada Dalmațieni 101",
+        "localTitle": "Strada Dalmațieni 101",
+        "originalTitle": "101 Dalmatian Street",
+        "releaseYear": 2019,
+        "season": 1,
+        "episode": 15
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "The Acolyte",
+      "expectedPage": "https://desenefaine.com/epi/the-acolyte-sezonul-1-episodul-4/",
+      "data": {
+        "tmdbID": 114479,
+        "movieName": "The Acolyte",
+        "localTitle": "The Acolyte",
+        "originalTitle": "The Acolyte",
+        "releaseYear": 2024,
+        "season": 1,
+        "episode": 4
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Kizazi Moto: Generația de Foc",
+      "expectedPage": "https://desenefaine.com/epi/kizazi-moto-generatia-de-foc-s1-ep3/",
+      "data": {
+        "tmdbID": 156610,
+        "movieName": "Kizazi Moto: Generația de Foc",
+        "localTitle": "Kizazi Moto: Generația de Foc",
+        "originalTitle": "Kizazi Moto: Generation Fire",
+        "releaseYear": 2023,
+        "season": 1,
+        "episode": 3
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "O poveste grimminală",
+      "expectedPage": "https://desenefaine.com/epi/o-poveste-grimminala-s1-ep6/",
+      "data": {
+        "tmdbID": 133355,
+        "movieName": "A Tale Dark & Grimm",
+        "localTitle": "A Tale Dark & Grimm",
+        "originalTitle": "A Tale Dark & Grimm",
+        "releaseYear": 2021,
+        "season": 1,
+        "episode": 6
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "OK, K.O.! Să fim eroi!",
+      "expectedPage": "https://desenefaine.com/epi/ok-k-o-sa-fim-eroi-sezonul-3-episodul-8/",
+      "data": {
+        "tmdbID": 72468,
+        "movieName": "OK, K.O.! Să fim eroi!",
+        "localTitle": "OK, K.O.! Să fim eroi!",
+        "originalTitle": "OK K.O.! Let's Be Heroes",
+        "releaseYear": 2017,
+        "season": 3,
+        "episode": 8
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Mira, detectiv regal",
+      "expectedPage": "https://desenefaine.com/epi/mira-detectiv-regal-sezonul-2-episodul-21/",
+      "data": {
+        "tmdbID": 100975,
+        "movieName": "Mira, Royal Detective",
+        "localTitle": "Mira, Royal Detective",
+        "originalTitle": "Mira, Royal Detective",
+        "releaseYear": 2020,
+        "season": 2,
+        "episode": 21
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Moon Knight",
+      "expectedPage": "https://desenefaine.com/epi/moon-knight-s1-ep3/",
+      "data": {
+        "tmdbID": 92749,
+        "movieName": "Moon Knight",
+        "localTitle": "Moon Knight",
+        "originalTitle": "Moon Knight",
+        "releaseYear": 2022,
+        "season": 1,
+        "episode": 3
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Vampire in the Garden",
+      "expectedPage": "https://desenefaine.com/epi/vampire-in-the-garden-s1-ep1/",
+      "data": {
+        "tmdbID": 99772,
+        "movieName": "Vampirul din grădină",
+        "localTitle": "Vampirul din grădină",
+        "originalTitle": "ヴァンパイア・イン・ザ・ガーデン",
+        "releaseYear": 2022,
+        "season": 1,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Aventurile lui Spider-Man",
+      "expectedPage": "https://desenefaine.com/epi/aventurile-lui-spider-man-s2-ep3/",
+      "data": {
+        "tmdbID": 3854,
+        "movieName": "Aventurile Omului-Păianjen",
+        "localTitle": "Aventurile Omului-Păianjen",
+        "originalTitle": "The Spectacular Spider-Man",
+        "releaseYear": 2008,
+        "season": 2,
+        "episode": 3
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Jocul calamarului",
+      "expectedPage": "https://desenefaine.com/epi/jocul-calamarului-sezonul-2-episodul-6/",
+      "data": {
+        "tmdbID": 93405,
+        "movieName": "Jocul calamarului",
+        "localTitle": "Jocul calamarului",
+        "originalTitle": "오징어 게임",
+        "releaseYear": 2021,
+        "season": 2,
+        "episode": 6
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Terminator Zero",
+      "expectedPage": "https://desenefaine.com/epi/terminator-zero-sezonul-1-episodul-1/",
+      "data": {
+        "tmdbID": 239287,
+        "movieName": "Terminator Zero",
+        "localTitle": "Terminator Zero",
+        "originalTitle": "Terminator Zero",
+        "releaseYear": 2024,
+        "season": 1,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Futurama",
+      "expectedPage": "https://desenefaine.com/epi/futurama-sezonul-4-episodul-6/",
+      "data": {
+        "tmdbID": 615,
+        "movieName": "Futurama",
+        "localTitle": "Futurama",
+        "originalTitle": "Futurama",
+        "releaseYear": 1999,
+        "season": 4,
+        "episode": 6
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Academia eroilor",
+      "expectedPage": "https://desenefaine.com/epi/academia-eroilor-sezonul-2-episodul-1/",
+      "data": {
+        "tmdbID": 65930,
+        "movieName": "Academia eroilor",
+        "localTitle": "Academia eroilor",
+        "originalTitle": "僕のヒーローアカデミア",
+        "releaseYear": 2016,
+        "season": 2,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Animals Up Close with Bertie Gregory",
+      "expectedPage": "https://desenefaine.com/epi/animals-up-close-with-bertie-gregory-s1-ep4/",
+      "data": {
+        "tmdbID": 231311,
+        "movieName": "Animale în prim-plan cu Bertie Gregory",
+        "localTitle": "Animale în prim-plan cu Bertie Gregory",
+        "originalTitle": "Animals Up Close with Bertie Gregory",
+        "releaseYear": 2023,
+        "season": 1,
+        "episode": 4
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Bugs Bunny Constructorii",
+      "expectedPage": "https://desenefaine.com/epi/bugs-bunny-constructorii-sezonul-2-episodul-13/",
+      "data": {
+        "tmdbID": 203687,
+        "movieName": "Bugs Bunny Builders",
+        "localTitle": "Bugs Bunny Builders",
+        "originalTitle": "Bugs Bunny Builders",
+        "releaseYear": 2022,
+        "season": 2,
+        "episode": 13
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Doctor Who",
+      "expectedPage": "https://desenefaine.com/epi/doctor-who-sezonul-2-episodul-5/",
+      "data": {
+        "tmdbID": 239770,
+        "movieName": "Doctor Who",
+        "localTitle": "Doctor Who",
+        "originalTitle": "Doctor Who",
+        "releaseYear": 2024,
+        "season": 2,
+        "episode": 5
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "She-Hulk: Avocata apărării",
+      "expectedPage": "https://desenefaine.com/epi/she-hulk-avocata-apararii-s1-ep8/",
+      "data": {
+        "tmdbID": 92783,
+        "movieName": "She-Hulk: Avocata apărării",
+        "localTitle": "She-Hulk: Avocata apărării",
+        "originalTitle": "She-Hulk: Attorney at Law",
+        "releaseYear": 2022,
+        "season": 1,
+        "episode": 8
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "SpongeBob Pantaloni Pătrați",
+      "expectedPage": "https://desenefaine.com/epi/spongebob-pantaloni-patrati-sezonul-11-episodul-12/",
+      "data": {
+        "tmdbID": 387,
+        "movieName": "SpongeBob Pantaloni Pătrați",
+        "localTitle": "SpongeBob Pantaloni Pătrați",
+        "originalTitle": "SpongeBob SquarePants",
+        "releaseYear": 1999,
+        "season": 11,
+        "episode": 12
+      }
+    }
+  ]
+}

@@ -22,6 +22,10 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Checks the playlist and an initial media segment before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
 - Netu and Playmogo/DoodStream are deferred and excluded. Player4me is not supported. DeseneleDublate integration is planned, not included.
 
+## Version 3: DeseneFaine address fixes
+
+The unchanged 50-title DeseneFaine sample now passes **50/50 on Android**, up from 41/50; the 14 Doza address cases also pass. Series are located through a verified parent title and premiere year before selecting the requested episode, including `1x1` paths. English-title fallback and guarded movie aliases handle translation differences. See the [complete fifty-title audit](desenefaine-audit.md). No streams were resolved during these audits.
+
 ## Version 2: DozaAnimata
 
 DozaAnimata is searched when DeseneFaine returns fewer than three results; the total limit remains three. Dubbed series are matched to their exact season and episode. Subtitled-only titles are excluded. When TMDB and the website use different translations, bounded public sitemap discovery and the main artwork's original-title filename supplement title matching, with release year and content type still required. This runs entirely on the TV and caches the catalog sitemap in memory for up to an hour.

@@ -1,9 +1,9 @@
 {
-  "version": 2,
-  "sha256": "07f47b1a1b8d9c56037c7bd60a5f296b5c963434ba6868c72779459356f5b010",
-  "bytes": 27739,
+  "version": 3,
+  "sha256": "5a6e70772c18bc2c3a493bd8a917403d29c04979b0d18da7677d70361b9243ff",
+  "bytes": 28562,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
-  "unitTests": "PASS: language declarations, foreign/unknown rejection, older bare labels, exact joined VOE labels, strict title/year matching, independent AES and VOE encoding fixtures",
+  "unitTests": "PASS: original host/language references, Doza identity checks, Desene parent premiere year, recommendation isolation, exact episode syntax/number, short original movie alias safeguards",
   "runs": [
     {
       "title": "Avatar",
@@ -55,5 +55,27 @@
     "streamsResolved": false
   },
   "physicalTvBaseline": "User confirmed all four original hosts and Doza Vidmoly on both development episodes; version2 adds catalog discovery improvements",
-  "playmogo": "Direct native requests HTTP403; excluded"
+  "playmogo": "Direct native requests HTTP403; excluded",
+  "desenefaineAddressAudit": {
+    "before": {
+      "correct": 41,
+      "total": 50,
+      "wrong": 1
+    },
+    "after": {
+      "correct": 50,
+      "total": 50,
+      "wrong": 0
+    },
+    "movies": 25,
+    "series": 25,
+    "seed": 1247742965,
+    "report": "desenefaine-audit.json",
+    "streamsResolved": false
+  },
+  "dozaAddressRegression": {
+    "passed": 14,
+    "total": 14,
+    "streamsResolved": false
+  }
 }
