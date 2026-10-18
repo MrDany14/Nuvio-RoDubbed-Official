@@ -1,7 +1,7 @@
 {
-  "version": 1,
-  "sha256": "3de06ba75c54dc9395ef83cb5d15f219e6f6c7bf5226265af24a1dd46bbed162",
-  "bytes": 24356,
+  "version": 2,
+  "sha256": "07f47b1a1b8d9c56037c7bd60a5f296b5c963434ba6868c72779459356f5b010",
+  "bytes": 27739,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
   "unitTests": "PASS: language declarations, foreign/unknown rejection, older bare labels, exact joined VOE labels, strict title/year matching, independent AES and VOE encoding fixtures",
   "runs": [
@@ -41,6 +41,19 @@
   "exactReleasePhysicalTvPlaybackVerified": false,
   "netu": "Deferred; excluded",
   "websites": [
-    "desenefaine.com"
-  ]
+    "desenefaine.com",
+    "www.dozaanimata.net"
+  ],
+  "catalogAudit": {
+    "passed": 14,
+    "total": 14,
+    "movies": 7,
+    "series": 7,
+    "initialPassed": 8,
+    "seed": 784801863,
+    "report": "catalog-audit.json",
+    "streamsResolved": false
+  },
+  "physicalTvBaseline": "User confirmed all four original hosts and Doza Vidmoly on both development episodes; version2 adds catalog discovery improvements",
+  "playmogo": "Direct native requests HTTP403; excluded"
 }

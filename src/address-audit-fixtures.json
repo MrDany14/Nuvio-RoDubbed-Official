@@ -1,0 +1,187 @@
+{
+  "seed": 784801863,
+  "fixtures": [
+    {
+      "type": "movie",
+      "websiteTitle": "Crăciunul Angelei",
+      "expectedPage": "https://www.dozaanimata.net/craciunul-angelei-2017-dublat-in-romana/",
+      "data": {
+        "tmdbID": 563710,
+        "movieName": "Crăciunul Angelei",
+        "localTitle": "Crăciunul Angelei",
+        "originalTitle": "Angela's Christmas",
+        "releaseYear": 2017
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Din mintea lui Jimmy: Filmul",
+      "expectedPage": "https://www.dozaanimata.net/din-mintea-lui-jimmy-filmul-2006-dublat-in-romana/",
+      "data": {
+        "tmdbID": 212518,
+        "movieName": "Re-Animated",
+        "localTitle": "Re-Animated",
+        "originalTitle": "Re-Animated",
+        "releaseYear": 2006
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Școala de Sperieturi a lui Casper",
+      "expectedPage": "https://www.dozaanimata.net/scoala-de-sperieturi-a-lui-casper-2006-dublat-in-romana/",
+      "data": {
+        "tmdbID": 31170,
+        "movieName": "Școala de sperie a lui Casper",
+        "localTitle": "Școala de sperie a lui Casper",
+        "originalTitle": "Casper's Scare School",
+        "releaseYear": 2006
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Cursa Grand Prix a Europei",
+      "expectedPage": "https://www.dozaanimata.net/cursa-grand-prix-a-europei-2025-dublat-in-romana/",
+      "data": {
+        "tmdbID": 1316147,
+        "movieName": "Cursa Grand Prix a Europei",
+        "localTitle": "Cursa Grand Prix a Europei",
+        "originalTitle": "Grand Prix of Europe",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Ostatica Eloá: În direct la Televizor",
+      "expectedPage": "https://www.dozaanimata.net/ostatica-eloa-in-direct-la-televizor-2025-dublat-in-romana/",
+      "data": {
+        "tmdbID": 1564346,
+        "movieName": "Caso Eloá: Refém Ao Vivo",
+        "localTitle": "Caso Eloá: Refém Ao Vivo",
+        "originalTitle": "Caso Eloá: Refém Ao Vivo",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Craig Înainte de Dumbravă",
+      "expectedPage": "https://www.dozaanimata.net/craig-inainte-de-dumbrava-2023-dublat-in-romana/",
+      "data": {
+        "tmdbID": 928833,
+        "movieName": "Craig Înainte de Dumbravă",
+        "localTitle": "Craig Înainte de Dumbravă",
+        "originalTitle": "Craig Before the Creek",
+        "releaseYear": 2023
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Scooby-Doo! și Krypto Câinele Erou",
+      "expectedPage": "https://www.dozaanimata.net/scooby-doo-si-krypto-cainele-erou-2023-dublat-in-romana/",
+      "data": {
+        "tmdbID": 1146348,
+        "movieName": "Scooby-Doo! and Krypto, Too!",
+        "localTitle": "Scooby-Doo! and Krypto, Too!",
+        "originalTitle": "Scooby-Doo! and Krypto, Too!",
+        "releaseYear": 2023
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Nașii Mei Vrăjitori: O Nouă Dorință",
+      "expectedPage": "https://www.dozaanimata.net/episode/nasii-mei-vrajitori-o-noua-dorinta-sezonul-1-episodul-2-scoala-de-corectie-magica-prietena-invatatoarei/",
+      "data": {
+        "tmdbID": 247246,
+        "movieName": "Nașii mei vrăjitori: O nouă dorință",
+        "localTitle": "Nașii mei vrăjitori: O nouă dorință",
+        "originalTitle": "The Fairly OddParents: A New Wish",
+        "releaseYear": 2024,
+        "season": 1,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Iwaju: Orașul Viitorului",
+      "expectedPage": "https://www.dozaanimata.net/episode/iwaju-orasul-viitorului-sezonul-1-episodul-1-iwaju/",
+      "data": {
+        "tmdbID": 114481,
+        "movieName": "Iwájú: Orașul viitorului",
+        "localTitle": "Iwájú: Orașul viitorului",
+        "originalTitle": "Iwájú",
+        "releaseYear": 2024,
+        "season": 1,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Lumea Looney Tunes",
+      "expectedPage": "https://www.dozaanimata.net/episode/lumea-looney-tunes-sezonul-1-episodul-28/",
+      "data": {
+        "tmdbID": 102321,
+        "movieName": "Lumea Looney Tunes",
+        "localTitle": "Lumea Looney Tunes",
+        "originalTitle": "Looney Tunes Cartoons",
+        "releaseYear": 2020,
+        "season": 1,
+        "episode": 28
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Fetițele Powerpuff",
+      "expectedPage": "https://www.dozaanimata.net/episode/fetitele-powerpuff-sezonul-2-episodul-3-la-multi-ani-nu-mai-am-chef/",
+      "data": {
+        "tmdbID": 607,
+        "movieName": "Fetițele Powerpuff",
+        "localTitle": "Fetițele Powerpuff",
+        "originalTitle": "The Powerpuff Girls",
+        "releaseYear": 1998,
+        "season": 2,
+        "episode": 3
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ultima Bârfă",
+      "expectedPage": "https://www.dozaanimata.net/episode/ultima-barfa-sezonul-1-episodul-2-dansul-locco-locco/",
+      "data": {
+        "tmdbID": 14785,
+        "movieName": "The Latest Buzz",
+        "localTitle": "The Latest Buzz",
+        "originalTitle": "The Latest Buzz",
+        "releaseYear": 2007,
+        "season": 1,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Barbie Mysteries: Goana după Cai",
+      "expectedPage": "https://www.dozaanimata.net/episode/barbie-mysteries-goana-dupa-cai-sezonul-1-episodul-1-atentie-la-neatentie/",
+      "data": {
+        "tmdbID": 234586,
+        "movieName": "Barbie Mysteries",
+        "localTitle": "Barbie Mysteries",
+        "originalTitle": "Barbie Mysteries",
+        "releaseYear": 2024,
+        "season": 1,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Clasa lui 3000",
+      "expectedPage": "https://www.dozaanimata.net/episode/clasa-lui-3000-sezonul-1-episodul-10-iubirea-e-in-aer/",
+      "data": {
+        "tmdbID": 2094,
+        "movieName": "Clasa lui 3000",
+        "localTitle": "Clasa lui 3000",
+        "originalTitle": "Class of 3000",
+        "releaseYear": 2006,
+        "season": 1,
+        "episode": 10
+      }
+    }
+  ]
+}

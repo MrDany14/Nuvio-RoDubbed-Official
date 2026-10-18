@@ -1,6 +1,6 @@
 # RoDubbed
 
-Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine. No PC or helper server is needed.
+Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine, plus Vidmoly from DozaAnimata. No PC or helper server is needed.
 
 ## Install on Nuvio TV
 
@@ -20,7 +20,13 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Discovers the title's available servers once, then resolves only relevant supported hosts. Legacy Filemoon labels can lead to Byse.
 - Requires Romanian server declarations. For older bare host labels, accepts the title page's explicit Romanian-dubbing declaration. English/subtitled labels are excluded, and explicit foreign default audio in host/HLS metadata is rejected.
 - Checks the playlist and an initial media segment before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
-- Netu is deferred and excluded from this release. Player4me is not supported. DeseneleDublate and DozaAnimata integration is planned, not included.
+- Netu and Playmogo/DoodStream are deferred and excluded. Player4me is not supported. DeseneleDublate integration is planned, not included.
+
+## Version 2: DozaAnimata
+
+DozaAnimata is searched when DeseneFaine returns fewer than three results; the total limit remains three. Dubbed series are matched to their exact season and episode. Subtitled-only titles are excluded. When TMDB and the website use different translations, bounded public sitemap discovery and the main artwork's original-title filename supplement title matching, with release year and content type still required. This runs entirely on the TV and caches the catalog sitemap in memory for up to an hour.
+
+A randomized sample of **seven movies and seven series episodes passed 14/14 address checks on Android** after fixing six translation-related misses. No stream host was requested or resolved during this audit. This sample supports the tested cases; it is not a guarantee that every catalog title will match. See [the full audit](catalog-audit.md).
 
 ## Validation
 
