@@ -1,0 +1,286 @@
+{
+  "date": "2026-10-19",
+  "version": 10,
+  "sha256": "a6f12591d874c1d00b5e268dfb15cb30f5cbe189da28499ff1a6dc75913532d9",
+  "bytes": 50160,
+  "combinedProviderChecks": [
+    {
+      "title": "Masca magică",
+      "pass": true,
+      "firstSourceMs": 561,
+      "totalMs": 1100,
+      "sources": [
+        "Streamtape | RO Dub | FilmeDublate",
+        "Byse | RO Dub | FilmeDublate",
+        "Abyss | RO Dub | FilmeDublate"
+      ],
+      "types": [
+        "VIDEO",
+        "M3U8",
+        "VIDEO"
+      ]
+    },
+    {
+      "title": "Kirby Desenatorul",
+      "pass": true,
+      "firstSourceMs": 2024,
+      "totalMs": 8656,
+      "sources": [
+        "OK.ru | RO Dub | DeseneleDublate"
+      ],
+      "types": [
+        "VIDEO"
+      ]
+    },
+    {
+      "title": "Toy Story 5 combined",
+      "pass": true,
+      "firstSourceMs": 678,
+      "totalMs": 3036,
+      "sources": [
+        "Streamtape | RO Dub | FilmeDublate",
+        "Byse | RO Dub | FilmeDublate",
+        "Abyss | RO Dub | FilmeDublate"
+      ],
+      "types": [
+        "VIDEO",
+        "M3U8",
+        "VIDEO"
+      ]
+    },
+    {
+      "title": "Wednesday combined",
+      "pass": true,
+      "firstSourceMs": 1439,
+      "totalMs": 1966,
+      "sources": [
+        "VOE | RO Dub | DeseneFaine",
+        "Playmogo | RO Dub | DozaAnimata",
+        "Vidmoly | RO Dub | DozaAnimata"
+      ],
+      "types": [
+        "M3U8",
+        "VIDEO",
+        "M3U8"
+      ]
+    }
+  ],
+  "individualWebsiteChecks": [
+    {
+      "title": "DeseneFaine Toy Story 5",
+      "pass": true,
+      "firstSourceMs": 1369,
+      "totalMs": 3101,
+      "sources": [
+        "Byse | RO Dub | DeseneFaine",
+        "SeekStreaming | RO Dub | DeseneFaine",
+        "StreamP2P | RO Dub | DeseneFaine"
+      ],
+      "types": [
+        "M3U8",
+        "M3U8",
+        "M3U8"
+      ]
+    },
+    {
+      "title": "Doza Miraculous",
+      "pass": true,
+      "firstSourceMs": 4466,
+      "totalMs": 4989,
+      "sources": [
+        "Vidmoly | RO Dub | DozaAnimata",
+        "Playmogo | RO Dub | DozaAnimata"
+      ],
+      "types": [
+        "M3U8",
+        "VIDEO"
+      ]
+    },
+    {
+      "title": "FilmeDublate Toy Story 5",
+      "pass": true,
+      "firstSourceMs": 1153,
+      "totalMs": 8412,
+      "sources": [
+        "Byse | RO Dub | FilmeDublate",
+        "Streamtape | RO Dub | FilmeDublate",
+        "Abyss | RO Dub | FilmeDublate"
+      ],
+      "types": [
+        "M3U8",
+        "VIDEO",
+        "VIDEO"
+      ]
+    },
+    {
+      "title": "DeseneleDublate Masca magică",
+      "pass": true,
+      "firstSourceMs": 1324,
+      "totalMs": 1324,
+      "sources": [
+        "OK.ru | RO Dub | DeseneleDublate"
+      ],
+      "types": [
+        "VIDEO"
+      ]
+    }
+  ],
+  "titleMatching": "Reuses the tested 70-title matching correction: 61 correct title addresses, zero incorrect returned addresses, five withheld and four independently unverified. This does not establish 61 available streams.",
+  "hostTestsFromIsolatedBuild": {
+    "date": "2026-10-19",
+    "sha256": "924e509cc8dbda8a5581997de3526d4b27d859bcb44f83e07951f8882ad30f19",
+    "bytes": 49421,
+    "discovery": {
+      "results": [
+        {
+          "title": "Masca magică",
+          "candidates": 1,
+          "pass": true,
+          "quality": 1080,
+          "type": "VIDEO",
+          "site": "DeseneleDublate",
+          "ms": 1414
+        },
+        {
+          "title": "High School Musical 1",
+          "candidates": 1,
+          "pass": false,
+          "error": "java.lang.Exception: OK.ru player metadata unavailable",
+          "ms": 925
+        },
+        {
+          "title": "Liceul Degrassi",
+          "candidates": 1,
+          "pass": true,
+          "quality": 720,
+          "type": "VIDEO",
+          "site": "DeseneleDublate",
+          "ms": 1369
+        },
+        {
+          "title": "Kirby Desenatorul",
+          "candidates": 1,
+          "pass": true,
+          "quality": 720,
+          "type": "VIDEO",
+          "site": "DeseneleDublate",
+          "ms": 1640
+        }
+      ]
+    },
+    "independentEpisodeIdentity": [
+      {
+        "title": "Liceul Degrassi",
+        "season": 10,
+        "episode": 9,
+        "titleFromIndependentMetadata": "I Just Don't Know What To Do With Myself (1)",
+        "publisherTitle": "Nu știu ce să mă fac (partea întâi)",
+        "runtime": null
+      },
+      {
+        "title": "Kirby Desenatorul",
+        "season": 3,
+        "episode": 8,
+        "titleFromIndependentMetadata": "Dr. Mac ‘n Cheese’s Labyrinth of Horrors",
+        "publisherTitle": "Dr. Macaroane cu Brânză în labirintul de groază",
+        "runtime": 23
+      }
+    ],
+    "providerChecks": [
+      {
+        "title": "Masca magică",
+        "pass": true,
+        "callbacks": 1,
+        "ms": 2004
+      },
+      {
+        "title": "Liceul Degrassi",
+        "pass": true,
+        "callbacks": 1,
+        "ms": 1075
+      },
+      {
+        "title": "Kirby Desenatorul",
+        "pass": true,
+        "callbacks": 1,
+        "ms": 1713
+      }
+    ],
+    "decoded": [
+      {
+        "title": "Masca magică",
+        "pass": true,
+        "durationMs": 6206508,
+        "audio": "yes",
+        "video": "yes",
+        "decodedFrames": 2,
+        "differentFrames": true
+      },
+      {
+        "title": "Liceul Degrassi",
+        "pass": true,
+        "durationMs": 1254458,
+        "audio": "yes",
+        "video": "yes",
+        "decodedFrames": 2,
+        "differentFrames": true
+      },
+      {
+        "title": "Kirby Desenatorul",
+        "pass": true,
+        "durationMs": 1323475,
+        "audio": "yes",
+        "video": "yes",
+        "decodedFrames": 2,
+        "differentFrames": true
+      }
+    ],
+    "playbackAttempts": [
+      {
+        "sample": 0,
+        "output": "[DD] title=https://deseneledublate.com/desen/masca-magica-2020-dublat-in-romana/\r\nPLAYBACK FAIL java.lang.AssertionError: Playback did not advance: 59734 -> 60103 true"
+      },
+      {
+        "sample": 2,
+        "output": "[DD] title=https://deseneledublate.com/serial/liceul-degrassi-seria-dublata-in-romana/\r\n{\"title\":\"Liceul Degrassi\",\"pass\":true,\"player\":\"Android MediaPlayer, muted\",\"seekCompleted\":true,\"durationMs\":1254458,\"positionBeforeMs\":57858,\"positionMs\":60453,\"videoWidth\":1280,\"videoHeight\":720,\"isPlaying\":true}"
+      },
+      {
+        "sample": 3,
+        "output": "[DD] title=https://deseneledublate.com/serial/kirby-buckets-seria-dublata-in-romana/\r\n{\"title\":\"Kirby Desenatorul\",\"pass\":true,\"player\":\"Android MediaPlayer, muted\",\"seekCompleted\":true,\"durationMs\":1323475,\"positionBeforeMs\":59978,\"positionMs\":61956,\"videoWidth\":1280,\"videoHeight\":720,\"isPlaying\":true}"
+      }
+    ],
+    "playbackLimitation": "Emulator post-seek progress inconsistent: Degrassi and Kirby passed after settling; movie passed an initial run but failed a later repeat. Physical TV playback confirmation required.",
+    "spokenRomanian": "Awaiting user confirmation; automated playback muted"
+  },
+  "userPhysicalTvConfirmation": {
+    "build": "Separate OK.ru test build, SHA256 924e509cc8dbda8a5581997de3526d4b27d859bcb44f83e07951f8882ad30f19",
+    "confirmedRomanianPlayback": [
+      "Masca magică (2020)",
+      "Kirby Desenatorul S03E08"
+    ],
+    "degrassi": "User could not locate it in app search. Emulator resolution/decode only; not user playback confirmed."
+  },
+  "implementation": {
+    "discovery": "Four catalog searches share a 38-second deadline. Ready catalogs are processed as they complete; up to three host resolvers run together. All outstanding tasks/connections are cancelled at completion.",
+    "limits": "At most three distinct streams; hosts not already returned are preferred across catalog batches.",
+    "hosts": "Only OK.ru added on DeseneleDublate. Structured series episodes and verified movies; flattened legacy season mappings withheld. No hardcoded content titles/URLs/IDs."
+  },
+  "limits": [
+    "Exact official v10 physical Mi Box playback remains pending; user confirmation applies to identical host/catalog code in the isolated test build.",
+    "Romanian speech is not independently listened to for every title. Publisher declarations and explicit foreign-audio rejection remain required.",
+    "Degrassi was not found in the application search by the user; this update changes source discovery, not Nuvio global search.",
+    "Netu, DD Streamtape and DD Vidmoly.to remain excluded.",
+    "Earlier emulator post-seek playback timing was inconsistent; all three sampled OK.ru videos decoded distinct frames with audio/video metadata."
+  ],
+  "finalOfficialCdnDecode": {
+    "title": "Masca magică",
+    "pass": true,
+    "durationMs": 6206508,
+    "audio": "yes",
+    "video": "yes",
+    "decodedFrames": 2,
+    "differentFrames": true
+  },
+  "cdnUpdate": "Final resolver additionally accepts exact HTTPS subdomains of vkuser.net observed in the OK.ru player response; movie identity and bounded MP4 duration checks remain required. Final official artifact decoded distinct movie frames with audio/video metadata.",
+  "checkArtifactScope": "Checks0,1,7 and movie frame decode use the final artifact. Checks2-6 used the preceding v10 artifact; only the OK.ru CDN allowlist changed afterward, and those other host implementations were unchanged."
+}

@@ -1,7 +1,7 @@
 {
-  "version": 9,
-  "sha256": "d29d67dfbb4bd6ecbb69cab6127b2b9f9181f0e591beaada13e5c6d361ccfdf6",
-  "bytes": 44713,
+  "version": 10,
+  "sha256": "a6f12591d874c1d00b5e268dfb15cb30f5cbe189da28499ff1a6dc75913532d9",
+  "bytes": 50160,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
   "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors; PASS independent Abyss AES-CTR/numeric-key/token fixtures, video/CDN identity, provenance and playback headers; PASS Playmogo token/CDN/episode/provenance guards and narrow corroborated series spelling; PASS verified Dood mirror routing and exact redirect video-ID guards; PASS independent IMDb/pilot year, complete-season identity and verified publisher/TMDB playback context",
   "runs": [
@@ -43,7 +43,8 @@
   "websites": [
     "desenefaine.com",
     "www.dozaanimata.net",
-    "filmedublate.net"
+    "filmedublate.net",
+    "deseneledublate.com"
   ],
   "catalogAudit": {
     "passed": 14,
@@ -261,7 +262,16 @@
       "Publisher language declarations alone do not prove spoken audio on untested titles"
     ]
   },
-  "deseneleDublate": "Paused; not included",
+  "deseneleDublate": {
+    "host": "OK.ru",
+    "report": "deseneledublate-validation.json",
+    "officialIntegrationChecks": 8,
+    "physicalTvRomanianPlaybackConfirmedOnIsolatedBuild": [
+      "Masca magică (2020)",
+      "Kirby Desenatorul S03E08"
+    ],
+    "exactOfficialBuildPhysicalTvConfirmed": false
+  },
   "abyss": {
     "report": "abyss-validation.json",
     "resolved": 5,

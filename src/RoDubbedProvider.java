@@ -19,7 +19,7 @@ public final class RoDubbedProvider extends TmdbProvider {
     }
     static List<NativeCatalog.Candidate> order(List<NativeCatalog.Candidate> found){
         List<NativeCatalog.Candidate> ordered=new ArrayList<>();
-        for(int pass=0;pass<2;pass++)for(String host:Arrays.asList("Byse","SeekStreaming","StreamP2P","VOE","Vidmoly","Streamtape","Abyss","Playmogo")){
+        for(int pass=0;pass<2;pass++)for(String host:Arrays.asList("Byse","SeekStreaming","StreamP2P","VOE","Vidmoly","Streamtape","Abyss","Playmogo","OK.ru")){
             int n=0;for(NativeCatalog.Candidate c:found)if(c.host.equals(host)){if(n++==pass){ordered.add(c);break;}}
         }
         return ordered;
@@ -27,15 +27,29 @@ public final class RoDubbedProvider extends TmdbProvider {
     public Object loadLinks(String data,boolean casting,Function1 subtitle,Function1 callback,Continuation continuation){
         final NativeHttp.Session session=new NativeHttp.Session(38000);NativeHttp.CURRENT.set(session);
         ExecutorService pool=Executors.newFixedThreadPool(3,new ThreadFactory(){public Thread newThread(Runnable task){Thread t=new Thread(task,"RoDubbed-host");t.setDaemon(true);return t;}});
+        ExecutorService catalogs=Executors.newFixedThreadPool(4,new ThreadFactory(){public Thread newThread(Runnable task){Thread t=new Thread(task,"RoDubbed-catalog");t.setDaemon(true);return t;}});
+        CompletionService<List<NativeCatalog.Candidate>> discoveries=new ExecutorCompletionService<>(catalogs);
+        List<Future<List<NativeCatalog.Candidate>>> catalogFutures=new ArrayList<>();
         CompletionService<ResolvedStream> completion=new ExecutorCompletionService<>(pool);
-        List<Future<ResolvedStream>> futures=new ArrayList<>();Set<String> returned=new HashSet<>();
+        List<Future<ResolvedStream>> futures=new ArrayList<>();Set<String> returned=new HashSet<>();final Set<String> returnedHosts=new HashSet<>();
         long started=System.nanoTime();int count=0,active=0,next=0;
         try{
-            for(int website=0;website<3&&count<3;website++){
-            session.check();List<NativeCatalog.Candidate> found;
-            try{found=website==0?new NativeCatalog().discover(new JSONObject(data)):website==1?new DozaCatalog().discover(new JSONObject(data)):new FdCatalog().discover(new JSONObject(data));}
-            catch(Exception e){System.out.println("[RoDubbed] catalog "+website+" skipped: "+e.getMessage());continue;}
-            List<NativeCatalog.Candidate> queue=order(found);next=0;
+            // Discover sites together so an absent title on one site cannot consume
+            // the entire lookup deadline before another site's quick result is used.
+            for(int website=0;website<4;website++){
+                final int site=website;
+                catalogFutures.add(discoveries.submit(new Callable<List<NativeCatalog.Candidate>>(){public List<NativeCatalog.Candidate> call(){
+                    NativeHttp.CURRENT.set(session);
+                    try{JSONObject input=new JSONObject(data);return site==0?new NativeCatalog().discover(input):site==1?new DozaCatalog().discover(input):site==2?new FdCatalog().discover(input):new DdCatalog().discover(input);}
+                    catch(Exception e){System.out.println("[RoDubbed] catalog "+site+" skipped: "+e.getMessage());return Collections.emptyList();}
+                    finally{NativeHttp.CURRENT.remove();}
+                }}));
+            }
+            for(int website=0;website<4&&count<3;website++){
+            session.check();long catalogRemaining=session.deadline-System.nanoTime();if(catalogRemaining<=0)break;
+            Future<List<NativeCatalog.Candidate>> discovered=discoveries.poll(catalogRemaining,TimeUnit.NANOSECONDS);if(discovered==null)break;
+            List<NativeCatalog.Candidate> found=discovered.get();
+            List<NativeCatalog.Candidate> queue=order(found);Collections.sort(queue,new Comparator<NativeCatalog.Candidate>(){public int compare(NativeCatalog.Candidate a,NativeCatalog.Candidate b){return Boolean.compare(returnedHosts.contains(a.host),returnedHosts.contains(b.host));}});next=0;
             while(count<3&&(active>0||next<queue.size())){
                 while(count+active<3&&next<queue.size()){
                     final NativeCatalog.Candidate candidate=queue.get(next++);
@@ -49,11 +63,11 @@ public final class RoDubbedProvider extends TmdbProvider {
                 long remaining=session.deadline-System.nanoTime();if(remaining<=0)break;
                 Future<ResolvedStream> done=completion.poll(remaining,TimeUnit.NANOSECONDS);if(done==null)break;active--;
                 ResolvedStream stream=done.get();
-                if(stream!=null&&returned.add(stream.identity)){callback.invoke(makeLink(stream));count++;}
+                if(stream!=null&&returned.add(stream.identity)){callback.invoke(makeLink(stream));returnedHosts.add(stream.host);count++;}
             }
             }
         }catch(Exception e){System.out.println("[RoDubbed] discovery stopped: "+e.getMessage());}
-        finally{for(Future<?> f:futures)if(!f.isDone())f.cancel(true);session.stop();pool.shutdownNow();NativeHttp.CURRENT.remove();}
+        finally{for(Future<?> f:futures)if(!f.isDone())f.cancel(true);for(Future<?> f:catalogFutures)if(!f.isDone())f.cancel(true);session.stop();pool.shutdownNow();catalogs.shutdownNow();NativeHttp.CURRENT.remove();}
         System.out.println("[RoDubbed] confirmedRO="+count+" totalMs="+(System.nanoTime()-started)/1000000);
         return count>0;
     }
@@ -69,8 +83,9 @@ public final class RoDubbedProvider extends TmdbProvider {
         else if(c.host.equals("Playmogo")){stream=PlaymogoClient.resolve(c);checked=true;}
         else if(c.host.equals("Abyss")){stream=AbyssClient.resolve(c);checked=true;}
         else if(c.host.equals("Streamtape")){stream=StreamtapeClient.resolve(c);checked=true;}
+        else if(c.host.equals("OK.ru")){stream=OkruClient.resolve(c);checked=true;}
         else throw new Exception("Unsupported host");
-        if(!checked)HlsProbe.validate(stream);return new ResolvedStream(stream.host,stream.url,stream.referer,stream.identity,stream.quality,FdCatalog.siteUrl(c.page)?"FilmeDublate":DozaCatalog.siteUrl(c.page)?"DozaAnimata":"DeseneFaine",stream.isHls,stream.playbackHeaders);
+        if(!checked)HlsProbe.validate(stream);return new ResolvedStream(stream.host,stream.url,stream.referer,stream.identity,stream.quality,DdTitleCatalog.siteUrl(c.page)?"DeseneleDublate":FdCatalog.siteUrl(c.page)?"FilmeDublate":DozaCatalog.siteUrl(c.page)?"DozaAnimata":"DeseneFaine",stream.isHls,stream.playbackHeaders);
     }
     static Object makeLink(ResolvedStream stream)throws Exception{
         Constructor<?> c=Class.forName("com.lagradost.cloudstream3.utils.ExtractorLink").getConstructor(String.class,String.class,String.class,String.class,int.class,boolean.class,Map.class,String.class);

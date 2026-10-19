@@ -1,6 +1,6 @@
 # RoDubbed
 
-Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine, plus Vidmoly/Playmogo from DozaAnimata and Byse/Streamtape/Abyss from FilmeDublate. No PC or helper server is needed.
+Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine, plus Vidmoly/Playmogo from DozaAnimata and Byse/Streamtape/Abyss from FilmeDublate. OK.ru from DeseneleDublate is also supported. No PC or helper server is needed.
 
 ## Install on Nuvio TV
 
@@ -20,7 +20,15 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Discovers the title's available servers once, then resolves only relevant supported hosts. Legacy Filemoon labels can lead to Byse.
 - Requires Romanian server declarations. For older bare host labels, accepts the title page's explicit Romanian-dubbing declaration. English/subtitled labels are excluded, and explicit foreign default audio in host/HLS metadata is rejected.
 - Checks HLS playlists and an initial media segment; Streamtape and Abyss MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
-- Playmogo.com and six verified Dood mirror domains are recognized on DozaAnimata. Netu, Sendvid, dsvplay.com and other unverified mirrors remain excluded. Player4me is not supported. DeseneleDublate is paused and not included. Morencius is not implemented. Abyss is enabled for FilmeDublate.
+- Playmogo.com and six verified Dood mirror domains are recognized on DozaAnimata. Netu, Sendvid, dsvplay.com and other unverified mirrors remain excluded. Player4me is not supported. DeseneleDublate supports OK.ru movies and structured series episodes; its Streamtape, Vidmoly.to and unverified legacy season mappings remain excluded. Morencius is not implemented. Abyss is enabled for FilmeDublate.
+
+## Version 10: DeseneleDublate through OK.ru
+
+Adds verified movie and structured series discovery on DeseneleDublate, using exact title/year and season checks. OK.ru video identity, episode numbering, availability and full-length MP4 duration are verified before returning a source. No content IDs or title URLs are hardcoded.
+
+The user confirmed Romanian playback for Masca magică (2020) and Kirby Desenatorul S03E08 using the separate test build. Official v10 retains those identity checks and additionally supports the vkuser.net CDN family observed in OK.ru's current response; the final artifact decoded distinct movie frames with audio/video metadata. Degrassi passed emulator resolution/decode, but the user could not find the series in Nuvio search; it is not physically playback-confirmed. Exact official v10 still needs physical-TV confirmation.
+
+Catalog searches now run together within the existing 38-second limit, so a missing title on one website cannot prevent another website from being searched. The provider returns at most three distinct streams, prefers hosts not already returned and cancels remaining work. Existing hosts passed direct regression checks on DeseneFaine, DozaAnimata and FilmeDublate. See [validation](deseneledublate-validation.json).
 
 ## Version 9: Verified series and season matching
 

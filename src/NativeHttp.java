@@ -35,7 +35,7 @@ final class NativeHttp {
         }}
         if(partial)c.setRequestProperty("Range","bytes=0-4095");
         try{
-            if(body!=null){c.setRequestMethod("POST");c.setDoOutput(true);c.setRequestProperty("Content-Type","application/json");byte[] data=body.getBytes(StandardCharsets.UTF_8);c.setFixedLengthStreamingMode(data.length);try(OutputStream out=c.getOutputStream()){out.write(data);}}
+            if(body!=null){c.setRequestMethod("POST");c.setDoOutput(true);if(!headers.containsKey("Content-Type"))c.setRequestProperty("Content-Type","application/json");byte[] data=body.getBytes(StandardCharsets.UTF_8);c.setFixedLengthStreamingMode(data.length);try(OutputStream out=c.getOutputStream()){out.write(data);}}
             int status=c.getResponseCode();synchronized(s.cookies){s.cookies.put(u.toURI(),c.getHeaderFields());}if(status!=200&&status!=206)throw new IOException("HTTP "+status);s.resolvedUrls.put(url,c.getURL().toString());
             ByteArrayOutputStream out=new ByteArrayOutputStream();
             try(InputStream in=c.getInputStream()){

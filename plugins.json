@@ -2,8 +2,8 @@
   {
     "name": "RoDubbed",
     "internalName": "RoDubbedOfficial",
-    "description": "Up to three Romanian dubbed streams across DeseneFaine, DozaAnimata and FilmeDublate. Native hosts, Dood mirrors and independently verified Doza series/season matching. Netu deferred.",
-    "version": 9,
+    "description": "Up to three Romanian dubbed streams across DeseneFaine, DozaAnimata, FilmeDublate and DeseneleDublate. Native Android hosts including OK.ru with verified title/season matching. Netu deferred.",
+    "version": 10,
     "apiVersion": 1,
     "status": 1,
     "authors": [
@@ -14,7 +14,7 @@
       "TvSeries"
     ],
     "url": "https://raw.githubusercontent.com/MrDany14/Nuvio-RoDubbed-Official/main/RoDubbed.cs3",
-    "fileSize": 44713,
+    "fileSize": 50160,
     "repositoryUrl": "https://github.com/MrDany14/Nuvio-RoDubbed-Official"
   }
 ]
