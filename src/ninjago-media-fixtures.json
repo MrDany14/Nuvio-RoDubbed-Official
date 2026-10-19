@@ -1,0 +1,32 @@
+{
+  "fixtures": [
+    {
+      "title": "Ninjago: Insula",
+      "page": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-1-necercetat/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 14,
+        "episode": 1
+      },
+      "expectedPlaymogo": "https://playmogo.com/e/3yautzyij2sh"
+    },
+    {
+      "title": "Lego Ninjago: Maeștrii Spinjitzu",
+      "page": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-2-printesa-de-jad/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 8,
+        "episode": 2
+      },
+      "expectedPlaymogo": "https://playmogo.com/e/xzggvzv5dbaa"
+    }
+  ]
+}

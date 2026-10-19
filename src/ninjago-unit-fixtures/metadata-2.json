@@ -1,0 +1,447 @@
+{
+  "season_number": 8,
+  "air_date": "2018-04-16",
+  "episodes": [
+    {
+      "episode_number": 1,
+      "name": "Masca decepției",
+      "guest_stars": [
+        {
+          "name": "Britt McKillip"
+        },
+        {
+          "name": "Kelly Metzger"
+        },
+        {
+          "name": "Kirby Morrow"
+        },
+        {
+          "name": "Jennifer Hayward"
+        },
+        {
+          "name": "Brent Miller"
+        },
+        {
+          "name": "Michael Adamthwaite"
+        },
+        {
+          "name": "Vincent Tong"
+        },
+        {
+          "name": "Richard Newman"
+        },
+        {
+          "name": "Ellen Kennedy"
+        },
+        {
+          "name": "Alan Marriott"
+        },
+        {
+          "name": "Sam Vincent"
+        }
+      ]
+    },
+    {
+      "episode_number": 2,
+      "name": "Prințesa de jad",
+      "guest_stars": [
+        {
+          "name": "Britt McKillip"
+        },
+        {
+          "name": "Kelly Metzger"
+        },
+        {
+          "name": "Brent Miller"
+        },
+        {
+          "name": "Kirby Morrow"
+        },
+        {
+          "name": "Michael Donovan"
+        },
+        {
+          "name": "Richard Newman"
+        },
+        {
+          "name": "Ellen Kennedy"
+        },
+        {
+          "name": "Michael Adamthwaite"
+        },
+        {
+          "name": "Paul Dobson"
+        },
+        {
+          "name": "Maggie O'Hara"
+        },
+        {
+          "name": "Alan Marriott"
+        },
+        {
+          "name": "Vincent Tong"
+        },
+        {
+          "name": "Sam Vincent"
+        }
+      ]
+    },
+    {
+      "episode_number": 3,
+      "name": "Oni și dragonul",
+      "guest_stars": [
+        {
+          "name": "Britt McKillip"
+        },
+        {
+          "name": "Kelly Metzger"
+        },
+        {
+          "name": "Brent Miller"
+        },
+        {
+          "name": "Kirby Morrow"
+        },
+        {
+          "name": "Jennifer Hayward"
+        },
+        {
+          "name": "Maggie O'Hara"
+        },
+        {
+          "name": "Michael Adamthwaite"
+        },
+        {
+          "name": "Sam Vincent"
+        },
+        {
+          "name": "Tabitha St. Germain"
+        },
+        {
+          "name": "Vincent Tong"
+        },
+        {
+          "name": "Alan Marriott"
+        }
+      ]
+    },
+    {
+      "episode_number": 4,
+      "name": "Șarpele jaguar",
+      "guest_stars": [
+        {
+          "name": "Britt McKillip"
+        },
+        {
+          "name": "Kai Emmett"
+        },
+        {
+          "name": "Jennifer Hayward"
+        },
+        {
+          "name": "Vincent Tong"
+        },
+        {
+          "name": "Maggie O'Hara"
+        },
+        {
+          "name": "Michael Adamthwaite"
+        },
+        {
+          "name": "Paul Dobson"
+        },
+        {
+          "name": "Kelly Metzger"
+        },
+        {
+          "name": "Brent Miller"
+        },
+        {
+          "name": "Kirby Morrow"
+        },
+        {
+          "name": "Sam Vincent"
+        },
+        {
+          "name": "Garry Chalk"
+        },
+        {
+          "name": "Mark Oliver"
+        }
+      ]
+    },
+    {
+      "episode_number": 5,
+      "name": "Neliniștea norilor",
+      "guest_stars": [
+        {
+          "name": "Britt McKillip"
+        },
+        {
+          "name": "Kelly Metzger"
+        },
+        {
+          "name": "Michael Adamthwaite"
+        },
+        {
+          "name": "Vincent Tong"
+        },
+        {
+          "name": "Kirby Morrow"
+        },
+        {
+          "name": "Jennifer Hayward"
+        },
+        {
+          "name": "Michael Donovan"
+        },
+        {
+          "name": "Brent Miller"
+        },
+        {
+          "name": "Sam Vincent"
+        },
+        {
+          "name": "Caleb Skeris"
+        }
+      ]
+    },
+    {
+      "episode_number": 6,
+      "name": "Cel tăcut",
+      "guest_stars": [
+        {
+          "name": "Britt McKillip"
+        },
+        {
+          "name": "Kelly Metzger"
+        },
+        {
+          "name": "Michael Adamthwaite"
+        },
+        {
+          "name": "Brent Miller"
+        },
+        {
+          "name": "Vincent Tong"
+        },
+        {
+          "name": "Kirby Morrow"
+        },
+        {
+          "name": "Jennifer Hayward"
+        },
+        {
+          "name": "Maggie O'Hara"
+        },
+        {
+          "name": "Garry Chalk"
+        },
+        {
+          "name": "Sam Vincent"
+        },
+        {
+          "name": "Caleb Skeris"
+        }
+      ]
+    },
+    {
+      "episode_number": 7,
+      "name": "Jocul măștilor",
+      "guest_stars": [
+        {
+          "name": "Britt McKillip"
+        },
+        {
+          "name": "Kelly Metzger"
+        },
+        {
+          "name": "Caleb Skeris"
+        },
+        {
+          "name": "Michael Adamthwaite"
+        },
+        {
+          "name": "Maggie O'Hara"
+        },
+        {
+          "name": "Kelly Sheridan"
+        },
+        {
+          "name": "Vincent Tong"
+        },
+        {
+          "name": "Sam Vincent"
+        },
+        {
+          "name": "Kirby Morrow"
+        },
+        {
+          "name": "Brent Miller"
+        },
+        {
+          "name": "Garry Chalk"
+        },
+        {
+          "name": "Paul Dobson"
+        }
+      ]
+    },
+    {
+      "episode_number": 8,
+      "name": "Vremea terorii",
+      "guest_stars": [
+        {
+          "name": "Britt McKillip"
+        },
+        {
+          "name": "Kelly Metzger"
+        },
+        {
+          "name": "Brent Miller"
+        },
+        {
+          "name": "Mark Oliver"
+        },
+        {
+          "name": "Jennifer Hayward"
+        },
+        {
+          "name": "Vincent Tong"
+        },
+        {
+          "name": "Kathleen Barr"
+        },
+        {
+          "name": "Michael Donovan"
+        },
+        {
+          "name": "Maggie O'Hara"
+        },
+        {
+          "name": "Garry Chalk"
+        },
+        {
+          "name": "Caleb Skeris"
+        },
+        {
+          "name": "Michael Adamthwaite"
+        },
+        {
+          "name": "Kirby Morrow"
+        },
+        {
+          "name": "Sam Vincent"
+        }
+      ]
+    },
+    {
+      "episode_number": 9,
+      "name": "Adevăratul potențial",
+      "guest_stars": [
+        {
+          "name": "Britt McKillip"
+        },
+        {
+          "name": "Kelly Metzger"
+        },
+        {
+          "name": "Vincent Tong"
+        },
+        {
+          "name": "Kirby Morrow"
+        },
+        {
+          "name": "Kelly Sheridan"
+        },
+        {
+          "name": "Jennifer Hayward"
+        },
+        {
+          "name": "Brent Miller"
+        },
+        {
+          "name": "Maggie O'Hara"
+        },
+        {
+          "name": "Garry Chalk"
+        },
+        {
+          "name": "Paul Dobson"
+        },
+        {
+          "name": "Michael Adamthwaite"
+        },
+        {
+          "name": "Alan Marriott"
+        },
+        {
+          "name": "Sam Vincent"
+        },
+        {
+          "name": "Mark Oliver"
+        },
+        {
+          "name": "Michael Donovan"
+        },
+        {
+          "name": "Kathleen Barr"
+        },
+        {
+          "name": "Caleb Skeris"
+        }
+      ]
+    },
+    {
+      "episode_number": 10,
+      "name": "Probleme mari, micule Ninjago",
+      "guest_stars": [
+        {
+          "name": "Britt McKillip"
+        },
+        {
+          "name": "Kelly Metzger"
+        },
+        {
+          "name": "Vincent Tong"
+        },
+        {
+          "name": "Kirby Morrow"
+        },
+        {
+          "name": "Mark Oliver"
+        },
+        {
+          "name": "Kelly Sheridan"
+        },
+        {
+          "name": "Jennifer Hayward"
+        },
+        {
+          "name": "Kathleen Barr"
+        },
+        {
+          "name": "Tabitha St. Germain"
+        },
+        {
+          "name": "Sam Vincent"
+        },
+        {
+          "name": "Michael Adamthwaite"
+        },
+        {
+          "name": "Brent Miller"
+        },
+        {
+          "name": "Caleb Skeris"
+        },
+        {
+          "name": "Paul Dobson"
+        },
+        {
+          "name": "Michael Donovan"
+        }
+      ]
+    }
+  ]
+}

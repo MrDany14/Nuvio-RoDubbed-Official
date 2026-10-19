@@ -1,0 +1,1006 @@
+{
+  "date": "2026-10-19",
+  "version": 9,
+  "environment": "Android TV14 ART with actual Nuvio TV1.0.0 classes; emulator, not physical Mi Box",
+  "scope": "Generic Doza series pilot-year verification and separately published complete-season matching; no production title names, content IDs or content URLs hardcoded",
+  "rules": {
+    "pilotYear": "Require exact current article title and title-named IMDb link matching independently fetched TMDB external identity; publisher year must be a verified season0/1 premiere year. Newly accepted episodes must independently match the requested name or primary episode IMDb ID.",
+    "seasonArc": "After ordinary lookup fails, compare a separately named publisher Season1 page against the entire requested TMDB Romanian season. Require same season-release year, a shared distinctive series word, at least two independently verified cast names, a complete contiguous episode list and every episode name matching. Exact requested episode heading/IMDb is checked again.",
+    "hostContext": "Only after independent episode verification, pass both publisher and requested TMDB season/episode pairs to Playmogo. Accept only one of those exact pairs; do not ignore episode labels."
+  },
+  "productionDex": {
+    "testedAndFinalIdentical": true,
+    "sha256": "34e542f17ea0c36d65863caec3f22e197d60d7c58b8158e05049d91dea485afa"
+  },
+  "addressChecks": {
+    "seed": 20261019,
+    "passed": 13,
+    "total": 13,
+    "results": [
+      {
+        "title": "Ninjago S1E1",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-1-episodul-1-ascensiunea-serpilor/",
+        "actual": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-1-episodul-1-ascensiunea-serpilor/",
+        "pass": true,
+        "ms": 2947
+      },
+      {
+        "title": "Ninjago S1E13",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-1-episodul-13-ziua-marelui-devorator/",
+        "actual": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-1-episodul-13-ziua-marelui-devorator/",
+        "pass": true,
+        "ms": 2517
+      },
+      {
+        "title": "Ninjago S2E2",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-2-episodul-2-pirati-contra-ninja/",
+        "actual": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-2-episodul-2-pirati-contra-ninja/",
+        "pass": true,
+        "ms": 2389
+      },
+      {
+        "title": "Ninjago S3E2",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-3-episodul-2-arta-pumnului-tacut/",
+        "actual": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-3-episodul-2-arta-pumnului-tacut/",
+        "pass": true,
+        "ms": 3356
+      },
+      {
+        "title": "Ninjago S5E2",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-5-episodul-2-poveste-cu-fantome/",
+        "actual": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-5-episodul-2-poveste-cu-fantome/",
+        "pass": true,
+        "ms": 2852
+      },
+      {
+        "title": "Ninjago S8E1",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-1-masca-deceptiei/",
+        "actual": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-1-masca-deceptiei/",
+        "pass": true,
+        "ms": 2680
+      },
+      {
+        "title": "Ninjago S8E2",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-2-printesa-de-jad/",
+        "actual": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-2-printesa-de-jad/",
+        "pass": true,
+        "ms": 3863
+      },
+      {
+        "title": "Ninjago S8E10",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-10-probleme-mari-micul-ninjago/",
+        "actual": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-10-probleme-mari-micul-ninjago/",
+        "pass": true,
+        "ms": 2793
+      },
+      {
+        "title": "Ninjago S10E4",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-10-episodul-4-sfarsitul/",
+        "actual": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-10-episodul-4-sfarsitul/",
+        "pass": true,
+        "ms": 2870
+      },
+      {
+        "title": "Ninjago The Island S14E1",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-1-necercetat/",
+        "actual": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-1-necercetat/",
+        "pass": true,
+        "ms": 8331
+      },
+      {
+        "title": "Ninjago The Island S14E2",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-2-pazitorii-amuletei/",
+        "actual": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-2-pazitorii-amuletei/",
+        "pass": true,
+        "ms": 9222
+      },
+      {
+        "title": "Ninjago The Island S14E3",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-3-jay-darul/",
+        "actual": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-3-jay-darul/",
+        "pass": true,
+        "ms": 9535
+      },
+      {
+        "title": "Ninjago The Island S14E4",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-4-dintele-wojirei/",
+        "actual": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-4-dintele-wojirei/",
+        "pass": true,
+        "ms": 8300
+      }
+    ]
+  },
+  "independentEpisodeNameChecks": [
+    {
+      "title": "Ninjago S1E1",
+      "tmdbName": "Ascensiunea șerpilor",
+      "publisherSlug": "ascensiunea-serpilor",
+      "exactName": true,
+      "publisherSeason": 1,
+      "tmdbSeason": 1,
+      "episode": 1
+    },
+    {
+      "title": "Ninjago S1E13",
+      "tmdbName": "Ziua marelui devorator",
+      "publisherSlug": "ziua-marelui-devorator",
+      "exactName": true,
+      "publisherSeason": 1,
+      "tmdbSeason": 1,
+      "episode": 13
+    },
+    {
+      "title": "Ninjago S2E2",
+      "tmdbName": "Pirați contra Ninja",
+      "publisherSlug": "pirati-contra-ninja",
+      "exactName": true,
+      "publisherSeason": 2,
+      "tmdbSeason": 2,
+      "episode": 2
+    },
+    {
+      "title": "Ninjago S3E2",
+      "tmdbName": "Arta pumnului tăcut",
+      "publisherSlug": "arta-pumnului-tacut",
+      "exactName": true,
+      "publisherSeason": 3,
+      "tmdbSeason": 3,
+      "episode": 2
+    },
+    {
+      "title": "Ninjago S5E2",
+      "tmdbName": "Poveste cu fantome",
+      "publisherSlug": "poveste-cu-fantome",
+      "exactName": true,
+      "publisherSeason": 5,
+      "tmdbSeason": 5,
+      "episode": 2
+    },
+    {
+      "title": "Ninjago S8E1",
+      "tmdbName": "Masca decepției",
+      "publisherSlug": "masca-deceptiei",
+      "exactName": true,
+      "publisherSeason": 8,
+      "tmdbSeason": 8,
+      "episode": 1
+    },
+    {
+      "title": "Ninjago S8E2",
+      "tmdbName": "Prințesa de jad",
+      "publisherSlug": "printesa-de-jad",
+      "exactName": true,
+      "publisherSeason": 8,
+      "tmdbSeason": 8,
+      "episode": 2
+    },
+    {
+      "title": "Ninjago S8E10",
+      "tmdbName": "Probleme mari, micule Ninjago",
+      "publisherSlug": "probleme-mari-micul-ninjago",
+      "exactName": false,
+      "publisherSeason": 8,
+      "tmdbSeason": 8,
+      "episode": 10
+    },
+    {
+      "title": "Ninjago S10E4",
+      "tmdbName": "Sfârșitul",
+      "publisherSlug": "sfarsitul",
+      "exactName": true,
+      "publisherSeason": 10,
+      "tmdbSeason": 10,
+      "episode": 4
+    },
+    {
+      "title": "Ninjago The Island S14E1",
+      "tmdbName": "Necercetat",
+      "publisherSlug": "necercetat",
+      "exactName": true,
+      "publisherSeason": 1,
+      "tmdbSeason": 14,
+      "episode": 1
+    },
+    {
+      "title": "Ninjago The Island S14E2",
+      "tmdbName": "Păzitorii Amuletei",
+      "publisherSlug": "pazitorii-amuletei",
+      "exactName": true,
+      "publisherSeason": 1,
+      "tmdbSeason": 14,
+      "episode": 2
+    },
+    {
+      "title": "Ninjago The Island S14E3",
+      "tmdbName": "Jay, Darul",
+      "publisherSlug": "jay-darul",
+      "exactName": true,
+      "publisherSeason": 1,
+      "tmdbSeason": 14,
+      "episode": 3
+    },
+    {
+      "title": "Ninjago The Island S14E4",
+      "tmdbName": "Dintele Wojirei",
+      "publisherSlug": "dintele-wojirei",
+      "exactName": true,
+      "publisherSeason": 1,
+      "tmdbSeason": 14,
+      "episode": 4
+    }
+  ],
+  "originalDozaRegression": {
+    "seed": 784801863,
+    "passed": 14,
+    "total": 14,
+    "results": [
+      {
+        "title": "Crăciunul Angelei",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/craciunul-angelei-2017-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/craciunul-angelei-2017-dublat-in-romana/",
+        "pass": true,
+        "ms": 440
+      },
+      {
+        "title": "Din mintea lui Jimmy: Filmul",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/din-mintea-lui-jimmy-filmul-2006-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/din-mintea-lui-jimmy-filmul-2006-dublat-in-romana/",
+        "pass": true,
+        "ms": 689
+      },
+      {
+        "title": "Școala de Sperieturi a lui Casper",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/scoala-de-sperieturi-a-lui-casper-2006-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/scoala-de-sperieturi-a-lui-casper-2006-dublat-in-romana/",
+        "pass": true,
+        "ms": 351
+      },
+      {
+        "title": "Cursa Grand Prix a Europei",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/cursa-grand-prix-a-europei-2025-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/cursa-grand-prix-a-europei-2025-dublat-in-romana/",
+        "pass": true,
+        "ms": 299
+      },
+      {
+        "title": "Ostatica Eloá: În direct la Televizor",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/ostatica-eloa-in-direct-la-televizor-2025-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/ostatica-eloa-in-direct-la-televizor-2025-dublat-in-romana/",
+        "pass": true,
+        "ms": 644
+      },
+      {
+        "title": "Craig Înainte de Dumbravă",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/craig-inainte-de-dumbrava-2023-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/craig-inainte-de-dumbrava-2023-dublat-in-romana/",
+        "pass": true,
+        "ms": 320
+      },
+      {
+        "title": "Scooby-Doo! și Krypto Câinele Erou",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/scooby-doo-si-krypto-cainele-erou-2023-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/scooby-doo-si-krypto-cainele-erou-2023-dublat-in-romana/",
+        "pass": true,
+        "ms": 5324
+      },
+      {
+        "title": "Nașii Mei Vrăjitori: O Nouă Dorință",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/nasii-mei-vrajitori-o-noua-dorinta-sezonul-1-episodul-2-scoala-de-corectie-magica-prietena-invatatoarei/",
+        "actual": "https://www.dozaanimata.net/episode/nasii-mei-vrajitori-o-noua-dorinta-sezonul-1-episodul-2-scoala-de-corectie-magica-prietena-invatatoarei/",
+        "pass": true,
+        "ms": 869
+      },
+      {
+        "title": "Iwaju: Orașul Viitorului",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/iwaju-orasul-viitorului-sezonul-1-episodul-1-iwaju/",
+        "actual": "https://www.dozaanimata.net/episode/iwaju-orasul-viitorului-sezonul-1-episodul-1-iwaju/",
+        "pass": true,
+        "ms": 759
+      },
+      {
+        "title": "Lumea Looney Tunes",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lumea-looney-tunes-sezonul-1-episodul-28/",
+        "actual": "https://www.dozaanimata.net/episode/lumea-looney-tunes-sezonul-1-episodul-28/",
+        "pass": true,
+        "ms": 983
+      },
+      {
+        "title": "Fetițele Powerpuff",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/fetitele-powerpuff-sezonul-2-episodul-3-la-multi-ani-nu-mai-am-chef/",
+        "actual": "https://www.dozaanimata.net/episode/fetitele-powerpuff-sezonul-2-episodul-3-la-multi-ani-nu-mai-am-chef/",
+        "pass": true,
+        "ms": 1163
+      },
+      {
+        "title": "Ultima Bârfă",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/ultima-barfa-sezonul-1-episodul-2-dansul-locco-locco/",
+        "actual": "https://www.dozaanimata.net/episode/ultima-barfa-sezonul-1-episodul-2-dansul-locco-locco/",
+        "pass": true,
+        "ms": 1189
+      },
+      {
+        "title": "Barbie Mysteries: Goana după Cai",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/barbie-mysteries-goana-dupa-cai-sezonul-1-episodul-1-atentie-la-neatentie/",
+        "actual": "https://www.dozaanimata.net/episode/barbie-mysteries-goana-dupa-cai-sezonul-1-episodul-1-atentie-la-neatentie/",
+        "pass": true,
+        "ms": 768
+      },
+      {
+        "title": "Clasa lui 3000",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/clasa-lui-3000-sezonul-1-episodul-10-iubirea-e-in-aer/",
+        "actual": "https://www.dozaanimata.net/episode/clasa-lui-3000-sezonul-1-episodul-10-iubirea-e-in-aer/",
+        "pass": true,
+        "ms": 789
+      }
+    ]
+  },
+  "recentSixtyRegression": {
+    "total": 60,
+    "correct": 51,
+    "notFound": 6,
+    "unverified": 3,
+    "confirmedWrongMatches": 0,
+    "previousCorrect": 49,
+    "newlyCorrect": [
+      "Ninjago: Insula",
+      "Lego Ninjago: Maestrii Spinjitzu"
+    ],
+    "verifiedDuplicate": "In Mintea Cainilor; identical duplicate address remains the same as the prior audit",
+    "results": [
+      {
+        "index": 1,
+        "title": "Domnul Peabody și Sherman",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/domnul-peabody-si-sherman-2014-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/domnul-peabody-si-sherman-2014-dublat-in-romana/",
+        "status": "correct",
+        "ms": 3606
+      },
+      {
+        "index": 2,
+        "title": "Operationea: Narațiunea",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/operationea-naratiunea-2022-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/operationea-naratiunea-2022-dublat-in-romana/",
+        "status": "correct",
+        "ms": 336
+      },
+      {
+        "index": 3,
+        "title": "Disenchanted",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/disenchanted-2022-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/disenchanted-2022-dublat-in-romana/",
+        "status": "correct",
+        "ms": 661
+      },
+      {
+        "index": 4,
+        "title": "Casa Loud Filmul: Nu e timp de spionaj",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/casa-loud-filmul-nu-e-timp-de-spionaj-2024-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/casa-loud-filmul-nu-e-timp-de-spionaj-2024-dublat-in-romana/",
+        "status": "correct",
+        "ms": 691
+      },
+      {
+        "index": 5,
+        "title": "În Mintea Câinilor",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/in-mintea-cainilor-2024-dublat-in-romana-2/",
+        "actual": "https://www.dozaanimata.net/in-mintea-cainilor-2024-dublat-in-romana/",
+        "status": "verifiedDuplicate",
+        "ms": 393
+      },
+      {
+        "index": 6,
+        "title": "Riverdance: Aventura Animată",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/riverdance-aventura-animata-2022-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/riverdance-aventura-animata-2022-dublat-in-romana/",
+        "status": "correct",
+        "ms": 857
+      },
+      {
+        "index": 7,
+        "title": "Echipa Gazdă",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/echipa-gazda-2022-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/echipa-gazda-2022-dublat-in-romana/",
+        "status": "correct",
+        "ms": 372
+      },
+      {
+        "index": 8,
+        "title": "Prințesa Barbie și Vedeta Pop",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/printesa-barbie-si-vedeta-pop-2012-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/printesa-barbie-si-vedeta-pop-2012-dublat-in-romana/",
+        "status": "correct",
+        "ms": 319
+      },
+      {
+        "index": 9,
+        "title": "Casa Loud: Filmul",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/casa-loud-filmul-2021-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/casa-loud-filmul-2021-dublat-in-romana/",
+        "status": "correct",
+        "ms": 347
+      },
+      {
+        "index": 10,
+        "title": "Ciocănitoarea Woody merge în Tabără",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/ciocanitoarea-woody-merge-in-tabara-2024-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/ciocanitoarea-woody-merge-in-tabara-2024-dublat-in-romana/",
+        "status": "correct",
+        "ms": 294
+      },
+      {
+        "index": 11,
+        "title": "Lassie se Întoarce Acasă",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/lassie-se-intoarce-acasa-2020-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/lassie-se-intoarce-acasa-2020-dublat-in-romana/",
+        "status": "correct",
+        "ms": 637
+      },
+      {
+        "index": 12,
+        "title": "Pettson și Findus",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/pettson-si-findus-1999-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/pettson-si-findus-1999-dublat-in-romana/",
+        "status": "correct",
+        "ms": 3273
+      },
+      {
+        "index": 13,
+        "title": "Primul film al lui Doug",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/primul-film-al-lui-doug-1999-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/primul-film-al-lui-doug-1999-dublat-in-romana/",
+        "status": "correct",
+        "ms": 384
+      },
+      {
+        "index": 14,
+        "title": "Omul numit Flintstone",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/omul-numit-flintstone-1966-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/omul-numit-flintstone-1966-dublat-in-romana/",
+        "status": "correct",
+        "ms": 1967
+      },
+      {
+        "index": 15,
+        "title": "Johnny: A Doua Șansă",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/johnny-a-doua-sansa-2022-dublat-in-romana/",
+        "actual": "",
+        "status": "notFound",
+        "ms": 4982
+      },
+      {
+        "index": 16,
+        "title": "Versa",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/versa-2025-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/versa-2025-dublat-in-romana/",
+        "status": "correct",
+        "ms": 328
+      },
+      {
+        "index": 17,
+        "title": "Spiridușii Năzdrăvani: Filmul",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/spiridusii-nazdravani-filmul-2012-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/spiridusii-nazdravani-filmul-2012-dublat-in-romana/",
+        "status": "correct",
+        "ms": 748
+      },
+      {
+        "index": 18,
+        "title": "Familia Jetson: Filmul",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/familia-jetson-filmul-1990-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/familia-jetson-filmul-1990-dublat-in-romana/",
+        "status": "correct",
+        "ms": 317
+      },
+      {
+        "index": 19,
+        "title": "Titina",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/titina-2022-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/titina-2022-dublat-in-romana/",
+        "status": "correct",
+        "ms": 326
+      },
+      {
+        "index": 20,
+        "title": "Barbie în Povestea Sirenei",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/barbie-in-povestea-sirenei-2010-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/barbie-in-povestea-sirenei-2010-dublat-in-romana/",
+        "status": "correct",
+        "ms": 4348
+      },
+      {
+        "index": 21,
+        "title": "Moș Crăciun Ucenic și Fulgul Magic de Zăpadă",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/mos-craciun-ucenic-si-fulgul-magic-de-zapada-2013-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/mos-craciun-ucenic-si-fulgul-magic-de-zapada-2013-dublat-in-romana/",
+        "status": "correct",
+        "ms": 655
+      },
+      {
+        "index": 22,
+        "title": "Gușu-Roșie Robin",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/gusu-rosie-robin-2021-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/gusu-rosie-robin-2021-dublat-in-romana/",
+        "status": "correct",
+        "ms": 1368
+      },
+      {
+        "index": 23,
+        "title": "Micul meu Ponei: Fetele Equestria – Permisul de Acces în Culise",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/micul-meu-ponei-fetele-equestria-permisul-de-acces-in-culise-2019-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/micul-meu-ponei-fetele-equestria-permisul-de-acces-in-culise-2019-dublat-in-romana/",
+        "status": "correct",
+        "ms": 845
+      },
+      {
+        "index": 24,
+        "title": "Un Crăciun Magic",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/un-craciun-magic-2012-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/un-craciun-magic-2012-dublat-in-romana/",
+        "status": "correct",
+        "ms": 1496
+      },
+      {
+        "index": 25,
+        "title": "Doctor Who: Biserica de pe strada Ruby",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/doctor-who-biserica-de-pe-strada-ruby-2023-dublat-in-romana/",
+        "status": "unverified",
+        "reason": "Doctor Who Christmas special is catalogued as a movie post; independent same-type TMDB identity not established; primary cast metadata appears unrelated",
+        "ms": 0
+      },
+      {
+        "index": 26,
+        "title": "Epoca de Gheață 3: Apariția Dinozaurilor",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/epoca-de-gheata-3-aparitia-dinozaurilor-2009-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/epoca-de-gheata-3-aparitia-dinozaurilor-2009-dublat-in-romana/",
+        "status": "correct",
+        "ms": 323
+      },
+      {
+        "index": 27,
+        "title": "SuperMoșul",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/supermosul-2024-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/supermosul-2024-dublat-in-romana/",
+        "status": "correct",
+        "ms": 351
+      },
+      {
+        "index": 28,
+        "title": "Pompierul Sam: Marele incendiu din Pontypandy",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/pompierul-sam-marele-incendiu-din-pontypandy-2009-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/pompierul-sam-marele-incendiu-din-pontypandy-2009-dublat-in-romana/",
+        "status": "correct",
+        "ms": 943
+      },
+      {
+        "index": 29,
+        "title": "Dragonii: Salvatorii înaripați: Secretele Cântaripii",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/dragonii-salvatorii-inaripati-secretele-cantaripii-2020-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/dragonii-salvatorii-inaripati-secretele-cantaripii-2020-dublat-in-romana/",
+        "status": "correct",
+        "ms": 342
+      },
+      {
+        "index": 30,
+        "title": "Scooby-Doo și Fantoma Vrăjitoarei",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/scooby-doo-si-fantoma-vrajitoarei-1999-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/scooby-doo-si-fantoma-vrajitoarei-1999-dublat-in-romana/",
+        "status": "correct",
+        "ms": 5413
+      },
+      {
+        "index": 31,
+        "title": "Barbie: Un Strop de Magie",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/barbie-un-strop-de-magie-sezonul-2-episodul-2-sa-vorbim-despre-chelsea/",
+        "actual": "https://www.dozaanimata.net/episode/barbie-un-strop-de-magie-sezonul-2-episodul-2-sa-vorbim-despre-chelsea/",
+        "status": "correct",
+        "ms": 3196
+      },
+      {
+        "index": 32,
+        "title": "Insula Dramei Totale: Revanșa",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/insula-dramei-totale-revansa-sezonul-1-episodul-3-gheata-pentru-toti/",
+        "actual": "https://www.dozaanimata.net/episode/insula-dramei-totale-revansa-sezonul-1-episodul-3-gheata-pentru-toti/",
+        "status": "correct",
+        "ms": 820
+      },
+      {
+        "index": 33,
+        "title": "Angry Birds: O Vară Nebună",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/angry-birds-o-vara-nebuna-sezonul-2-episodul-1-ai-la-grija-la-ce-pescuiesti/",
+        "actual": "https://www.dozaanimata.net/episode/angry-birds-o-vara-nebuna-sezonul-2-episodul-1-ai-la-grija-la-ce-pescuiesti/",
+        "status": "correct",
+        "ms": 953
+      },
+      {
+        "index": 34,
+        "title": "Agentul 203",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/agentul-203-sezonul-1-episodul-18-un-prieten-la-ananghie/",
+        "actual": "https://www.dozaanimata.net/episode/agentul-203-sezonul-1-episodul-18-un-prieten-la-ananghie/",
+        "status": "correct",
+        "ms": 850
+      },
+      {
+        "index": 35,
+        "title": "Gașca Micilor Eroi / Action Pack",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/gasca-micilor-eroi-sezonul-1-episodul-5-dinou-probleme/",
+        "actual": "",
+        "status": "notFound",
+        "ms": 5048
+      },
+      {
+        "index": 36,
+        "title": "Misterul Familiei Hunter",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/misterul-familiei-hunter-sezonul-3-episodul-16-frati/",
+        "actual": "https://www.dozaanimata.net/episode/misterul-familiei-hunter-sezonul-3-episodul-16-frati/",
+        "status": "correct",
+        "ms": 3443
+      },
+      {
+        "index": 37,
+        "title": "Ninjago: Insula",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-1-necercetat/",
+        "actual": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-1-necercetat/",
+        "status": "correct",
+        "ms": 7948
+      },
+      {
+        "index": 38,
+        "title": "Răgetul Felinelor Fulger",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/ragetul-felinelor-fulger-episodul-22-safari-joe/",
+        "actual": "https://www.dozaanimata.net/episode/ragetul-felinelor-fulger-episodul-22-safari-joe/",
+        "status": "correct",
+        "ms": 2182
+      },
+      {
+        "index": 39,
+        "title": "Familia Crood: Copacul Familiei",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/familia-crood-copacul-familiei-sezonul-1-episodul-23-noua-pestera/",
+        "actual": "",
+        "status": "notFound",
+        "ms": 9436
+      },
+      {
+        "index": 40,
+        "title": "Magicienii Dincolo de Waverly Place",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/magicienii-dincolo-de-waverly-place-sezonul-1-episodul-18-loveste-ma-cu-cel-mai-bun-bot-al-tau/",
+        "actual": "https://www.dozaanimata.net/episode/magicienii-dincolo-de-waverly-place-sezonul-1-episodul-18-loveste-ma-cu-cel-mai-bun-bot-al-tau/",
+        "status": "correct",
+        "ms": 956
+      },
+      {
+        "index": 41,
+        "title": "Erin și Aaron",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/erin-si-aaron-sezonul-1-episodul-12-ar-trebui-sa-raman-sau-sa-plec-partea-i/",
+        "actual": "https://www.dozaanimata.net/episode/erin-si-aaron-sezonul-1-episodul-12-ar-trebui-sa-raman-sau-sa-plec-partea-i/",
+        "status": "correct",
+        "ms": 1072
+      },
+      {
+        "index": 42,
+        "title": "Secrete Miraculoase",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/secrete-miraculoase-sezonul-1-episodul-2-marinette-si-adrien/",
+        "status": "unverified",
+        "reason": "Miraculous Secrets has conflicting publisher/TMDB premiere years and generic TMDB episode names; selected character-short equivalence not independently established",
+        "ms": 0
+      },
+      {
+        "index": 43,
+        "title": "Avatar: Ultimul Războinic al Aerului",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/avatar-ultimul-razboinic-al-aerului-sezonul-1-episodul-7-nordul/",
+        "actual": "https://www.dozaanimata.net/episode/avatar-ultimul-razboinic-al-aerului-sezonul-1-episodul-7-nordul/",
+        "status": "correct",
+        "ms": 870
+      },
+      {
+        "index": 44,
+        "title": "Pinguinii din Madagascar",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/pinguinii-din-madagascar-sezonul-2-episodul-3-adapost-pentru-aligatori/",
+        "actual": "https://www.dozaanimata.net/episode/pinguinii-din-madagascar-sezonul-2-episodul-3-adapost-pentru-aligatori/",
+        "status": "correct",
+        "ms": 1860
+      },
+      {
+        "index": 45,
+        "title": "Maestrul Strop",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/maestrul-strop-episodul-3-modestie/",
+        "actual": "https://www.dozaanimata.net/episode/maestrul-strop-episodul-3-modestie/",
+        "status": "correct",
+        "ms": 1511
+      },
+      {
+        "index": 46,
+        "title": "Kiff",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/kiff-sezonul-1-episodul-6-cereale-a-la-kiff-kiff-e-pilot/",
+        "actual": "https://www.dozaanimata.net/episode/kiff-sezonul-1-episodul-6-cereale-a-la-kiff-kiff-e-pilot/",
+        "status": "correct",
+        "ms": 974
+      },
+      {
+        "index": 47,
+        "title": "Felinele Fulger",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/felinele-fulger-sezonul-1-episodul-5-vechi-prieteni/",
+        "actual": "https://www.dozaanimata.net/episode/felinele-fulger-sezonul-1-episodul-5-vechi-prieteni/",
+        "status": "correct",
+        "ms": 869
+      },
+      {
+        "index": 48,
+        "title": "The Cuphead Show!",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/the-cuphead-show-sezonul-3-episodul-7-o-livrare-speciala/",
+        "actual": "https://www.dozaanimata.net/episode/the-cuphead-show-sezonul-3-episodul-7-o-livrare-speciala/",
+        "status": "correct",
+        "ms": 3163
+      },
+      {
+        "index": 49,
+        "title": "Aventuri în Vestul Sălbatic",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/aventuri-in-vestul-salbatic-partea-iii/",
+        "actual": "",
+        "status": "notFound",
+        "ms": 2706
+      },
+      {
+        "index": 50,
+        "title": "Redwall",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/redwall-sezonul-1-episodul-8-planuri-de-lupta/",
+        "actual": "https://www.dozaanimata.net/episode/redwall-sezonul-1-episodul-8-planuri-de-lupta/",
+        "status": "correct",
+        "ms": 1055
+      },
+      {
+        "index": 51,
+        "title": "Liceul Monștrilor",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/liceul-monstrilor-sezonul-1-episodul-18-1-furt-de-putere-partea-i/",
+        "status": "unverified",
+        "reason": "Publisher splits Furt de Putere into parts18.1/18.2; TMDB episode31 Power Heist has runtime22min. Exact single-address equivalence not established.",
+        "ms": 0
+      },
+      {
+        "index": 52,
+        "title": "Transformers: Scântei pe Pământ",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/transformers-scantei-pe-pamant-sezonul-1-episodul-4-regulile-casei/",
+        "actual": "https://www.dozaanimata.net/episode/transformers-scantei-pe-pamant-sezonul-1-episodul-4-regulile-casei/",
+        "status": "correct",
+        "ms": 1069
+      },
+      {
+        "index": 53,
+        "title": "Familia Casagrande",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/familia-casagrande-sezonul-2-episodul-19-operatiunea-popstar/",
+        "actual": "",
+        "status": "notFound",
+        "ms": 8206
+      },
+      {
+        "index": 54,
+        "title": "Sirenele Insulei Mako",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/sirenele-insulei-mako-sezonul-1-episodul-12-coada-de-sirena/",
+        "actual": "https://www.dozaanimata.net/episode/sirenele-insulei-mako-sezonul-1-episodul-12-coada-de-sirena/",
+        "status": "correct",
+        "ms": 1726
+      },
+      {
+        "index": 55,
+        "title": "Să-nceapă Aventura: Tărâmuri Îndepărtate",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/sa-nceapa-aventura-taramuri-indepartate-sezonul-1-episodul-3-din-nou-impreuna/",
+        "actual": "https://www.dozaanimata.net/episode/sa-nceapa-aventura-taramuri-indepartate-sezonul-1-episodul-3-din-nou-impreuna/",
+        "status": "correct",
+        "ms": 1421
+      },
+      {
+        "index": 56,
+        "title": "Lego Ninjago: Maeștrii Spinjitzu",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-2-printesa-de-jad/",
+        "actual": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-2-printesa-de-jad/",
+        "status": "correct",
+        "ms": 2630
+      },
+      {
+        "index": 57,
+        "title": "H2O: Aventurile Sirenelor",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/h2o-aventurile-sirenelor-sezonul-2-episodul-2-pierdere-de-memorie/",
+        "actual": "https://www.dozaanimata.net/episode/h2o-aventurile-sirenelor-sezonul-2-episodul-2-pierdere-de-memorie/",
+        "status": "correct",
+        "ms": 1603
+      },
+      {
+        "index": 58,
+        "title": "Omul-Păianjen: Vecinul Prietenos",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/omul-paianjen-vecinul-prietenos-sezonul-1-episodul-8-panza-incalcita/",
+        "actual": "https://www.dozaanimata.net/episode/omul-paianjen-vecinul-prietenos-sezonul-1-episodul-8-panza-incalcita/",
+        "status": "correct",
+        "ms": 1364
+      },
+      {
+        "index": 59,
+        "title": "Jocul Calamarului",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/jocul-calamarului-sezonul-1-episodul-9-o-zi-norocoasa/",
+        "actual": "https://www.dozaanimata.net/episode/jocul-calamarului-sezonul-1-episodul-9-o-zi-norocoasa/",
+        "status": "correct",
+        "ms": 850
+      },
+      {
+        "index": 60,
+        "title": "Bakugan: Evoluții",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/bakugan-evolutii-sezonul-1-episodul-13-1-un-nou-nano-echipament/",
+        "actual": "",
+        "status": "notFound",
+        "ms": 7217
+      }
+    ]
+  },
+  "nativeMediaChecks": {
+    "passed": 2,
+    "total": 2,
+    "results": [
+      {
+        "title": "Ninjago: Insula",
+        "addressPass": true,
+        "supportedHosts": [
+          "Playmogo",
+          "Vidmoly"
+        ],
+        "durationMs": 662039,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 10535
+      },
+      {
+        "title": "Lego Ninjago: Maeștrii Spinjitzu",
+        "addressPass": true,
+        "supportedHosts": [
+          "Playmogo",
+          "Vidmoly"
+        ],
+        "durationMs": 1321448,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 5138
+      }
+    ]
+  },
+  "bothHostChecks": {
+    "passed": 2,
+    "total": 2,
+    "results": [
+      {
+        "title": "Ninjago: Insula",
+        "pass": true,
+        "hosts": [
+          {
+            "host": "Playmogo",
+            "type": "VIDEO"
+          },
+          {
+            "host": "Vidmoly",
+            "type": "M3U8"
+          }
+        ]
+      },
+      {
+        "title": "Lego Ninjago: Maeștrii Spinjitzu",
+        "pass": true,
+        "hosts": [
+          {
+            "host": "Playmogo",
+            "type": "VIDEO"
+          },
+          {
+            "host": "Vidmoly",
+            "type": "M3U8"
+          }
+        ]
+      }
+    ]
+  },
+  "playback": {
+    "title": "Ninjago: Insula",
+    "pass": true,
+    "player": "Android MediaPlayer, muted",
+    "seekCompleted": true,
+    "durationMs": 662039,
+    "positionBeforeMs": 60159,
+    "positionMs": 62338,
+    "videoWidth": 1280,
+    "videoHeight": 720,
+    "isPlaying": true
+  },
+  "negativeCheck": "PASS actual publisher Crystalized S15E1 rejected as requested TMDB Seabound S15E1 despite matching numbers",
+  "unitChecks": "PASS independently corroborated pilot identity, full-season equivalence, wrong IMDb/year/season/story, unrelated IMDb domains, incomplete lists and subtitled content; mapped Playmogo accepts only publisher/requested verified pairs.",
+  "limits": [
+    "General rules can help other titles with the same evidence, but only the two Ninjago misses improved in this60-title sample.",
+    "Six address misses and three ambiguous identities remain; Croods/Bakugan flattened or split episode numbering is not implemented by this change.",
+    "Not every later Ninjago season layout has been mapped; uncorroborated renumbered episodes fail closed.",
+    "Address checks do not establish every episode has an available stream. Stream checks cover the two supplied Ninjago pages.",
+    "Emulator tests were muted; Romanian speech follows publisher declarations, not independent listening.",
+    "Physical Mi Box playback of exact v9 remains pending.",
+    "Netu and Sendvid remain excluded; paused DeseneleDublate and other repositories are unchanged."
+  ]
+}

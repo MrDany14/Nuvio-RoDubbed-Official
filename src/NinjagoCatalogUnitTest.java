@@ -1,0 +1,23 @@
+import java.nio.file.*;import org.json.*;import org.jsoup.Jsoup;import org.jsoup.nodes.Document;
+public final class NinjagoCatalogUnitTest {
+ static void yes(boolean b,String message){if(!b)throw new AssertionError(message);}
+ static String read(String dir,String file)throws Exception{return new String(Files.readAllBytes(Paths.get(dir,file)),"UTF-8");}
+ static JSONObject copy(JSONObject j){return new JSONObject(j.toString());}
+ public static void main(String[] args)throws Exception{
+  String dir=args[0];JSONObject english=new JSONObject(read(dir,"metadata-0.json")),data=new JSONObject().put("localTitle","LEGO Ninjago: Maeștrii Spinjitzu").put("originalTitle","Ninjago: Masters of Spinjitzu").put("season",8).put("episode",2).put("releaseYear",2012);
+  Document main=Jsoup.parse(read(dir,"parent-1.html"),DozaCatalog.SITE);yes(!DozaCatalog.matches(main,data),"Uncorroborated different year rejected");
+  data.put("verifiedImdb",english.getJSONObject("external_ids").getString("imdb_id")).put("verifiedFirstYears",new JSONArray().put(2011).put(2012));
+  yes(DozaCatalog.matches(main,data),"Exact primary IMDb + known pilot year + exact series title");yes(!DozaCatalog.matches(main,copy(data).put("verifiedImdb","tt9999999")),"Different series IMDb rejected");yes(!DozaCatalog.matches(main,copy(data).put("verifiedFirstYears",new JSONArray().put(2012))),"Unverified year rejected");
+  JSONObject episodeData=copy(data).put("tmdbID",38693).put("verifiedSeason",new JSONObject(read(dir,"metadata-2.json")));Document episodePage=Jsoup.parse(read(dir,"episode-1.html"),DozaCatalog.SITE);yes(DozaCatalog.episodeIdentity(episodePage,"",episodeData),"Selected episode agrees with independent name");Document changed=Jsoup.parse("<div class='mvic-desc'><h3 itemprop='name'>Lego Ninjago: Maeștrii Spinjitzu – Sezonul 8 Episodul 2 – A Different Story</h3></div>",DozaCatalog.SITE);yes(!DozaCatalog.episodeIdentity(changed,"",episodeData),"Matching numbers cannot authorize wrong episode content");
+  Document wrong=Jsoup.parse(main.html().replace("https://www.imdb.com/title/tt1871731/","https://www.imdb.com.evil.invalid/title/tt1871731/"),DozaCatalog.SITE);yes(!DozaCatalog.matches(wrong,data),"Lookalike IMDb rejected");
+  wrong=Jsoup.parse(main.html().replace("class=\"f-desc\"","class=\"recommendation\""),DozaCatalog.SITE);yes(!DozaCatalog.matches(wrong,data),"Recommended IMDb cannot authorize pilot year");
+  JSONObject island=copy(data).put("season",14).put("episode",1).put("verifiedSeason",new JSONObject(read(dir,"metadata-3.json")));JSONArray cast=new JSONArray(),guests=island.getJSONObject("verifiedSeason").getJSONArray("episodes").getJSONObject(0).getJSONArray("guest_stars");for(int i=0;i<guests.length();i++)cast.put(guests.getJSONObject(i).optString("name"));island.put("verifiedCast",cast);
+  String islandHtml=read(dir,"parent-0.html");Document arc=Jsoup.parse(islandHtml,DozaCatalog.SITE);String target=DozaCatalog.arcEpisode(arc,island);yes(target.endsWith("-episodul-1-necercetat/"),"All4 independent Romanian titles map publisher S1 to TMDB S14");yes(DozaCatalog.matches(arc,island),"Corroborated separately named arc");
+  yes(DozaCatalog.arcEpisode(arc,copy(island).put("episode",4)).endsWith("-episodul-4-dintele-wojirei/"),"Last arc episode mapped");yes(DozaCatalog.arcEpisode(arc,copy(island).put("episode",5)).isEmpty(),"Out-of-range episode rejected");yes(DozaCatalog.arcEpisode(arc,copy(island).put("season",15)).isEmpty(),"Different requested season rejected");
+  JSONObject missing=copy(island);missing.getJSONObject("verifiedSeason").getJSONArray("episodes").remove(3);yes(DozaCatalog.arcEpisode(arc,missing).isEmpty(),"Incomplete independent season rejected");
+  wrong=Jsoup.parse(islandHtml.replace("pazitorii-amuletei/","a-different-story/"),DozaCatalog.SITE);yes(DozaCatalog.arcEpisode(wrong,island).isEmpty(),"One changed episode identity rejects whole arc");
+  yes(DozaCatalog.arcEpisode(arc,copy(island).put("verifiedCast",new JSONArray())).isEmpty(),"Independent cast required");wrong=Jsoup.parse(islandHtml.replace("Dublat în Română","Subtitrat în Română"),DozaCatalog.SITE);yes(DozaCatalog.arcEpisode(wrong,island).isEmpty(),"Subtitled arc excluded");
+  JSONObject generic=copy(island).put("localTitle","Starbound Warriors").put("originalTitle","Starbound Warriors");wrong=Jsoup.parse(islandHtml.replace("Ninjago","Starbound"),DozaCatalog.SITE);yes(!DozaCatalog.arcEpisode(wrong,generic).isEmpty(),"No Ninjago-specific title or ID rule");
+  System.out.println("PASS independent IMDb/pilot year and complete season-arc mapping, wrong-season/name/year/host/incomplete/subtitled guards; no title hardcodes");
+ }
+}

@@ -1,0 +1,187 @@
+{
+  "seed": 20261019,
+  "fixtures": [
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago S1E1",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-1-episodul-1-ascensiunea-serpilor/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 1,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago S1E13",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-1-episodul-13-ziua-marelui-devorator/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 1,
+        "episode": 13
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago S2E2",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-2-episodul-2-pirati-contra-ninja/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 2,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago S3E2",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-3-episodul-2-arta-pumnului-tacut/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 3,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago S5E2",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-5-episodul-2-poveste-cu-fantome/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 5,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago S8E1",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-1-masca-deceptiei/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 8,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago S8E2",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-2-printesa-de-jad/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 8,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago S8E10",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-8-episodul-10-probleme-mari-micul-ninjago/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 8,
+        "episode": 10
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago S10E4",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-ninjago-maestrii-spinjitzu-sezonul-10-episodul-4-sfarsitul/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 10,
+        "episode": 4
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago The Island S14E1",
+      "expectedPage": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-1-necercetat/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 14,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago The Island S14E2",
+      "expectedPage": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-2-pazitorii-amuletei/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 14,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago The Island S14E3",
+      "expectedPage": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-3-jay-darul/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 14,
+        "episode": 3
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago The Island S14E4",
+      "expectedPage": "https://www.dozaanimata.net/episode/ninjago-insula-sezonul-1-episodul-4-dintele-wojirei/",
+      "data": {
+        "tmdbID": 38693,
+        "movieName": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "localTitle": "LEGO Ninjago: Maeștrii Spinjitzu",
+        "originalTitle": "Ninjago: Masters of Spinjitzu",
+        "releaseYear": 2012,
+        "season": 14,
+        "episode": 4
+      }
+    }
+  ]
+}

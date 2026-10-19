@@ -9,7 +9,9 @@ import org.jsoup.parser.Parser;
 final class DozaCatalog {
     static final class Located {
         final String titleUrl,pageUrl;final Document page;
-        Located(String titleUrl,String pageUrl,Document page){this.titleUrl=titleUrl;this.pageUrl=pageUrl;this.page=page;}
+        final JSONObject verifiedEpisode;
+        Located(String titleUrl,String pageUrl,Document page){this(titleUrl,pageUrl,page,null);}
+        Located(String titleUrl,String pageUrl,Document page,JSONObject verifiedEpisode){this.titleUrl=titleUrl;this.pageUrl=pageUrl;this.page=page;this.verifiedEpisode=verifiedEpisode;}
     }
     static final String SITE="https://www.dozaanimata.net";
     static final Map<String,List<String>> SITEMAPS=new HashMap<>();
@@ -17,6 +19,51 @@ final class DozaCatalog {
     static boolean siteUrl(String value){try{URL u=new URL(value);return "https".equals(u.getProtocol())&&"www.dozaanimata.net".equals(u.getHost());}catch(Exception e){return false;}}
     static boolean dubbed(String heading){String n=NativeCatalog.normalize(heading);return RomanianAudio.declaredRomanian(heading)&&n.matches(".*\\bdublat(?:a)? in romana\\b.*");}
     static String heading(Document doc){Element h=doc.select(".mvic-desc h3[itemprop=name]").first();return h==null?"":h.text();}
+    static String titleOnly(String heading){return NativeCatalog.normalize(heading.replaceFirst("\\s*\\((?:19|20)\\d{2}\\).*$",""));}
+    static boolean verifiedSeriesYear(Document doc,JSONObject data,int year){
+        if(data.optInt("season")<=0)return false;String imdb=data.optString("verifiedImdb");JSONArray years=data.optJSONArray("verifiedFirstYears");if(!imdb.matches("tt[0-9]+")||years==null)return false;
+        boolean known=false,exactTitle=false;for(int i=0;i<years.length();i++)if(years.optInt(i)==year)known=true;
+        String title=titleOnly(heading(doc));for(String key:Arrays.asList("localTitle","movieName","originalTitle","englishTitle"))if(title.equals(NativeCatalog.normalize(data.optString(key))))exactTitle=true;
+        if(!known||!exactTitle)return false;
+        // Only the title-named link in the current article description can
+        // corroborate the independently fetched series IMDb identity.
+        for(Element a:doc.select(".mvic-desc .f-desc a[href]"))try{URL u=new URL(a.absUrl("href").isEmpty()?a.attr("href"):a.absUrl("href"));if(u.getProtocol().equals("https")&&(u.getHost().equals("www.imdb.com")||u.getHost().equals("imdb.com"))&&u.getUserInfo()==null&&u.getPath().matches("/title/"+imdb+"/?")&&title.equals(NativeCatalog.normalize(a.text())))return true;}catch(Exception ignored){}
+        return false;
+    }
+    static String arcEpisode(Document page,JSONObject data){
+        JSONObject season=data.optJSONObject("verifiedSeason");int requested=data.optInt("episode");if(data.optInt("season")<=1||season==null||season.optInt("season_number")!=data.optInt("season"))return "";
+        JSONArray episodes=season.optJSONArray("episodes");if(episodes==null||episodes.length()<2||episodes.length()>40||requested<1||requested>episodes.length())return "";
+        String h=heading(page),date=season.optString("air_date");Matcher year=Pattern.compile("\\((\\d{4})\\)").matcher(h);if(!dubbed(h)||!year.find()||!date.startsWith(year.group(1)+"-")||!corroboratedCast(page,data))return "";
+        boolean shared=false;Set<String> words=new HashSet<>(Arrays.asList(titleOnly(h).split(" ")));for(String key:Arrays.asList("localTitle","originalTitle","englishTitle"))for(String word:NativeCatalog.normalize(data.optString(key)).split(" "))if(word.length()>=6&&!word.matches("season|series|aventuri|adventures|masters|maestrii")&&words.contains(word))shared=true;if(!shared)return "";
+        TreeMap<Integer,String> ordered=new TreeMap<>();
+        for(Element a:page.select("#seasons a[href]")){
+            String url=a.absUrl("href");if(!siteUrl(url)||!url.startsWith(SITE+"/episode/"))return "";
+            Matcher m=Pattern.compile("/episode/[^/]+-sezonul-1-episodul-(\\d+)-([^/]+)/?").matcher(newPath(url));if(!m.matches())return "";int n=Integer.parseInt(m.group(1));if(!NativeCatalog.normalize(a.text()).matches("episodul 0*"+n))return "";
+            String previous=ordered.put(n,url);if(previous!=null&&!previous.equals(url))return "";
+        }
+        if(ordered.size()!=episodes.length())return "";
+        for(int i=0;i<episodes.length();i++){
+            JSONObject ep=episodes.getJSONObject(i);String url=ordered.get(i+1),name=NativeCatalog.normalize(ep.optString("name"));if(url==null||ep.optInt("episode_number")!=i+1||name.length()<6||name.matches("(?:episode|episodul) \\d+"))return "";
+            Matcher m=Pattern.compile(".*-sezonul-1-episodul-\\d+-([^/]+)/?").matcher(newPath(url));if(!m.matches()||!NativeCatalog.normalize(m.group(1)).equals(name))return "";
+        }
+        return ordered.get(requested);
+    }
+    static String newPath(String url){try{return new URL(url).getPath();}catch(Exception e){return "";}}
+    static JSONObject requestedSeason(JSONObject data)throws Exception{
+        JSONObject season=data.optJSONObject("verifiedSeason");if(season!=null&&season.optInt("season_number")==data.optInt("season"))return season;
+        season=new JSONObject(NativeHttp.text("https://api.themoviedb.org/3/tv/"+data.getInt("tmdbID")+"/season/"+data.getInt("season")+"?language=ro-RO&api_key="+NativeCatalog.TMDB_KEY,Collections.<String,String>emptyMap()));data.put("verifiedSeason",season);
+        JSONArray cast=data.optJSONArray("verifiedCast"),episodes=season.optJSONArray("episodes");if(cast==null)cast=new JSONArray();if(episodes!=null)for(int i=0;i<episodes.length();i++){JSONArray guests=episodes.getJSONObject(i).optJSONArray("guest_stars");if(guests!=null)for(int j=0;j<guests.length();j++)cast.put(guests.getJSONObject(j).optString("name"));}data.put("verifiedCast",cast);return season;
+    }
+    static boolean episodeIdentity(Document page,String url,JSONObject data)throws Exception{
+        JSONArray episodes=requestedSeason(data).optJSONArray("episodes");JSONObject requested=null;if(episodes!=null)for(int i=0;i<episodes.length();i++)if(episodes.getJSONObject(i).optInt("episode_number")==data.optInt("episode"))requested=episodes.getJSONObject(i);if(requested==null)return false;
+        String name=NativeCatalog.normalize(requested.optString("name")),actual=NativeCatalog.normalize(heading(page)).replaceFirst("^.*? sezonul \\d+ episodul \\d+ ","");
+        if(name.length()>=6&&!name.matches("(?:episode|episodul) \\d+")&&actual.equals(name))return true;
+        // Translation variants can differ. An exact primary-article IMDb
+        // episode identity is stronger than fuzzy wording or episode numbers.
+        Set<String> primary=new HashSet<>();for(Element a:page.select(".mvic-desc .f-desc a[href]"))try{URL u=new URL(a.absUrl("href"));if(u.getProtocol().equals("https")&&u.getUserInfo()==null&&(u.getHost().equals("www.imdb.com")||u.getHost().equals("imdb.com"))&&u.getPath().matches("/title/tt[0-9]+/?"))primary.add(u.getPath().replaceFirst("/$","").substring(7));}catch(Exception ignored){}
+        if(primary.isEmpty())return false;
+        JSONObject metadata=new JSONObject(NativeHttp.text("https://api.themoviedb.org/3/tv/"+data.getInt("tmdbID")+"/season/"+data.getInt("season")+"/episode/"+data.getInt("episode")+"/external_ids?api_key="+NativeCatalog.TMDB_KEY,Collections.<String,String>emptyMap()));String imdb=metadata.optString("imdb_id");return imdb.matches("tt[0-9]+")&&primary.contains(imdb);
+    }
     static boolean spellingAlias(String a,String b){
         String[] left=NativeCatalog.normalize(a).split(" "),right=NativeCatalog.normalize(b).split(" ");if(left.length!=right.length||left.length<4||a.length()<24||b.length()<24)return false;int changes=0,shared=0;
         for(int word=0;word<left.length;word++){String x=left[word],y=right[word];if(x.equals(y)){if(x.length()>3)shared++;continue;}if(++changes>1||x.length()<8||y.length()<8||!x.matches("[a-z]+")||!y.matches("[a-z]+")||Math.abs(x.length()-y.length())>1)return false;int i=0,j=0,edits=0;while(i<x.length()&&j<y.length()){if(x.charAt(i)==y.charAt(j)){i++;j++;}else{if(++edits>1)return false;if(x.length()>=y.length())i++;if(y.length()>=x.length())j++;}}if(edits+(x.length()-i)+(y.length()-j)!=1)return false;}
@@ -24,12 +71,14 @@ final class DozaCatalog {
     }
     static boolean matches(Document doc,JSONObject data){
         String h=heading(doc);if(!dubbed(h))return false;
+        if(!arcEpisode(doc,data).isEmpty())return true;
         boolean artwork=verifiedArtwork(doc,data);
         Matcher year=Pattern.compile("\\((\\d{4})\\)").matcher(h);
         if(data.optInt("releaseYear",0)>0&&(!year.find()||Integer.parseInt(year.group(1))!=data.getInt("releaseYear"))){
             // A publisher can date an adaptation by its source release. Require
             // exact TMDB artwork, title overlap and two independently named cast members.
-            if(!artwork||!corroboratedCast(doc,data)||score(h,data)<6)return false;
+            Matcher publisherYear=Pattern.compile("\\((\\d{4})\\)").matcher(h);boolean pilotIdentity=publisherYear.find()&&verifiedSeriesYear(doc,data,Integer.parseInt(publisherYear.group(1)));
+            if(!pilotIdentity&&(!artwork||!corroboratedCast(doc,data)||score(h,data)<6))return false;
         }
         String title=NativeCatalog.normalize(h.replaceFirst("\\s*\\((?:19|20)\\d{2}\\).*$","").replaceFirst("(?i)\\s*[–-]\\s*Dublat.*$",""));
         for(String key:Arrays.asList("localTitle","movieName","originalTitle"))if(!data.optString(key).isEmpty()&&title.equals(NativeCatalog.normalize(data.optString(key))))return true;
@@ -111,6 +160,7 @@ final class DozaCatalog {
         }
         return found;
     }
+    static List<NativeCatalog.Candidate> players(Located located){List<NativeCatalog.Candidate> found=players(located.page,located.pageUrl);if(located.verifiedEpisode!=null)for(NativeCatalog.Candidate c:found)if(c.host.equals("Playmogo")&&c.expected!=null)c.expected.put("verifiedRequested",new JSONObject(located.verifiedEpisode.toString()));return found;}
     Located locateAt(String url,JSONObject data)throws Exception{
         if(!siteUrl(url))return null;
         boolean series=data.optInt("season",0)>0;if(series!=new URL(url).getPath().startsWith("/series/"))return null;
@@ -118,18 +168,20 @@ final class DozaCatalog {
         if(!matches(page,data))return null;
         int season=data.optInt("season",0),episode=data.optInt("episode",0);
         if(season<=0||episode<=0)return new Located(url,url,page);
-        String segmented=segmentedEpisode(page,data);if(segmented.equals("!"))return null;
+        Matcher dated=Pattern.compile("\\((\\d{4})\\)").matcher(heading(page));boolean pilot=dated.find()&&Integer.parseInt(dated.group(1))!=data.optInt("releaseYear")&&verifiedSeriesYear(page,data,Integer.parseInt(dated.group(1)));if(pilot)requestedSeason(data);
+        String arc=arcEpisode(page,data),segmented=arc.isEmpty()?segmentedEpisode(page,data):arc;if(segmented.equals("!"))return null;
         for(Element a:page.select("a[href]")){
             String target=a.absUrl("href");if(!siteUrl(target)||!new URL(target).getPath().startsWith("/episode/")||(segmented.isEmpty()?!episodeAddress(target,season,episode):!target.equals(segmented)))continue;
             Document ep=Jsoup.parse(NativeHttp.text(target,NativeHttp.headers(url)),target);
             String seriesTitle=NativeCatalog.normalize(heading(page).replaceFirst("\\s*\\((?:19|20)\\d{2}\\).*$",""));
             String episodeTitle=NativeCatalog.normalize(heading(ep)).replaceFirst(" (?:sezonul \\d+ )?episodul \\d+.*$","");
             if(!seriesTitle.equals(episodeTitle)||!RomanianAudio.declaredRomanian("ROMANA "+heading(ep)))return null;
-            return new Located(url,target,ep);
+            if((pilot||!arc.isEmpty())&&!episodeIdentity(ep,target,data))return null;
+            return new Located(url,target,ep,(pilot||!arc.isEmpty())?new JSONObject().put("season",season).put("episode",episode):null);
         }
         return null;
     }
-    List<NativeCatalog.Candidate> inspect(String url,JSONObject data)throws Exception{Located located=locateAt(url,data);return located==null?Collections.<NativeCatalog.Candidate>emptyList():players(located.page,located.pageUrl);}
+    List<NativeCatalog.Candidate> inspect(String url,JSONObject data)throws Exception{Located located=locateAt(url,data);return located==null?Collections.<NativeCatalog.Candidate>emptyList():players(located);}
     Located locate(JSONObject data)throws Exception{
         Set<String> visited=new LinkedHashSet<>(),titles=new LinkedHashSet<>();
         for(String key:Arrays.asList("localTitle","movieName","originalTitle"))if(!data.optString(key).isEmpty())titles.add(data.optString(key));
@@ -145,8 +197,9 @@ final class DozaCatalog {
         JSONObject identity=new JSONObject(data.toString());
         boolean series=data.optInt("season",0)>0;
         if(data.optInt("tmdbID",0)>0){
-            JSONObject english=new JSONObject(NativeHttp.text("https://api.themoviedb.org/3/"+(series?"tv/":"movie/")+data.getInt("tmdbID")+"?language=en-US&append_to_response=credits,images&include_image_language=en,ro,null&api_key="+NativeCatalog.TMDB_KEY,Collections.<String,String>emptyMap()));
+            JSONObject english=new JSONObject(NativeHttp.text("https://api.themoviedb.org/3/"+(series?"tv/":"movie/")+data.getInt("tmdbID")+"?language=en-US&append_to_response=credits,images,external_ids&include_image_language=en,ro,null&api_key="+NativeCatalog.TMDB_KEY,Collections.<String,String>emptyMap()));
             identity.put("englishTitle",english.optString(series?"name":"title"));
+            if(series){JSONObject ids=english.optJSONObject("external_ids");if(ids!=null)identity.put("verifiedImdb",ids.optString("imdb_id"));JSONArray firstYears=new JSONArray(),seasons=english.optJSONArray("seasons");if(seasons!=null)for(int i=0;i<seasons.length();i++){JSONObject s=seasons.getJSONObject(i);String air=s.optString("air_date");if(s.optInt("season_number",99)<=1&&air.matches("\\d{4}-.*"))firstYears.put(Integer.parseInt(air.substring(0,4)));}identity.put("verifiedFirstYears",firstYears);}
             JSONArray artwork=new JSONArray(),cast=new JSONArray();
             for(String key:Arrays.asList("poster_path","backdrop_path")){String path=english.optString(key,"");if(!path.isEmpty())artwork.put(path.substring(path.lastIndexOf('/')+1));}
             JSONObject images=english.optJSONObject("images");if(images!=null)for(String key:Arrays.asList("posters","backdrops")){
@@ -159,6 +212,12 @@ final class DozaCatalog {
         // Retry search hits with the enriched independent identity. Previously
         // visited pages must not be discarded before this stronger comparison.
         for(String candidate:visited){Located found=locateAt(candidate,identity);if(found!=null)return found;}
+        // Some publishers put an entire later season on a separately named
+        // Season1 page. Fetch its independent Romanian episode names only
+        // after ordinary parent/season lookup has failed; require every name.
+        if(series&&data.optInt("tmdbID")>0&&data.optInt("season")>1)try{requestedSeason(identity);}catch(Exception ignored){}
+        if(identity.has("verifiedSeason"))for(String candidate:visited){Located found=locateAt(candidate,identity);if(found!=null)return found;}
+        if(identity.has("verifiedSeason")&&data.optInt("season")>1){List<String> arcs=new ArrayList<>(catalogUrls(true));final JSONObject ranking=identity;Collections.sort(arcs,new Comparator<String>(){public int compare(String a,String b){return Integer.compare(score(b,ranking),score(a,ranking));}});int checked=0;for(String candidate:arcs){if(visited.contains(candidate)||!candidate.contains("-dublat-in-romana"))continue;if(++checked>6)break;visited.add(candidate);Located found=locateAt(candidate,identity);if(found!=null)return found;}}
         // WordPress text search omits taxonomy labels, although Doza often
         // preserves the original/English movie name as a public tag.
         Set<String> aliases=new LinkedHashSet<>();
@@ -187,6 +246,7 @@ final class DozaCatalog {
     }
     static int score(String url,JSONObject data){
         String slug=NativeCatalog.normalize(url);int score=url.contains("-"+data.optInt("releaseYear",0)+"-")?20:0;
+        JSONObject season=data.optJSONObject("verifiedSeason");if(season!=null){String date=season.optString("air_date");if(date.length()>=4&&url.contains("-"+date.substring(0,4)+"-"))score+=20;}
         for(String key:Arrays.asList("localTitle","originalTitle","englishTitle"))for(String word:NativeCatalog.normalize(data.optString(key)).split(" "))if(word.length()>3&&slug.contains(word))score+=word.length();return score;
     }
     static synchronized List<String> catalogUrls(boolean series)throws Exception{
@@ -201,5 +261,5 @@ final class DozaCatalog {
         }
         SITEMAPS.put(type,urls);return urls;
     }
-    List<NativeCatalog.Candidate> discover(JSONObject data)throws Exception{Located located=locate(data);return located==null?Collections.<NativeCatalog.Candidate>emptyList():players(located.page,located.pageUrl);}
+    List<NativeCatalog.Candidate> discover(JSONObject data)throws Exception{Located located=locate(data);return located==null?Collections.<NativeCatalog.Candidate>emptyList():players(located);}
 }

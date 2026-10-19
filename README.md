@@ -22,6 +22,16 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Checks HLS playlists and an initial media segment; Streamtape and Abyss MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
 - Playmogo.com and six verified Dood mirror domains are recognized on DozaAnimata. Netu, Sendvid, dsvplay.com and other unverified mirrors remain excluded. Player4me is not supported. DeseneleDublate is paused and not included. Morencius is not implemented. Abyss is enabled for FilmeDublate.
 
+## Version 9: Verified series and season matching
+
+Improves Doza matching through independent metadata rather than hardcoded title URLs. A series dated by its pilot year requires an exact primary-article IMDb identity, matching title and independently verified pilot date. Newly accepted episodes must match the requested episode name or exact episode IMDb identity.
+
+A separately published Season1 page can represent a later TMDB season only when its release year, series/cast evidence and **every episode name in the complete season** agree. The verified publisher/TMDB numbering pair also reaches the player guard: Ninjago Island is publisherS1 but TMDBS14, and its upload usesS14. Other season/episode combinations remain rejected.
+
+**13 Ninjago addresses pass**, including all four Island episodes. The prior14 Doza cases still pass; the recent60-title sample improves from49 to51 correct, with6misses and3unverified cases remaining and no confirmed new wrong matches. The existing duplicate movie address is still verified as the same film. Both Playmogo and Vidmoly resolve on the two supplied Ninjago pages; both Playmogo videos decoded distinct frames, and Island passed actual muted Android MediaPlayer playback and seeking. See [matching validation](doza-matching-validation.json).
+
+The rules are reusable, but this audit establishes two newly fixed titles, not a universal solution. Croods/Bakugan and other flattening/split-episode patterns still need separate work. Some later Ninjago seasons are differently numbered and remain excluded when episode identity cannot be established. Physical Mi Box validation of exactv9 is pending.
+
 ## Version 8: Dood mirrors on DozaAnimata
 
 Recognizes **d000d.com, dood.li, do0od.com, doods.pro, d0o0d.com and ds2play.com** through their verified Playmogo redirects. The resolver preserves the exact video ID and accepts only known HTTPS player destinations; it never invents a replacement ID. Requests retain the shared pool, deadlines and cancellation. The total remains up to three streams.
