@@ -2,8 +2,8 @@
   {
     "name": "RoDubbed",
     "internalName": "RoDubbedOfficial",
-    "description": "One native TV provider, up to three Romanian dubbed streams across DeseneFaine, DozaAnimata and FilmeDublate. Byse, SeekStreaming, StreamP2P, VOE, Vidmoly and site-restricted Streamtape. Abyss/Netu deferred.",
-    "version": 5,
+    "description": "Up to three Romanian dubbed streams across DeseneFaine, DozaAnimata and FilmeDublate. Byse, SeekStreaming, StreamP2P, VOE, Vidmoly, Streamtape and native Abyss. Netu deferred.",
+    "version": 6,
     "apiVersion": 1,
     "status": 1,
     "authors": [
@@ -14,7 +14,7 @@
       "TvSeries"
     ],
     "url": "https://raw.githubusercontent.com/MrDany14/Nuvio-RoDubbed-Official/main/RoDubbed.cs3",
-    "fileSize": 35203,
+    "fileSize": 37915,
     "repositoryUrl": "https://github.com/MrDany14/Nuvio-RoDubbed-Official"
   }
 ]

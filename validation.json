@@ -1,9 +1,9 @@
 {
-  "version": 5,
-  "sha256": "45a87c5cba17a5a3a8cd5c64315d0833fa4d151c217e33b479ce2ff58ab89a45",
-  "bytes": 35203,
+  "version": 6,
+  "sha256": "8bf3c0a3d8330b2cc9f114a84595fae5850f072160d8bd2ee58b39604546ef58",
+  "bytes": 37915,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
-  "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors",
+  "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors; PASS independent Abyss AES-CTR/numeric-key/token fixtures, video/CDN identity, provenance and playback headers",
   "runs": [
     {
       "title": "Avatar",
@@ -252,5 +252,14 @@
       "Publisher language declarations alone do not prove spoken audio on untested titles"
     ]
   },
-  "deseneleDublate": "Paused; not included"
+  "deseneleDublate": "Paused; not included",
+  "abyss": {
+    "report": "abyss-validation.json",
+    "resolved": 5,
+    "checked": 6,
+    "expectedRuntimeRejection": 1,
+    "decodedVideoCases": 4,
+    "androidPlayerSeekAndPlaybackCases": 3,
+    "physicalMiBoxExactBuild": false
+  }
 }

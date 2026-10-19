@@ -1,6 +1,6 @@
 # RoDubbed
 
-Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine, plus Vidmoly from DozaAnimata and Byse/Streamtape from FilmeDublate. No PC or helper server is needed.
+Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine, plus Vidmoly from DozaAnimata and Byse/Streamtape/Abyss from FilmeDublate. No PC or helper server is needed.
 
 ## Install on Nuvio TV
 
@@ -19,8 +19,16 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Returns up to three distinct validated streams, preferring different hosts. A title with one available stream returns one.
 - Discovers the title's available servers once, then resolves only relevant supported hosts. Legacy Filemoon labels can lead to Byse.
 - Requires Romanian server declarations. For older bare host labels, accepts the title page's explicit Romanian-dubbing declaration. English/subtitled labels are excluded, and explicit foreign default audio in host/HLS metadata is rejected.
-- Checks HLS playlists and an initial media segment; Streamtape MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
-- Netu and Playmogo/DoodStream are deferred and excluded. Player4me is not supported. DeseneleDublate is paused and not included. Abyss and morencius are not implemented.
+- Checks HLS playlists and an initial media segment; Streamtape and Abyss MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
+- Netu and Playmogo/DoodStream are deferred and excluded. Player4me is not supported. DeseneleDublate is paused and not included. Morencius is not implemented. Abyss is enabled for FilmeDublate.
+
+## Version 6: Native Abyss
+
+Adds the public Abyss player's native H.264 MP4 flow for FilmeDublate. It runs locally on Android, without executing player/ad scripts or using a helper server. Native playback receives Abyss-specific headers. MP4 duration must match the verified title page, and a bounded mid-file range request must succeed before a link is returned. The existing total limit remains three streams.
+
+**Five of six sampled Abyss titles resolve; the sixth is correctly rejected for a runtime mismatch.** Four samples decoded different video frames at30s and60s on Android. ToyStory5, Ironheart S1E2 and Iubire la birou also passed actual muted Android MediaPlayer playback and seek-completion checks using the exact native Nuvio URL and headers. This is emulator/API testing, not physical Mi Box playback of this exact release. See [Abyss validation](abyss-validation.json).
+
+The user confirmed ToyStory5 website audio is Romanian. Spoken audio in the other samples has not been listened to. Iubire la birou had slow/variable network behavior during checks; its720p copy subsequently decoded distinct frames. Network failures remain possible and skip the affected host.
 
 ## Version 5: FilmeDublate
 
@@ -28,7 +36,7 @@ Adds FilmeDublate Byse and Streamtape as a fallback when existing sites return f
 
 **Twenty title/episode addresses passed 20/20 on Android**, including fifteen movies and five distinct series with requested episodes. No hosts were requested during that audit. Four other catalog entries remain unverified because independent TMDB mapping failed. See the [twenty-title report](filmedublate-audit.md). Separate media checks passed eight links across six cases; Mario Streamtape was rejected for runtime disagreement. The user confirms Toy Story5 Byse and Streamtape play on physical TV in the isolated FD build. Exact combined v5 physical playback is pending.
 
-Abyss, morencius, Netu and Sendvid remain excluded. The original repository and all test folders are unchanged.
+In version5, Abyss was not yet implemented. Morencius, Netu and Sendvid remain excluded. The original repository and all test folders are unchanged.
 
 ## Version 4: DozaAnimata address fixes
 

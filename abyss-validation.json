@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-19",
+  "version": 6,
+  "environment": "Android TV14 ART, actual Nuvio TV1.0.0 ExtractorLink API; Android MediaMetadataRetriever and MediaPlayer; not installed Nuvio playback on physical Mi Box",
+  "implementation": {
+    "site": "FilmeDublate only",
+    "flow": "Public player configuration -> local AES-CTR media decoding -> player native MP4 URL generation -> bounded MP4 duration and mid-file seek-range validation -> native VIDEO link",
+    "reference": "https://iamcdn.net/player-v2/core.bundle.js",
+    "runtime": "Entirely Android device; no JavaScript/ad execution or helper service",
+    "headers": "Abyss media must omit Origin; retain Referer and User-Agent. Normal CDN redirects are followed.",
+    "codecs": "H.264, up to1080p, fallback720p/480p"
+  },
+  "resolution": {
+    "passed": 5,
+    "total": 6,
+    "results": [
+      {
+        "title": "Vaiana",
+        "pass": true,
+        "quality": 1080,
+        "ms": 1047
+      },
+      {
+        "title": "Povestea jucăriilor 5",
+        "pass": true,
+        "quality": 1080,
+        "ms": 721
+      },
+      {
+        "title": "72 DE ORE",
+        "pass": true,
+        "quality": 720,
+        "ms": 1703
+      },
+      {
+        "title": "Iubire la birou",
+        "pass": true,
+        "quality": 720,
+        "ms": 2422
+      },
+      {
+        "title": "Super Mario Galaxia: Filmul",
+        "pass": false,
+        "error": "Abyss runtime mismatch: expected 5400s, actual 6250s",
+        "ms": 1529
+      },
+      {
+        "title": "Inimă de fier",
+        "pass": true,
+        "quality": 720,
+        "ms": 1086
+      }
+    ]
+  },
+  "decodedVideoFrames": {
+    "passed": 4,
+    "total": 6,
+    "results": [
+      {
+        "title": "Vaiana",
+        "host": "Abyss",
+        "quality": 1080,
+        "decoded": {
+          "durationMs": 6636958,
+          "audio": "yes",
+          "video": "yes",
+          "decodedFrames": 2,
+          "differentFrames": true
+        },
+        "pass": true,
+        "ms": 3378
+      },
+      {
+        "title": "Povestea jucăriilor 5",
+        "host": "Abyss",
+        "quality": 1080,
+        "decoded": {
+          "durationMs": 5862541,
+          "audio": "yes",
+          "video": "yes",
+          "decodedFrames": 2,
+          "differentFrames": true
+        },
+        "pass": true,
+        "ms": 3357
+      },
+      {
+        "title": "72 DE ORE",
+        "host": "Abyss",
+        "quality": 720,
+        "decoded": {
+          "durationMs": 6314965,
+          "audio": "yes",
+          "video": "yes",
+          "decodedFrames": 2,
+          "differentFrames": true
+        },
+        "pass": true,
+        "ms": 3781
+      },
+      {
+        "title": "Iubire la birou",
+        "pass": false,
+        "error": "java.net.SocketTimeoutException: timeout",
+        "ms": 6244
+      },
+      {
+        "title": "Super Mario Galaxia: Filmul",
+        "pass": false,
+        "error": "java.lang.Exception: Abyss runtime mismatch: expected 5400s, actual 6250s",
+        "ms": 3159
+      },
+      {
+        "title": "Inimă de fier",
+        "host": "Abyss",
+        "quality": 720,
+        "decoded": {
+          "durationMs": 2870706,
+          "audio": "yes",
+          "video": "yes",
+          "decodedFrames": 2,
+          "differentFrames": true
+        },
+        "pass": true,
+        "ms": 9704
+      }
+    ]
+  },
+  "playback": [
+    {
+      "title": "Toy Story5",
+      "seekCompleted": true,
+      "durationMs": 5862562,
+      "positionBeforeMs": 56221,
+      "positionMs": 58424,
+      "videoWidth": 1920,
+      "videoHeight": 1032,
+      "isPlaying": true
+    },
+    {
+      "title": "Ironheart S1E2",
+      "seekCompleted": true,
+      "durationMs": 2870709,
+      "positionBeforeMs": 59299,
+      "positionMs": 61501,
+      "videoWidth": 1719,
+      "videoHeight": 720,
+      "isPlaying": true
+    },
+    {
+      "title": "Iubire la birou",
+      "seekCompleted": true,
+      "durationMs": 6890896,
+      "positionBeforeMs": 56422,
+      "positionMs": 58623,
+      "videoWidth": 1280,
+      "videoHeight": 720,
+      "isPlaying": true
+    }
+  ],
+  "playbackNotes": "Muted Android MediaPlayer uses exact URL and headers from the native Nuvio link; callback-based seek completion and increasing playback position verified. Four titles decoded distinct frames at30s and60s. Initial Iubire test had a timeout; its720p copy later decoded distinct frames in a separate quality-specific probe. Network timing varies.",
+  "audioLanguage": "User confirms all ToyStory5 website servers are Romanian, including Abyss. Other sampled titles have audio tracks and Romanian publisher declarations; speech not listened to.",
+  "excluded": [
+    {
+      "title": "Super Mario Galaxia: Filmul",
+      "reason": "Page5400s versus media6250s; Abyss and Streamtape copies rejected"
+    }
+  ],
+  "limits": [
+    "Only validated FilmeDublate provenance is enabled",
+    "Source duration is a safeguard, not proof of exact movie identity or spoken language",
+    "Network failures can skip a host; remaining supported hosts still return",
+    "Netu, Sendvid, morencius and DeseneleDublate remain excluded"
+  ],
+  "fullProvider": [
+    {
+      "title": "Ironheart S1E2",
+      "sources": [
+        "Byse / DeseneFaine",
+        "Streamtape / FilmeDublate",
+        "Abyss / FilmeDublate"
+      ],
+      "ms": 6447,
+      "pass": true
+    },
+    {
+      "title": "Toy Story5",
+      "sources": [
+        "Byse",
+        "StreamP2P",
+        "SeekStreaming"
+      ],
+      "site": "DeseneFaine",
+      "ms": 1769,
+      "pass": true
+    }
+  ]
+}

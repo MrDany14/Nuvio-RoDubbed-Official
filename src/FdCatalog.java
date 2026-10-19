@@ -38,7 +38,7 @@ final class FdCatalog {
   Located located=locate(data);if(located==null)return Collections.emptyList();String html=NativeHttp.text(located.wrapper,NativeHttp.headers(located.titleUrl));List<NativeCatalog.Candidate> found=new ArrayList<>();Set<String> seen=new HashSet<>();
   Matcher m=Pattern.compile("case\\s+\\d+:\\s*src\\s*=\\s*[\"'](https://[^\"']+)[\"']\\s*;").matcher(html);
   int duration=runtime(located.page.select(".meta-row").text());JSONObject expected=new JSONObject().put("durationSeconds",duration).put("title",located.page.select("h1.film-title").text());
-  while(m.find()){String embed=m.group(1),host=NativeCatalog.kind(embed);if(!(host.equals("Byse")||host.equals("Streamtape"))||!seen.add(embed))continue;if(host.equals("Streamtape")&&duration<90)continue;found.add(new NativeCatalog.Candidate(host,located.titleUrl,located.wrapper,"ROMANA",embed,expected));}
+  while(m.find()){String embed=m.group(1),host=NativeCatalog.kind(embed);if(!(host.equals("Byse")||host.equals("Streamtape")||host.equals("Abyss"))||!seen.add(embed))continue;if((host.equals("Streamtape")||host.equals("Abyss"))&&duration<90)continue;found.add(new NativeCatalog.Candidate(host,located.titleUrl,located.wrapper,"ROMANA",embed,expected));}
   return found;
  }
 }
