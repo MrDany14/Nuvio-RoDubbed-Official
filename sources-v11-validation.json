@@ -1,0 +1,287 @@
+{
+  "date": "2026-10-19T15:04:43.549Z",
+  "version": 11,
+  "bytes": 54236,
+  "sha256": "da05ce9b96883d8d3c82e74896986a69319d028ee4751b58c04eec9a607dcbcd",
+  "changes": [
+    "DeseneleDublate Streamtape (HD and ordinary labels) with validated title/episode provenance and independent runtime.",
+    "FD min/minute runtime parsing; independently requested series episode runtimes; explicit published movie-runtime alternative for legitimate short-film metadata differences.",
+    "Morencius with non-executing packed-data decoding and explicit combined Romanian video/audio variant."
+  ],
+  "finalArtifact": {
+    "ddStreamtape": {
+      "title": "Orașul Halloween",
+      "host": "Streamtape",
+      "pass": true,
+      "format": "VIDEO",
+      "ms": 1079
+    },
+    "ddStreamtapeDecode": {
+      "pass": true,
+      "durationMs": 5057969,
+      "audio": "yes",
+      "video": "yes",
+      "differentFrames": true
+    },
+    "fdStreamtapeShort": {
+      "title": "Într-un Ocean O Poveste Cu Descendenții",
+      "host": "Streamtape",
+      "pass": true,
+      "format": "VIDEO",
+      "ms": 541
+    },
+    "fdStreamtapeDecode": {
+      "pass": true,
+      "durationMs": 555691,
+      "audio": "yes",
+      "video": "yes",
+      "differentFrames": true
+    },
+    "fdAbyss": {
+      "title": "Te voi găsi",
+      "host": "Abyss",
+      "pass": true,
+      "format": "VIDEO",
+      "ms": 1393
+    },
+    "fdAbyssThumbnailCheck": {
+      "pass": false,
+      "error": "java.lang.RuntimeException: setDataSource failed: status = 0x80000000"
+    },
+    "morencius": {
+      "pass": true,
+      "host": "Morencius",
+      "format": "M3U8",
+      "ms": 21742
+    },
+    "regressions": [
+      {
+        "title": "Toy Story 5 combined",
+        "pass": true,
+        "firstSourceMs": 873,
+        "totalMs": 7557,
+        "sources": [
+          "Streamtape | RO Dub | FilmeDublate",
+          "Byse | RO Dub | FilmeDublate",
+          "Abyss | RO Dub | FilmeDublate"
+        ],
+        "types": [
+          "VIDEO",
+          "M3U8",
+          "VIDEO"
+        ]
+      },
+      {
+        "title": "Doza Miraculous",
+        "pass": true,
+        "firstSourceMs": 3423,
+        "totalMs": 3918,
+        "sources": [
+          "Vidmoly | RO Dub | DozaAnimata",
+          "Playmogo | RO Dub | DozaAnimata"
+        ],
+        "types": [
+          "M3U8",
+          "VIDEO"
+        ]
+      },
+      {
+        "title": "DeseneleDublate Masca magică",
+        "pass": true,
+        "firstSourceMs": 1452,
+        "totalMs": 1453,
+        "sources": [
+          "OK.ru | RO Dub | DeseneleDublate"
+        ],
+        "types": [
+          "VIDEO"
+        ]
+      }
+    ]
+  },
+  "classificationReview": {
+    "publisherPages": 12,
+    "streamtapePassed": 12,
+    "abyssPassed": 8,
+    "results": [
+      {
+        "title": "Te voi găsi",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 1136
+      },
+      {
+        "title": "Te voi găsi",
+        "host": "Abyss",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 5523
+      },
+      {
+        "title": "Outlast: Jungla",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 638
+      },
+      {
+        "title": "Outlast: Jungla",
+        "host": "Abyss",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 7218
+      },
+      {
+        "title": "Șoimul",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 677
+      },
+      {
+        "title": "Șoimul",
+        "host": "Abyss",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 2796
+      },
+      {
+        "title": "Căsuța din prerie",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 642
+      },
+      {
+        "title": "Căsuța din prerie",
+        "host": "Abyss",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 5928
+      },
+      {
+        "title": "Palatul de Est",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 680
+      },
+      {
+        "title": "Palatul de Est",
+        "host": "Abyss",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 7706
+      },
+      {
+        "title": "Martorul ocular",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 979
+      },
+      {
+        "title": "Martorul ocular",
+        "host": "Abyss",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 7547
+      },
+      {
+        "title": "Între tată și fiu",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 828
+      },
+      {
+        "title": "Între tată și fiu",
+        "host": "Abyss",
+        "pass": false,
+        "error": "java.net.SocketTimeoutException: timeout",
+        "ms": 12531
+      },
+      {
+        "title": "Nemesis",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 639
+      },
+      {
+        "title": "Nemesis",
+        "host": "Abyss",
+        "pass": false,
+        "error": "java.net.SocketTimeoutException: timeout",
+        "ms": 7446
+      },
+      {
+        "title": "Legende",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 660
+      },
+      {
+        "title": "Legende",
+        "host": "Abyss",
+        "pass": false,
+        "error": "java.net.SocketTimeoutException: timeout",
+        "ms": 12654
+      },
+      {
+        "title": "Într-un Ocean O Poveste Cu Descendenții",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 541
+      },
+      {
+        "title": "Într-un Ocean O Poveste Cu Descendenții",
+        "host": "Abyss",
+        "pass": false,
+        "error": "java.net.SocketTimeoutException: timeout",
+        "ms": 6369
+      },
+      {
+        "title": "Cartierele",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 756
+      },
+      {
+        "title": "Cartierele",
+        "host": "Abyss",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 5922
+      },
+      {
+        "title": "Dragonii: Salvatorii înaripați – Secretele Cântaripii",
+        "host": "Streamtape",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 827
+      },
+      {
+        "title": "Dragonii: Salvatorii înaripați – Secretele Cântaripii",
+        "host": "Abyss",
+        "pass": true,
+        "format": "VIDEO",
+        "ms": 10470
+      }
+    ],
+    "artifactScope": "The 24-page/host review used the preceding v11 candidate. Final artifact rechecked the changed short-film runtime case, DD source, Abyss S1E1, Morencius, and combined/existing-host regressions."
+  },
+  "units": "Passed 10 duration/route checks, existing FD title/year/episode/provenance checks and 11 Morencius decoding/identity/audio checks.",
+  "limits": [
+    "Abyss has intermittent timeouts on some reviewed pages. It returns no source on failure.",
+    "The optional Android thumbnail retriever could not open the newly sampled Abyss URL even though native resolution, MP4 duration and seek range checks passed. New-page physical-TV playback is not claimed. Existing Abyss support was previously user-confirmed.",
+    "Romanian declarations are required; speech was not listened to for every title. Morencius explicitly selects the playlist track labelled Romanian.",
+    "Morencius responds after roughly 20 seconds; host-specific read allowance stays inside the shared 38-second deadline.",
+    "Disenchanted DD Streamtape returned HTTP 404 and is excluded from the new catalog source evidence.",
+    "Netu, Player4me/4meplayer/embed4me and unimplemented hosts remain excluded."
+  ]
+}

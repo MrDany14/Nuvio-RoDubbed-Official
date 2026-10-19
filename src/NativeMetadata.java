@@ -39,7 +39,7 @@ public final class NativeMetadata {
         }
         if(id<=0)throw new IllegalArgumentException("Invalid TMDB ID");
         JSONObject metadata=new JSONObject(new NativeCatalog().get("https://api.themoviedb.org/3/"+(tv?"tv/":"movie/")+id+"?language=ro-RO&api_key="+NativeCatalog.TMDB_KEY));
-        JSONObject data=link(id,metadata,tv);
+        JSONObject data=link(id,metadata,tv);if(!tv&&metadata.optInt("runtime")>0)data.put("durationSeconds",metadata.getInt("runtime")*60);
         String name=data.getString("movieName"),url="https://www.themoviedb.org/"+(tv?"tv/":"movie/")+id;
         Class<? extends Enum> type=Class.forName("com.lagradost.cloudstream3.TvType").asSubclass(Enum.class);
         Object tvType=Enum.valueOf(type,tv?"TvSeries":"Movie");

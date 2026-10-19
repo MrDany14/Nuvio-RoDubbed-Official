@@ -3,7 +3,7 @@ final class FdCatalog {
  static final String SITE="https://filmedublate.net";
  static boolean siteUrl(String text){try{URL u=new URL(text);return "https".equals(u.getProtocol())&&"filmedublate.net".equals(u.getHost())&&u.getUserInfo()==null;}catch(Exception e){return false;}}
  static boolean titleUrl(String text){if(!siteUrl(text))return false;try{return new URL(text).getPath().matches("/(?:film-dublat|desen-animat|serial-dublat)/[a-z0-9-]+-dublat-in-romana/?");}catch(Exception e){return false;}}
- static int runtime(String text){Matcher h=Pattern.compile("\\b(\\d+)h\\b").matcher(text),m=Pattern.compile("\\b(\\d+)m\\b").matcher(text);return ((h.find()?Integer.parseInt(h.group(1))*60:0)+(m.find()?Integer.parseInt(m.group(1)):0))*60;}
+ static int runtime(String text){Matcher h=Pattern.compile("\\b(\\d+)h\\b").matcher(text),m=Pattern.compile("\\b(\\d+)(?:m|min|minute)\\b").matcher(text);return ((h.find()?Integer.parseInt(h.group(1))*60:0)+(m.find()?Integer.parseInt(m.group(1)):0))*60;}
  static boolean matches(Document page,JSONObject data){
   Element h=page.select("h1.film-title").first();if(h==null)return false;
   String declaration=page.title()+" "+page.select("meta[name=description]").attr("content");if(!RomanianAudio.declaredRomanian(declaration))return false;
@@ -37,8 +37,8 @@ final class FdCatalog {
  List<NativeCatalog.Candidate> discover(JSONObject data)throws Exception{
   Located located=locate(data);if(located==null)return Collections.emptyList();String html=NativeHttp.text(located.wrapper,NativeHttp.headers(located.titleUrl));List<NativeCatalog.Candidate> found=new ArrayList<>();Set<String> seen=new HashSet<>();
   Matcher m=Pattern.compile("case\\s+\\d+:\\s*src\\s*=\\s*[\"'](https://[^\"']+)[\"']\\s*;").matcher(html);
-  int duration=runtime(located.page.select(".meta-row").text());JSONObject expected=new JSONObject().put("durationSeconds",duration).put("title",located.page.select("h1.film-title").text());
-  while(m.find()){String embed=m.group(1),host=NativeCatalog.kind(embed);if(!(host.equals("Byse")||host.equals("Streamtape")||host.equals("Abyss"))||!seen.add(embed))continue;if((host.equals("Streamtape")||host.equals("Abyss"))&&duration<90)continue;found.add(new NativeCatalog.Candidate(host,located.titleUrl,located.wrapper,"ROMANA",embed,expected));}
+  int duration=data.optInt("durationSeconds");if(duration<90)duration=runtime(located.page.select(".meta-row").text());if(data.optInt("season")>0&&data.optInt("episode")>0){try{JSONObject episodeMeta=new JSONObject(NativeHttp.text("https://api.themoviedb.org/3/tv/"+data.getInt("tmdbID")+"/season/"+data.getInt("season")+"/episode/"+data.getInt("episode")+"?api_key="+NativeCatalog.TMDB_KEY,Collections.<String,String>emptyMap()));if(episodeMeta.optInt("season_number")==data.getInt("season")&&episodeMeta.optInt("episode_number")==data.getInt("episode")&&episodeMeta.optInt("runtime")>0)duration=episodeMeta.getInt("runtime")*60;}catch(Exception missingEpisodeRuntime){/* Preserve existing Byse discovery; guarded file hosts may be withheld. */}}JSONObject expected=new JSONObject().put("durationSeconds",duration).put("title",located.page.select("h1.film-title").text());if(data.optInt("season")==0&&runtime(located.page.select(".meta-row").text())>=90)expected.put("alternateDurationSeconds",runtime(located.page.select(".meta-row").text()));
+  while(m.find()){String embed=m.group(1),host=NativeCatalog.kind(embed);if(!(host.equals("Byse")||host.equals("Streamtape")||host.equals("Abyss")||host.equals("Morencius"))||!seen.add(embed))continue;if((host.equals("Streamtape")||host.equals("Abyss"))&&duration<90)continue;JSONObject evidence=expected;if(host.equals("Morencius")){evidence=new JSONObject(expected.toString());if(data.optInt("durationSeconds")>=90)evidence.put("durationSeconds",data.getInt("durationSeconds"));}found.add(new NativeCatalog.Candidate(host,located.titleUrl,located.wrapper,"ROMANA",embed,evidence));}
   return found;
  }
 }

@@ -1,7 +1,7 @@
 {
-  "version": 10,
-  "sha256": "a6f12591d874c1d00b5e268dfb15cb30f5cbe189da28499ff1a6dc75913532d9",
-  "bytes": 50160,
+  "version": 11,
+  "sha256": "da05ce9b96883d8d3c82e74896986a69319d028ee4751b58c04eec9a607dcbcd",
+  "bytes": 54236,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
   "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors; PASS independent Abyss AES-CTR/numeric-key/token fixtures, video/CDN identity, provenance and playback headers; PASS Playmogo token/CDN/episode/provenance guards and narrow corroborated series spelling; PASS verified Dood mirror routing and exact redirect video-ID guards; PASS independent IMDb/pilot year, complete-season identity and verified publisher/TMDB playback context",
   "runs": [
@@ -316,5 +316,6 @@
     "bothHostsValidatedPages": 2,
     "decodedVideos": 2,
     "androidPlaybackAndSeekCases": 1
-  }
+  },
+  "sourcesV11Report": "sources-v11-validation.json"
 }

@@ -19,7 +19,7 @@ public final class RoDubbedProvider extends TmdbProvider {
     }
     static List<NativeCatalog.Candidate> order(List<NativeCatalog.Candidate> found){
         List<NativeCatalog.Candidate> ordered=new ArrayList<>();
-        for(int pass=0;pass<2;pass++)for(String host:Arrays.asList("Byse","SeekStreaming","StreamP2P","VOE","Vidmoly","Streamtape","Abyss","Playmogo","OK.ru")){
+        for(int pass=0;pass<2;pass++)for(String host:Arrays.asList("Byse","SeekStreaming","StreamP2P","VOE","Vidmoly","Streamtape","Abyss","Playmogo","OK.ru","Morencius")){
             int n=0;for(NativeCatalog.Candidate c:found)if(c.host.equals(host)){if(n++==pass){ordered.add(c);break;}}
         }
         return ordered;
@@ -83,6 +83,7 @@ public final class RoDubbedProvider extends TmdbProvider {
         else if(c.host.equals("Playmogo")){stream=PlaymogoClient.resolve(c);checked=true;}
         else if(c.host.equals("Abyss")){stream=AbyssClient.resolve(c);checked=true;}
         else if(c.host.equals("Streamtape")){stream=StreamtapeClient.resolve(c);checked=true;}
+        else if(c.host.equals("Morencius"))stream=MorenciusClient.resolve(c);
         else if(c.host.equals("OK.ru")){stream=OkruClient.resolve(c);checked=true;}
         else throw new Exception("Unsupported host");
         if(!checked)HlsProbe.validate(stream);return new ResolvedStream(stream.host,stream.url,stream.referer,stream.identity,stream.quality,DdTitleCatalog.siteUrl(c.page)?"DeseneleDublate":FdCatalog.siteUrl(c.page)?"FilmeDublate":DozaCatalog.siteUrl(c.page)?"DozaAnimata":"DeseneFaine",stream.isHls,stream.playbackHeaders);

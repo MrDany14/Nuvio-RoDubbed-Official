@@ -24,11 +24,14 @@ final class NativeHttp {
         return request(url,headers,limit,partial,null);
     }
     static byte[] request(String url,Map<String,String> headers,int limit,boolean partial,String body)throws Exception{
+        return request(url,headers,limit,partial,body,6000);
+    }
+    static byte[] request(String url,Map<String,String> headers,int limit,boolean partial,String body,int readTimeout)throws Exception{
         Session s=session();s.check();URL u=new URL(url);
         if(!"https".equals(u.getProtocol()))throw new IOException("HTTPS required");
         HttpURLConnection c=(HttpURLConnection)u.openConnection();attach(c);
         int timeout=(int)Math.max(1,Math.min(6000,(s.deadline-System.nanoTime())/1000000));
-        c.setConnectTimeout(timeout);c.setReadTimeout(timeout);c.setRequestProperty("User-Agent",ByseClient.USER_AGENT);
+        c.setConnectTimeout(timeout);c.setReadTimeout((int)Math.max(1,Math.min(readTimeout,(s.deadline-System.nanoTime())/1000000)));c.setRequestProperty("User-Agent",ByseClient.USER_AGENT);
         for(Map.Entry<String,String> h:headers.entrySet())c.setRequestProperty(h.getKey(),h.getValue());
         synchronized(s.cookies){for(Map.Entry<String,List<String>> h:s.cookies.get(u.toURI(),Collections.<String,List<String>>emptyMap()).entrySet()){
             StringBuilder value=new StringBuilder();for(String part:h.getValue()){if(value.length()>0)value.append("; ");value.append(part);}c.setRequestProperty(h.getKey(),value.toString());

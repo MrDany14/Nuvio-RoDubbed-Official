@@ -20,7 +20,13 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Discovers the title's available servers once, then resolves only relevant supported hosts. Legacy Filemoon labels can lead to Byse.
 - Requires Romanian server declarations. For older bare host labels, accepts the title page's explicit Romanian-dubbing declaration. English/subtitled labels are excluded, and explicit foreign default audio in host/HLS metadata is rejected.
 - Checks HLS playlists and an initial media segment; Streamtape and Abyss MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
-- Playmogo.com and six verified Dood mirror domains are recognized on DozaAnimata. Netu, Sendvid, dsvplay.com and other unverified mirrors remain excluded. Player4me is not supported. DeseneleDublate supports OK.ru movies and structured series episodes; its Streamtape, Vidmoly.to and unverified legacy season mappings remain excluded. Morencius is not implemented. Abyss is enabled for FilmeDublate.
+- Playmogo.com and six verified Dood mirror domains are recognized on DozaAnimata. Netu, Sendvid, dsvplay.com and other unverified mirrors remain excluded. Player4me is not supported. DeseneleDublate supports OK.ru and Streamtape movies and structured series episodes. Vidmoly.to and unverified legacy season mappings remain excluded. Morencius is not implemented. Abyss is enabled for FilmeDublate.
+
+## Version 11: more supported routes
+
+Adds Streamtape on DeseneleDublate, including the StreamTape (HD) label. FilmeDublate now recognises minute suffixes and uses the requested episode's independent runtime instead of a nominal series duration. Morencius reads player configuration without executing page scripts and returns only an explicitly identified combined Romanian audio/video variant. Existing fast hosts remain preferred and the provider still caps results at three.
+
+DD Streamtape and FD Streamtape samples decoded audio/video and distinct frames in Android TV. All 12 reviewed FD pages resolved through Streamtape; Abyss had successful resolutions and intermittent timeouts. Morencius resolved in about 21 seconds. These are emulator checks, not physical-TV playback confirmation of every title. See [v11 validation](sources-v11-validation.json).
 
 ## Version 10: DeseneleDublate through OK.ru
 
