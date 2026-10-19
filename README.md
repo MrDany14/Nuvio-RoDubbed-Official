@@ -1,6 +1,6 @@
 # RoDubbed
 
-Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P, VOE and Dood/Playmogo from DeseneFaine, plus Vidmoly/Playmogo from DozaAnimata and Byse/Streamtape/Abyss from FilmeDublate. OK.ru from DeseneleDublate is also supported. No PC or helper server is needed.
+Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P, VOE and Dood/Playmogo from DeseneFaine, plus Vidmoly/Playmogo from DozaAnimata and Byse/Streamtape/Abyss from FilmeDublate. OK.ru from DeseneleDublate is also supported. DesenFlix supplies additional Byse sources. No PC or helper server is needed.
 
 ## Install on Nuvio TV
 
@@ -21,6 +21,12 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Requires Romanian server declarations. For older bare host labels, accepts the title page's explicit Romanian-dubbing declaration. English/subtitled labels are excluded, and explicit foreign default audio in host/HLS metadata is rejected.
 - Checks HLS playlists and an initial media segment; Streamtape and Abyss MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
 - Playmogo.com and seven verified Dood mirror domains are recognized on DozaAnimata; verified Romanian Dood/Playmogo sources are also supported on DeseneFaine. Netu, Sendvid, dsvplay.com and other unverified mirrors remain excluded. Player4me is not supported. DeseneleDublate supports OK.ru and Streamtape movies and structured series episodes. Vidmoly.to and unverified legacy season mappings remain excluded. Morencius supports explicitly identified Romanian audio/video on FilmeDublate. Abyss is enabled for FilmeDublate.
+
+## Version 13: DesenFlix
+
+Adds DesenFlix as the fifth website, reusing the existing native Byse resolver. Discovery requires the page's explicit Romanian-dubbing declaration, exact TMDB identity, media type and release year. Series select only the requested season/episode from labeled cards; the default iframe never substitutes for a missing episode. No individual title URLs are hardcoded.
+
+Live native discovery passed all 40 sampled cases: 20 films and 19 series returned the expected Byse links; Echipa Dronix S1E1 was correctly withheld because it is absent. Wrong-ID/year/type, subtitle and missing-episode regression checks passed. No new playback/deletion tests were performed. Catalog and TMDB lists are unchanged. See [v13 evidence](sources-v13-validation.json).
 
 ## Version 12: DeseneFaine Dood/Playmogo
 

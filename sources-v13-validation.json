@@ -1,0 +1,267 @@
+{
+  "version": 13,
+  "bytes": 55637,
+  "sha256": "0b660a4a730c317f3ce7ad90dfd86086e9d66cd96ee1ca528085c2b409563541",
+  "scope": "Add DesenFlix discovery using unchanged Byse resolver; five concurrent website discoveries; existing three-stream cap retained.",
+  "matching": "Explicit dubbed-only title and exact TMDB ID/media type/release year; exact episode labels including zero padding; missing episodes return no substitute.",
+  "liveSearch": {
+    "passed": 40,
+    "total": 40,
+    "movies": 20,
+    "series": 20,
+    "embeds": 39,
+    "missingS1E1": "Echipa Dronix (2019): correctly returns no candidate; first listed episode is S1E2.",
+    "results": [
+      {
+        "actual": "https://desenflix.online/abominable-christmas-2012-dublat-in-romana/",
+        "pass": true,
+        "ms": 1748,
+        "title": "Abominable Christmas (2012) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/rio-2011-dublat-in-romana/",
+        "pass": true,
+        "ms": 1151,
+        "title": "Rio (2011) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/megamind-2010-dublat-in-romana/",
+        "pass": true,
+        "ms": 1641,
+        "title": "Megamind (2010) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/scooby-doo-si-invadatorii-extraterestri-2000-dublat-in-romana/",
+        "pass": true,
+        "ms": 1132,
+        "title": "Scooby-Doo și invadatorii extratereștri (2000) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/familia-addams-2019-dublat-in-romana/",
+        "pass": true,
+        "ms": 1950,
+        "title": "Familia Addams (2019) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/alfa-si-omega-8-calatorie-in-regatul-ursilor-2017-dublat-in-romana/",
+        "pass": true,
+        "ms": 1150,
+        "title": "Alfa și Omega 8: Călătorie în Regatul Urșilor (2017) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/toy-story-1995-dublat-in-romana/",
+        "pass": true,
+        "ms": 2597,
+        "title": "Povestea jucăriilor (1995) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/dl-peabody-si-sherman-2014-dublat-in-romana/",
+        "pass": true,
+        "ms": 1040,
+        "title": "Dl. Peabody și Sherman (2014) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/savva-inima-de-razboinic-2015-dublat-in-romana/",
+        "pass": true,
+        "ms": 1132,
+        "title": "Savva: Inimă de războinic (2015) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/clopotica-si-aventurile-ei-in-lumea-oamenilor-2010-dublat-in-romana/",
+        "pass": true,
+        "ms": 1064,
+        "title": "Clopoțica și aventurile ei în lumea oamenilor (2010)  (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/alice-in-tara-minunilor-1951-dublat-in-romana/",
+        "pass": true,
+        "ms": 1062,
+        "title": "Alice în Țara Minunilor (1951) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/al-7-lea-pitic-2014-dublat-in-romana/",
+        "pass": true,
+        "ms": 1099,
+        "title": "Al 7-lea pitic (2014) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/sinbad-marinarul-1992-dublat-in-romana/",
+        "pass": true,
+        "ms": 1280,
+        "title": "Sinbad Marinarul (1992) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/intors-pe-dos-2-2024-dublat-in-romana/",
+        "pass": true,
+        "ms": 1170,
+        "title": "Întors pe dos 2 (2024) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/mulan1998-dublat-in-romana/",
+        "pass": true,
+        "ms": 1722,
+        "title": "Mulan (1998) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/cum-sa-iti-dresezi-dragonul-2025-dublat-in-romana/",
+        "pass": true,
+        "ms": 1127,
+        "title": "Cum să îți dresezi dragonul (2025) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/thomas-si-prietenii-sai-eroul-sinelor-2009-dublat-in-romana/",
+        "pass": true,
+        "ms": 1100,
+        "title": "Thomas și prietenii săi: Eroul Șinelor (2009) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/scooby-doo-jocurile-sinistre-2012-dublat-in-romana/",
+        "pass": true,
+        "ms": 1259,
+        "title": "Scooby-Doo! Jocurile Sinistre (2012) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/barbie-in-povestea-unei-sirene-2010-dublat-in-romana/",
+        "pass": true,
+        "ms": 1232,
+        "title": "Barbie în povestea unei sirene (2010) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/ferngully-ultima-padure-tropicala-1992-dublat-in-romana/",
+        "pass": true,
+        "ms": 1175,
+        "title": "FernGully: Ultima pădure tropicală (1992) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/wylde-pak-dublat-in-romana/",
+        "pass": true,
+        "ms": 1074,
+        "title": "Wylde Pak (Dublat în Română)"
+      },
+      {
+        "actual": "",
+        "pass": true,
+        "ms": 1601,
+        "title": "Echipa Dronix (2019) (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/garda-felina-dublat-in-romana/",
+        "pass": true,
+        "ms": 1144,
+        "title": "Garda Felină (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/generator-rex-dublat-in-romana/",
+        "pass": true,
+        "ms": 1087,
+        "title": "Generator Rex (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/patrula-broscutelor-dublat-in-romana/",
+        "pass": true,
+        "ms": 1073,
+        "title": "Patrula Broscuțelor (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/maggie-si-bianca-in-lumea-modei-dublat-in-romana/",
+        "pass": true,
+        "ms": 1241,
+        "title": "Maggie și Bianca în lumea modei (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/miraculos-buburuza-si-motan-noir-dublat-in-romana/",
+        "pass": true,
+        "ms": 1209,
+        "title": "Miraculos: Buburuza și Motan Noir (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/pad-ul-lui-zeke-dublat-in-romana/",
+        "pass": true,
+        "ms": 1052,
+        "title": "Pad-ul lui Zeke (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/omul-de-fier-aventuri-blindate-dublat-in-romana/",
+        "pass": true,
+        "ms": 1140,
+        "title": "Omul de Fier: Aventuri blindate (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/omul-paianjen-nelimitat-dublat-in-romana/",
+        "pass": true,
+        "ms": 1053,
+        "title": "Omul-Păianjen Nelimitat (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/ultimate-spider-man-dublat-in-romana/",
+        "pass": true,
+        "ms": 1251,
+        "title": "Senzaționalul Om-Păianjen (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/povestitorul-andersen-dublat-in-romana/",
+        "pass": true,
+        "ms": 1093,
+        "title": "Povestitorul Andersen (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/animalia-dublat-in-romana/",
+        "pass": true,
+        "ms": 1088,
+        "title": "Animalia (Dublat în română)"
+      },
+      {
+        "actual": "https://desenflix.online/voltron-legendary-defender-dublat-in-romana/",
+        "pass": true,
+        "ms": 998,
+        "title": "Voltron: Apărătorul Legendar (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/aventurile-lui-fievel-in-vestul-salbatic-dublat-in-romana/",
+        "pass": true,
+        "ms": 1228,
+        "title": "Aventurile lui Fievel în Vestul Sălbatic (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/familia-stevens-dublat-in-romana/",
+        "pass": true,
+        "ms": 1055,
+        "title": "Familia Stevens (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/american-dragon-jake-long-dublat-in-romana/",
+        "pass": true,
+        "ms": 1094,
+        "title": "American Dragon: Jake Long (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/dc-super-hero-girls-dublat-in-romana/",
+        "pass": true,
+        "ms": 1076,
+        "title": "DC Super Hero Girls (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/tutenstein-dublat-in-romana/",
+        "pass": true,
+        "ms": 1012,
+        "title": "Tutenstein (Dublat în Română)"
+      },
+      {
+        "actual": "https://desenflix.online/super-4-dublat-in-romana/",
+        "pass": true,
+        "ms": 1075,
+        "title": "Super 4 (Dublat în Română)"
+      }
+    ]
+  },
+  "regressions": "PASS UnifiedUnitTest, DeseneUnitTest, DozaUnitTest, FdUnitTest and DoodDfUnitTest",
+  "fixtureTests": "PASS 40 title identities/expected film or S1E1 embeds; wrong IDs/years/types; subtitle rejection; exact E1 vs E11; no missing-episode fallback.",
+  "playback": "No new playback testing requested; unchanged native Byse resolver and HLS/audio guards retained.",
+  "lists": "No catalog addon or TMDB lists changed.",
+  "androidRuntime": {
+    "result": "PASS",
+    "environment": "Existing isolated Android TV emulator, app_process with exact v13 package and installed Nuvio TV APK",
+    "tests": "All 40 fixture identities and film/S1E1 selection plus negative matching cases",
+    "playbackTested": false
+  }
+}

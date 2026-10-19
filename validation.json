@@ -1,7 +1,7 @@
 {
-  "version": 12,
-  "sha256": "7ca3591aeb7bfa2112ecd84329810a1ce2dabe264e3dc5a965d49b5d29c016c0",
-  "bytes": 54461,
+  "version": 13,
+  "sha256": "0b660a4a730c317f3ce7ad90dfd86086e9d66cd96ee1ca528085c2b409563541",
+  "bytes": 55637,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
   "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors; PASS independent Abyss AES-CTR/numeric-key/token fixtures, video/CDN identity, provenance and playback headers; PASS Playmogo token/CDN/episode/provenance guards and narrow corroborated series spelling; PASS verified Dood mirror routing and exact redirect video-ID guards; PASS independent IMDb/pilot year, complete-season identity and verified publisher/TMDB playback context",
   "runs": [
@@ -318,6 +318,6 @@
     "androidPlaybackAndSeekCases": 1
   },
   "sourcesV11Report": "sources-v11-validation.json",
-  "latestSourceValidation": "sources-v12-validation.json",
-  "latestLimit": "After bulk probing, host returned a CAPTCHA page without a normal playback handshake; further host requests stopped. This test package does not solve or bypass CAPTCHA."
+  "latestSourceValidation": "sources-v13-validation.json",
+  "latestLimit": "DesenFlix discovery tested on 40 titles; publisher dubbing declarations; no new playback/deletion tests."
 }

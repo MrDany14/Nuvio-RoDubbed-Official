@@ -27,7 +27,7 @@ public final class RoDubbedProvider extends TmdbProvider {
     public Object loadLinks(String data,boolean casting,Function1 subtitle,Function1 callback,Continuation continuation){
         final NativeHttp.Session session=new NativeHttp.Session(38000);NativeHttp.CURRENT.set(session);
         ExecutorService pool=Executors.newFixedThreadPool(3,new ThreadFactory(){public Thread newThread(Runnable task){Thread t=new Thread(task,"RoDubbed-host");t.setDaemon(true);return t;}});
-        ExecutorService catalogs=Executors.newFixedThreadPool(4,new ThreadFactory(){public Thread newThread(Runnable task){Thread t=new Thread(task,"RoDubbed-catalog");t.setDaemon(true);return t;}});
+        ExecutorService catalogs=Executors.newFixedThreadPool(5,new ThreadFactory(){public Thread newThread(Runnable task){Thread t=new Thread(task,"RoDubbed-catalog");t.setDaemon(true);return t;}});
         CompletionService<List<NativeCatalog.Candidate>> discoveries=new ExecutorCompletionService<>(catalogs);
         List<Future<List<NativeCatalog.Candidate>>> catalogFutures=new ArrayList<>();
         CompletionService<ResolvedStream> completion=new ExecutorCompletionService<>(pool);
@@ -36,16 +36,16 @@ public final class RoDubbedProvider extends TmdbProvider {
         try{
             // Discover sites together so an absent title on one site cannot consume
             // the entire lookup deadline before another site's quick result is used.
-            for(int website=0;website<4;website++){
+            for(int website=0;website<5;website++){
                 final int site=website;
                 catalogFutures.add(discoveries.submit(new Callable<List<NativeCatalog.Candidate>>(){public List<NativeCatalog.Candidate> call(){
                     NativeHttp.CURRENT.set(session);
-                    try{JSONObject input=new JSONObject(data);return site==0?new NativeCatalog().discover(input):site==1?new DozaCatalog().discover(input):site==2?new FdCatalog().discover(input):new DdCatalog().discover(input);}
+                    try{JSONObject input=new JSONObject(data);return site==0?new NativeCatalog().discover(input):site==1?new DozaCatalog().discover(input):site==2?new FdCatalog().discover(input):site==3?new DdCatalog().discover(input):new DesenflixCatalog().discover(input);}
                     catch(Exception e){System.out.println("[RoDubbed] catalog "+site+" skipped: "+e.getMessage());return Collections.emptyList();}
                     finally{NativeHttp.CURRENT.remove();}
                 }}));
             }
-            for(int website=0;website<4&&count<3;website++){
+            for(int website=0;website<5&&count<3;website++){
             session.check();long catalogRemaining=session.deadline-System.nanoTime();if(catalogRemaining<=0)break;
             Future<List<NativeCatalog.Candidate>> discovered=discoveries.poll(catalogRemaining,TimeUnit.NANOSECONDS);if(discovered==null)break;
             List<NativeCatalog.Candidate> found=discovered.get();
@@ -86,7 +86,7 @@ public final class RoDubbedProvider extends TmdbProvider {
         else if(c.host.equals("Morencius"))stream=MorenciusClient.resolve(c);
         else if(c.host.equals("OK.ru")){stream=OkruClient.resolve(c);checked=true;}
         else throw new Exception("Unsupported host");
-        if(!checked)HlsProbe.validate(stream);return new ResolvedStream(stream.host,stream.url,stream.referer,stream.identity,stream.quality,DdTitleCatalog.siteUrl(c.page)?"DeseneleDublate":FdCatalog.siteUrl(c.page)?"FilmeDublate":DozaCatalog.siteUrl(c.page)?"DozaAnimata":"DeseneFaine",stream.isHls,stream.playbackHeaders);
+        if(!checked)HlsProbe.validate(stream);return new ResolvedStream(stream.host,stream.url,stream.referer,stream.identity,stream.quality,DesenflixCatalog.siteUrl(c.page)?"DesenFlix":DdTitleCatalog.siteUrl(c.page)?"DeseneleDublate":FdCatalog.siteUrl(c.page)?"FilmeDublate":DozaCatalog.siteUrl(c.page)?"DozaAnimata":"DeseneFaine",stream.isHls,stream.playbackHeaders);
     }
     static Object makeLink(ResolvedStream stream)throws Exception{
         Constructor<?> c=Class.forName("com.lagradost.cloudstream3.utils.ExtractorLink").getConstructor(String.class,String.class,String.class,String.class,int.class,boolean.class,Map.class,String.class);
