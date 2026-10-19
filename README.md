@@ -22,6 +22,10 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Checks the playlist and an initial media segment before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
 - Netu and Playmogo/DoodStream are deferred and excluded. Player4me is not supported. DeseneleDublate integration is planned, not included.
 
+## Expanded verification
+
+A further **50 movies and 50 distinct series** passed Android address checks: 99 exact/canonical matches and 1 verified duplicate page. None overlap the previous 50. The earlier 50 DeseneFaine cases and 14 Doza cases also pass. Legacy URL spellings and independently verified premiere-year differences are now handled. See the [100-title report](desenefaine-expanded-audit.md). No streams were resolved during these audits.
+
 ## Version 3: DeseneFaine address fixes
 
 The unchanged 50-title DeseneFaine sample now passes **50/50 on Android**, up from 41/50; the 14 Doza address cases also pass. Series are located through a verified parent title and premiere year before selecting the requested episode, including `1x1` paths. English-title fallback and guarded movie aliases handle translation differences. See the [complete fifty-title audit](desenefaine-audit.md). No streams were resolved during these audits.

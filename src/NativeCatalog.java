@@ -16,6 +16,7 @@ final class NativeCatalog {
     }
     final Set<String> visited=new HashSet<>();final Set<String> titles=new LinkedHashSet<>();
     int year,season,episode;boolean series;
+    final Set<Integer> verifiedReleaseYears=new HashSet<>();final Set<String> verifiedPosters=new HashSet<>();
     static final class Located {
         final String titleUrl,pageUrl;final Document page;
         Located(String titleUrl,String pageUrl,Document page){this.titleUrl=titleUrl;this.pageUrl=pageUrl;this.page=page;}
@@ -38,6 +39,10 @@ final class NativeCatalog {
         if(!url.startsWith(SITE+(series?"/serial/":"/film/")))return false;
         Set<String> pageNames=new HashSet<>();
         Element heading=page.select("h1").first();
+        if(series&&heading!=null&&normalize(heading.text()).matches(".*\\bshorts\\b.*")){
+            boolean requested=false;for(String name:titles)if(normalize(name).matches(".*\\bshorts\\b.*"))requested=true;
+            if(!requested)return false;
+        }
         for(Element h:heading==null?Collections.<Element>emptyList():Collections.singletonList(heading)){
             String name=normalize(h.text());
             pageNames.add(name.replaceFirst(" (?:19|20)\\d{2}$",""));
@@ -63,11 +68,22 @@ final class NativeCatalog {
         Element header=heading==null?null:heading.closest(".entry-header");
         Element yearElement=(header==null?(article==null?page:article):header).select(".year").first();
         Matcher m=Pattern.compile("\\b(?:19|20)\\d{2}\\b").matcher(yearElement==null?"":yearElement.text());
-        return year==0||(m.find()&&Integer.parseInt(m.group())==year);
+        if(year==0)return true;if(!m.find())return false;int siteYear=Integer.parseInt(m.group());
+        if(siteYear==year)return true;
+        // A premiere can be listed by pilot year rather than regular broadcast
+        // year. An adjacent year needs the exact main TMDB artwork as well as
+        // the title/type identity checks above; year proximity alone is unsafe.
+        if(verifiedReleaseYears.contains(siteYear)||Math.abs(siteYear-year)==1){
+            Element image=(article==null?page:article).select("img[src]").first();
+            if(image!=null)try{URL poster=new URL(image.absUrl("src").isEmpty()?image.attr("src"):image.absUrl("src"));String path=poster.getPath();
+                if("https".equals(poster.getProtocol())&&"image.tmdb.org".equals(poster.getHost())&&verifiedPosters.contains(path.substring(path.lastIndexOf('/')+1)))return true;
+            }catch(Exception ignored){}
+        }
+        return false;
     }
     static String canonical(Document page,String fallback){Element e=page.select("link[rel=canonical]").first();return e!=null&&catalogUrl(e.attr("href"))?e.attr("href"):fallback;}
     static int[] episodeNumber(String url){
-        Matcher m=Pattern.compile("(?:-(?:sezonul-|sezon-|s)(\\d+)-(?:episodul-|ep|e)(\\d+)|-(\\d+)x(\\d+))(?:-|/|$)").matcher(url);
+        Matcher m=Pattern.compile("(?:-(?:sezonul-?|sezon-?|s)(\\d+)-(?:episodul-?|episoul-?|ep|e)(\\d+)|-(\\d+)x(\\d+))(?:-|/|$)").matcher(url);
         if(!m.find())return null;return new int[]{Integer.parseInt(m.group(1)==null?m.group(3):m.group(1)),Integer.parseInt(m.group(2)==null?m.group(4):m.group(2))};
     }
     Located locateAt(String url)throws Exception{
@@ -104,16 +120,24 @@ final class NativeCatalog {
         return found;
     }
     Located locate(JSONObject data)throws Exception{
-        visited.clear();titles.clear();
+        visited.clear();titles.clear();verifiedReleaseYears.clear();verifiedPosters.clear();
         season=data.optInt("season",0);episode=data.optInt("episode",0);series=season>0&&episode>0;year=data.optInt("releaseYear",0);
         for(String key:Arrays.asList("localTitle","movieName","originalTitle"))if(!normalize(data.optString(key,"")).isEmpty())titles.add(data.getString(key));
         Located found=searchTitles(new ArrayList<>(titles));if(found!=null)return found;
         if(data.optInt("tmdbID",0)>0){
-            JSONObject english=new JSONObject(NativeHttp.text("https://api.themoviedb.org/3/"+(series?"tv/":"movie/")+data.getInt("tmdbID")+"?language=en-US&api_key="+TMDB_KEY,Collections.<String,String>emptyMap()));
-            String title=english.optString(series?"name":"title");if(!normalize(title).isEmpty()&&titles.add(title))return searchTitles(Collections.singletonList(title));
+            JSONObject english=new JSONObject(NativeHttp.text("https://api.themoviedb.org/3/"+(series?"tv/":"movie/")+data.getInt("tmdbID")+"?language=en-US&api_key="+TMDB_KEY+(series?"":"&append_to_response=release_dates"),Collections.<String,String>emptyMap()));
+            String poster=english.optString("poster_path","");if(!poster.isEmpty())verifiedPosters.add(poster.substring(poster.lastIndexOf('/')+1));
+            if(series){JSONArray seasons=english.optJSONArray("seasons");if(seasons!=null)for(int i=0;i<seasons.length();i++){JSONObject s=seasons.getJSONObject(i);if(s.optInt("season_number",99)<=1)addReleaseYear(s.optString("air_date",""));}}
+            else{JSONObject releases=english.optJSONObject("release_dates");JSONArray countries=releases==null?null:releases.optJSONArray("results");if(countries!=null)for(int i=0;i<countries.length();i++){JSONArray dates=countries.getJSONObject(i).optJSONArray("release_dates");if(dates!=null)for(int n=0;n<dates.length();n++)addReleaseYear(dates.getJSONObject(n).optString("release_date",""));}
+                boolean alternate=false;for(int known:verifiedReleaseYears)if(known!=year)alternate=true;
+                if(alternate){JSONObject artwork=new JSONObject(NativeHttp.text("https://api.themoviedb.org/3/movie/"+data.getInt("tmdbID")+"/images?api_key="+TMDB_KEY,Collections.<String,String>emptyMap()));JSONArray posters=artwork.optJSONArray("posters");if(posters!=null)for(int i=0;i<posters.length();i++){String file=posters.getJSONObject(i).optString("file_path","");if(!file.isEmpty())verifiedPosters.add(file.substring(file.lastIndexOf('/')+1));}}
+            }
+            String title=english.optString(series?"name":"title");LinkedHashSet<String> retry=new LinkedHashSet<>();if(!normalize(title).isEmpty()){titles.add(title);retry.add(title);}retry.addAll(titles);
+            visited.clear();return searchTitles(new ArrayList<>(retry));
         }
         return null;
     }
+    void addReleaseYear(String date){if(date.matches("(?:19|20)\\d{2}-.*"))verifiedReleaseYears.add(Integer.parseInt(date.substring(0,4)));}
     Located searchTitles(List<String> order)throws Exception{
         for(String title:order){Located found=locateAt(SITE+(series?"/serial/":"/film/")+normalize(title).replace(' ','-')+"/");if(found!=null)return found;}
         for(String title:order){

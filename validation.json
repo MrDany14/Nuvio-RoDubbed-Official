@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "sha256": "5a6e70772c18bc2c3a493bd8a917403d29c04979b0d18da7677d70361b9243ff",
-  "bytes": 28562,
+  "sha256": "e982dc49ad087104f1b918f2f05598e568012e7c692986d4723fc01559bdb2dc",
+  "bytes": 29363,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
   "unitTests": "PASS: original host/language references, Doza identity checks, Desene parent premiere year, recommendation isolation, exact episode syntax/number, short original movie alias safeguards",
   "runs": [
@@ -77,5 +77,21 @@
     "passed": 14,
     "total": 14,
     "streamsResolved": false
+  },
+  "expandedAddressAudit": {
+    "newMovies": 50,
+    "newSeries": 50,
+    "passed": 100,
+    "total": 100,
+    "exact": 99,
+    "verifiedDuplicate": 1,
+    "wrong": 0,
+    "seed": 3801692861,
+    "report": "desenefaine-expanded-audit.json",
+    "streamsResolved": false
+  },
+  "previous50Regression": {
+    "passed": 50,
+    "total": 50
   }
 }
