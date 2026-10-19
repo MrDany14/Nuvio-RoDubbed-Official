@@ -1,6 +1,6 @@
 # RoDubbed
 
-Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine, plus Vidmoly/Playmogo from DozaAnimata and Byse/Streamtape/Abyss from FilmeDublate. OK.ru from DeseneleDublate is also supported. No PC or helper server is needed.
+Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P, VOE and Dood/Playmogo from DeseneFaine, plus Vidmoly/Playmogo from DozaAnimata and Byse/Streamtape/Abyss from FilmeDublate. OK.ru from DeseneleDublate is also supported. No PC or helper server is needed.
 
 ## Install on Nuvio TV
 
@@ -20,7 +20,13 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Discovers the title's available servers once, then resolves only relevant supported hosts. Legacy Filemoon labels can lead to Byse.
 - Requires Romanian server declarations. For older bare host labels, accepts the title page's explicit Romanian-dubbing declaration. English/subtitled labels are excluded, and explicit foreign default audio in host/HLS metadata is rejected.
 - Checks HLS playlists and an initial media segment; Streamtape and Abyss MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
-- Playmogo.com and six verified Dood mirror domains are recognized on DozaAnimata. Netu, Sendvid, dsvplay.com and other unverified mirrors remain excluded. Player4me is not supported. DeseneleDublate supports OK.ru and Streamtape movies and structured series episodes. Vidmoly.to and unverified legacy season mappings remain excluded. Morencius is not implemented. Abyss is enabled for FilmeDublate.
+- Playmogo.com and seven verified Dood mirror domains are recognized on DozaAnimata; verified Romanian Dood/Playmogo sources are also supported on DeseneFaine. Netu, Sendvid, dsvplay.com and other unverified mirrors remain excluded. Player4me is not supported. DeseneleDublate supports OK.ru and Streamtape movies and structured series episodes. Vidmoly.to and unverified legacy season mappings remain excluded. Morencius supports explicitly identified Romanian audio/video on FilmeDublate. Abyss is enabled for FilmeDublate.
+
+## Version 12: DeseneFaine Dood/Playmogo
+
+Adds the verified doodstream.com redirect route without changing video IDs. DeseneFaine sources require the existing exact title/year and episode match, explicit Romanian server labels, and preserved episode context through wrappers. Existing Doza support, three-stream cap and media/deleted-video guards remain.
+
+Four Android TV emulator samples played and sought successfully: 101 Dalmatians (1961), Clifford (2021), H2O S1E1 and Descendants (2015). Ten of 57 reviewed links resolved. After the bulk check the host began serving CAPTCHA pages, including on existing Doza sources; this release does not solve or bypass those challenges. Tests were muted and Romanian audio follows publisher declarations. The user approved promotion with those limits. See [v12 evidence](sources-v12-validation.json).
 
 ## Version 11: more supported routes
 

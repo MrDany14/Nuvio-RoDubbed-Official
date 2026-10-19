@@ -39,7 +39,7 @@ final class NativeCatalog {
             if(host.equals("voe.sx")||host.equals("voe.to"))return "VOE";
                     }catch(Exception ignored){}return "";
     }
-    static String labelKind(String label){String s=normalize(label);if(s.contains("byse")||s.contains("filemoon"))return "Byse";if(s.contains("streamp2p")||s.contains("p2pplay"))return "StreamP2P";if(s.contains("seekstream")||s.contains("seeksreaming"))return "SeekStreaming";if(s.replaceFirst("^server \\d+ ?","").matches("voe(?: .*)?"))return "VOE";return "";}
+    static String labelKind(String label){String s=normalize(label);if(s.contains("doodstream")||s.contains("playmogo"))return "Playmogo";if(s.contains("byse")||s.contains("filemoon"))return "Byse";if(s.contains("streamp2p")||s.contains("p2pplay"))return "StreamP2P";if(s.contains("seekstream")||s.contains("seeksreaming"))return "SeekStreaming";if(s.replaceFirst("^server \\d+ ?","").matches("voe(?: .*)?"))return "VOE";return "";}
     static boolean catalogUrl(String url){try{URL u=new URL(url);return "https".equals(u.getProtocol())&&"desenefaine.com".equals(u.getHost());}catch(Exception e){return false;}}
     boolean matches(Document page,String url){
         if(!url.startsWith(SITE+(series?"/serial/":"/film/")))return false;
@@ -121,7 +121,8 @@ final class NativeCatalog {
             String wrapper;try{wrapper=new String(ByseClient.decode(server.attr("data-src")),StandardCharsets.UTF_8);}catch(Exception e){continue;}
             String direct=kind(wrapper),expected=direct.isEmpty()?labelKind(label):direct;
             if(expected.isEmpty()||(!catalogUrl(wrapper)&&direct.isEmpty())||!seen.add(wrapper))continue;
-            found.add(new Candidate(expected,url,wrapper,label,direct.isEmpty()?null:wrapper));
+            JSONObject context=expected.equals("Playmogo")?new JSONObject().put("dfVerified",true).put("season",season).put("episode",episode):null;
+            found.add(new Candidate(expected,url,wrapper,label,direct.isEmpty()?null:wrapper,context));
         }
         return found;
     }
@@ -161,14 +162,14 @@ final class NativeCatalog {
         String html=NativeHttp.text(candidate.wrapper,NativeHttp.headers(candidate.page));Document page=Jsoup.parse(html,candidate.wrapper);
         for(Element frame:page.select("iframe[src]")){
             String target=frame.absUrl("src"),actual=kind(target);
-            if(!actual.isEmpty())return new Candidate(actual,candidate.page,candidate.wrapper,candidate.label,target);
+            if(!actual.isEmpty())return new Candidate(actual,candidate.page,candidate.wrapper,candidate.label,target,candidate.expected);
             if(catalogUrl(target)&&target.contains("trhide=1")){
                 Matcher m=Pattern.compile("[?&]tid=([a-fA-F0-9]+)").matcher(target);
                 if(m.find()){
                     String hex=new StringBuilder(m.group(1)).reverse().toString();if((hex.length()&1)!=0)continue;
                     byte[] bytes=new byte[hex.length()/2];for(int i=0;i<bytes.length;i++)bytes[i]=(byte)Integer.parseInt(hex.substring(i*2,i*2+2),16);
                     String decoded=new String(bytes,StandardCharsets.UTF_8);actual=kind(decoded);
-                    if(!actual.isEmpty())return new Candidate(actual,candidate.page,candidate.wrapper,candidate.label,decoded);
+                    if(!actual.isEmpty())return new Candidate(actual,candidate.page,candidate.wrapper,candidate.label,decoded,candidate.expected);
                 }
             }
         }
