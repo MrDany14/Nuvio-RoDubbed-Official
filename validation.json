@@ -1,9 +1,9 @@
 {
-  "version": 3,
-  "sha256": "e982dc49ad087104f1b918f2f05598e568012e7c692986d4723fc01559bdb2dc",
-  "bytes": 29363,
+  "version": 4,
+  "sha256": "e7cddcf876ed14bb269f9f99322ba2595c52bd7f9de180e6ad056e161cde0783",
+  "bytes": 31339,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
-  "unitTests": "PASS: original host/language references, Doza identity checks, Desene parent premiere year, recommendation isolation, exact episode syntax/number, short original movie alias safeguards",
+  "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors",
   "runs": [
     {
       "title": "Avatar",
@@ -93,5 +93,15 @@
   "previous50Regression": {
     "passed": 50,
     "total": 50
+  },
+  "dozaExpandedAddressAudit": {
+    "passed": 50,
+    "total": 50,
+    "movies": 25,
+    "series": 25,
+    "wrong": 0,
+    "seed": 3950667988,
+    "streamsResolved": false,
+    "report": "doza-expanded-audit.json"
   }
 }

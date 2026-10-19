@@ -1,0 +1,655 @@
+{
+  "seed": 3950667988,
+  "fixtures": [
+    {
+      "type": "movie",
+      "websiteTitle": "Cracovia Freestyle",
+      "expectedPage": "https://www.dozaanimata.net/cracovia-freestyle-2023-dublat-in-romana/",
+      "data": {
+        "tmdbID": 1152797,
+        "movieName": "Cracovia Freestyle",
+        "localTitle": "Cracovia Freestyle",
+        "originalTitle": "Freestyle",
+        "releaseYear": 2023
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Snicii",
+      "expectedPage": "https://www.dozaanimata.net/snicii-2025-dublat-in-romana/",
+      "data": {
+        "tmdbID": 1497036,
+        "movieName": "Snicii",
+        "localTitle": "Snicii",
+        "originalTitle": "Dr. Seuss's The Sneetches",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Cum să Ascunzi un Câine în New York",
+      "expectedPage": "https://www.dozaanimata.net/cum-sa-ascunzi-un-caine-in-new-york-2004-dublat-in-romana/",
+      "data": {
+        "tmdbID": 34672,
+        "movieName": "Chestnut: Hero of Central Park",
+        "localTitle": "Chestnut: Hero of Central Park",
+        "originalTitle": "Chestnut: Hero of Central Park",
+        "releaseYear": 2004
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Scrooge: Poveste de Crăciun",
+      "expectedPage": "https://www.dozaanimata.net/scrooge-poveste-de-craciun-2022-dublat-in-romana/",
+      "data": {
+        "tmdbID": 1001865,
+        "movieName": "Scrooge: O colindă de Crăciun",
+        "localTitle": "Scrooge: O colindă de Crăciun",
+        "originalTitle": "Scrooge: A Christmas Carol",
+        "releaseYear": 2022
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Tom și Jerry: Pe Mustața Mea",
+      "expectedPage": "https://www.dozaanimata.net/tom-si-jerry-pe-mustata-mea-2006-dublat-in-romana/",
+      "data": {
+        "tmdbID": 60293,
+        "movieName": "Tom și Jerry: Pe mustața mea!",
+        "localTitle": "Tom și Jerry: Pe mustața mea!",
+        "originalTitle": "Tom and Jerry: Shiver Me Whiskers",
+        "releaseYear": 2006
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Aventură în Natură 3: Marea Întrecere",
+      "expectedPage": "https://www.dozaanimata.net/aventura-in-natura-3-marea-intrecere-2024-dublat-in-romana/",
+      "data": {
+        "tmdbID": 1239870,
+        "movieName": "Большое путешествие. Вокруг света",
+        "localTitle": "Большое путешествие. Вокруг света",
+        "originalTitle": "Большое путешествие. Вокруг света",
+        "releaseYear": 2024
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Un Crăciun de Groază",
+      "expectedPage": "https://www.dozaanimata.net/un-craciun-de-groaza-2012-dublat-in-romana/",
+      "data": {
+        "tmdbID": 150776,
+        "movieName": "Abominable Christmas",
+        "localTitle": "Abominable Christmas",
+        "originalTitle": "Abominable Christmas",
+        "releaseYear": 2012
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Patrula Cățelușilor: Salvare cu Reacție",
+      "expectedPage": "https://www.dozaanimata.net/patrula-catelusilor-salvare-cu-reactie-2020-dublat-in-romana/",
+      "data": {
+        "tmdbID": 743439,
+        "movieName": "Patrula cățelușilor: Salvare cu reacție",
+        "localTitle": "Patrula cățelușilor: Salvare cu reacție",
+        "originalTitle": "PAW Patrol: Jet to the Rescue",
+        "releaseYear": 2020
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Ne-am pierdut Omul",
+      "expectedPage": "https://www.dozaanimata.net/ne-am-pierdut-omul-2023-dublat-in-romana/",
+      "data": {
+        "tmdbID": 973883,
+        "movieName": "Ne-am pierdut omul",
+        "localTitle": "Ne-am pierdut omul",
+        "originalTitle": "We Lost Our Human",
+        "releaseYear": 2023
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Dumbo",
+      "expectedPage": "https://www.dozaanimata.net/dumbo-1941-dublat-in-romana/",
+      "data": {
+        "tmdbID": 11360,
+        "movieName": "Dumbo",
+        "localTitle": "Dumbo",
+        "originalTitle": "Dumbo",
+        "releaseYear": 1941
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Cartea dragonilor",
+      "expectedPage": "https://www.dozaanimata.net/cartea-dragonilor-2011-dublat-in-romana/",
+      "data": {
+        "tmdbID": 79379,
+        "movieName": "Book of Dragons",
+        "localTitle": "Book of Dragons",
+        "originalTitle": "Book of Dragons",
+        "releaseYear": 2011
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Dog Man",
+      "expectedPage": "https://www.dozaanimata.net/dog-man-2025-dublat-in-romana/",
+      "data": {
+        "tmdbID": 774370,
+        "movieName": "Dog Man",
+        "localTitle": "Dog Man",
+        "originalTitle": "Dog Man",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Supermonstruleții Salvează Crăciunul",
+      "expectedPage": "https://www.dozaanimata.net/supermonstruletii-salveaza-craciunul-2019-dublat-in-romana/",
+      "data": {
+        "tmdbID": 643533,
+        "movieName": "Super Monsters Save Christmas",
+        "localTitle": "Super Monsters Save Christmas",
+        "originalTitle": "Super Monsters Save Christmas",
+        "releaseYear": 2019
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Scooby-Doo în Nopțile Arabe",
+      "expectedPage": "https://www.dozaanimata.net/scooby-doo-in-noptile-arabe-1994-dublat-in-romana/",
+      "data": {
+        "tmdbID": 13351,
+        "movieName": "Scooby-Doo în Nopțile Arabe",
+        "localTitle": "Scooby-Doo în Nopțile Arabe",
+        "originalTitle": "Scooby-Doo! in Arabian Nights",
+        "releaseYear": 1994
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Dragoste la Pătrat pentru Totdeauna",
+      "expectedPage": "https://www.dozaanimata.net/dragoste-la-patrat-pentru-totdeauna-2023-dublat-in-romana/",
+      "data": {
+        "tmdbID": 1150215,
+        "movieName": "Miłość do kwadratu bez granic",
+        "localTitle": "Miłość do kwadratu bez granic",
+        "originalTitle": "Miłość do kwadratu bez granic",
+        "releaseYear": 2023
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Lista Moșului",
+      "expectedPage": "https://www.dozaanimata.net/lista-mosului-2013-dublat-in-romana/",
+      "data": {
+        "tmdbID": 242682,
+        "movieName": "The Naughty List",
+        "localTitle": "The Naughty List",
+        "originalTitle": "The Naughty List",
+        "releaseYear": 2013
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Looney Looney Looney: Filmul lui Bugs Bunny",
+      "expectedPage": "https://www.dozaanimata.net/looney-looney-looney-filmul-lui-bugs-bunny-1981-dublat-in-romana/",
+      "data": {
+        "tmdbID": 41394,
+        "movieName": "Looney, Looney, Looney Bugs Bunny Film",
+        "localTitle": "Looney, Looney, Looney Bugs Bunny Film",
+        "originalTitle": "The Looney, Looney, Looney Bugs Bunny Movie",
+        "releaseYear": 1981
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Micul meu Ponei: Fetele Equestriei – Caruselul Prieteniei",
+      "expectedPage": "https://www.dozaanimata.net/micul-meu-ponei-fetele-equestriei-caruselul-prieteniei-2018-dublat-in-romana/",
+      "data": {
+        "tmdbID": 537170,
+        "movieName": "Micul Meu Ponei: Fetele Equestriei – Caruselul Prieteniei",
+        "localTitle": "Micul Meu Ponei: Fetele Equestriei – Caruselul Prieteniei",
+        "originalTitle": "My Little Pony: Equestria Girls - Rollercoaster of Friendship",
+        "releaseYear": 2018
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "The Legend of Ochi",
+      "expectedPage": "https://www.dozaanimata.net/the-legend-of-ochi-2025-dublat-in-romana/",
+      "data": {
+        "tmdbID": 896536,
+        "movieName": "Legenda lui Ochi",
+        "localTitle": "Legenda lui Ochi",
+        "originalTitle": "The Legend of Ochi",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Lumea Miraculoasă: Tokyo Forța Stelară",
+      "expectedPage": "https://www.dozaanimata.net/lumea-miraculoasa-tokyo-forta-stelara-2025-dublat-in-romana/",
+      "data": {
+        "tmdbID": 1147411,
+        "movieName": "Lumea Miraculoasă, Tokyo: Forța Stelară",
+        "localTitle": "Lumea Miraculoasă, Tokyo: Forța Stelară",
+        "originalTitle": "Miraculous World : Tokyo, Stellar Force",
+        "releaseYear": 2025
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Înapoi în Viitor",
+      "expectedPage": "https://www.dozaanimata.net/inapoi-in-viitor-1985-dublat-in-romana/",
+      "data": {
+        "tmdbID": 105,
+        "movieName": "Înapoi în viitor",
+        "localTitle": "Înapoi în viitor",
+        "originalTitle": "Back to the Future",
+        "releaseYear": 1985
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Scooby-Doo merge la Hollywood",
+      "expectedPage": "https://www.dozaanimata.net/scooby-doo-merge-la-hollywood-1979-dublat-in-romana/",
+      "data": {
+        "tmdbID": 36972,
+        "movieName": "Scooby-Doo merge la Hollywood",
+        "localTitle": "Scooby-Doo merge la Hollywood",
+        "originalTitle": "Scooby Goes Hollywood",
+        "releaseYear": 1979
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Epoca de Gheață 4: Continente în Derivă",
+      "expectedPage": "https://www.dozaanimata.net/epoca-de-gheata-4-continente-in-deriva-2012-dublat-in-romana/",
+      "data": {
+        "tmdbID": 57800,
+        "movieName": "Epoca de gheață 4: Continente în derivă",
+        "localTitle": "Epoca de gheață 4: Continente în derivă",
+        "originalTitle": "Ice Age: Continental Drift",
+        "releaseYear": 2012
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Îmblânzirea Scorpiei",
+      "expectedPage": "https://www.dozaanimata.net/imblanzirea-scorpiei-2022-dublat-in-romana/",
+      "data": {
+        "tmdbID": 953233,
+        "movieName": "Poskromienie złośnicy",
+        "localTitle": "Poskromienie złośnicy",
+        "originalTitle": "Poskromienie złośnicy",
+        "releaseYear": 2022
+      }
+    },
+    {
+      "type": "movie",
+      "websiteTitle": "Wallace și Gromit: Răzbunare Împănată",
+      "expectedPage": "https://www.dozaanimata.net/wallace-si-gromit-razbunare-impanata-2024-dublat-in-romana/",
+      "data": {
+        "tmdbID": 929204,
+        "movieName": "Wallace și Gromit: Răzbunare împănată",
+        "localTitle": "Wallace și Gromit: Răzbunare împănată",
+        "originalTitle": "Wallace & Gromit: Vengeance Most Fowl",
+        "releaseYear": 2024
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Haideți Tineri Titani",
+      "expectedPage": "https://www.dozaanimata.net/episode/haideti-tineri-titani-sezonul-1-episodul-4-mana-de-caine/",
+      "data": {
+        "tmdbID": 45140,
+        "movieName": "Haideți, Tineri Titani!",
+        "localTitle": "Haideți, Tineri Titani!",
+        "originalTitle": "Teen Titans Go!",
+        "releaseYear": 2013,
+        "season": 1,
+        "episode": 4
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Hero Inside",
+      "expectedPage": "https://www.dozaanimata.net/episode/hero-inside-sezonul-2-episodul-4-cel-bun-cel-rau-cel-jeleu/",
+      "data": {
+        "tmdbID": 238841,
+        "movieName": "Hero Inside",
+        "localTitle": "Hero Inside",
+        "originalTitle": "히어로 인사이드",
+        "releaseYear": 2023,
+        "season": 2,
+        "episode": 4
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Chop Socky Chooks",
+      "expectedPage": "https://www.dozaanimata.net/episode/chop-socky-chooks-sezonul-1-episodul-22-primire-de-gandaci/",
+      "data": {
+        "tmdbID": 6682,
+        "movieName": "Chop Socky Chooks",
+        "localTitle": "Chop Socky Chooks",
+        "originalTitle": "Chop Socky Chooks",
+        "releaseYear": 2008,
+        "season": 1,
+        "episode": 22
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Cronicile Xiaolin",
+      "expectedPage": "https://www.dozaanimata.net/episode/cronicile-xiaolin-sezonul-1-episodul-23-din-nou-in-carne-si-oase/",
+      "data": {
+        "tmdbID": 60306,
+        "movieName": "Cronicile Xiaolin",
+        "localTitle": "Cronicile Xiaolin",
+        "originalTitle": "Xiaolin Chronicles",
+        "releaseYear": 2013,
+        "season": 1,
+        "episode": 23
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Minunata și Năstrușnica Lume a lui Gumball",
+      "expectedPage": "https://www.dozaanimata.net/episode/minunata-si-nastrusnica-lume-a-lui-gumball-sezonul-1-episodul-18-portretul/",
+      "data": {
+        "tmdbID": 291904,
+        "movieName": "Năstrușnica lume a lui Gumball",
+        "localTitle": "Năstrușnica lume a lui Gumball",
+        "originalTitle": "The Wonderfully Weird World of Gumball",
+        "releaseYear": 2025,
+        "season": 1,
+        "episode": 18
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Să-nceapă Aventura",
+      "expectedPage": "https://www.dozaanimata.net/episode/sa-nceapa-aventura-sezonul-6-episodul-22-racirea/",
+      "data": {
+        "tmdbID": 15260,
+        "movieName": "Să-nceapă aventura",
+        "localTitle": "Să-nceapă aventura",
+        "originalTitle": "Adventure Time",
+        "releaseYear": 2010,
+        "season": 6,
+        "episode": 22
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "LEGO Monkie Kid",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-monkie-kid-sezonul-3-episodul-2-stra-dragonul-din-est/",
+      "data": {
+        "tmdbID": 106251,
+        "movieName": "Monkie Kid",
+        "localTitle": "Monkie Kid",
+        "originalTitle": "乐高悟空小侠",
+        "releaseYear": 2020,
+        "season": 3,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Laboratorul lui Dexter",
+      "expectedPage": "https://www.dozaanimata.net/episode/laboratorul-lui-dexter-sezonul-2-episodul-4-2-koosy-in-libertate/",
+      "data": {
+        "tmdbID": 4229,
+        "movieName": "Laboratorul lui Dexter",
+        "localTitle": "Laboratorul lui Dexter",
+        "originalTitle": "Dexter's Laboratory",
+        "releaseYear": 1996,
+        "season": 2,
+        "episode": 10
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Turneul Mondial al Dramei Totale",
+      "expectedPage": "https://www.dozaanimata.net/episode/turneul-mondial-al-dramei-totale-sezonul-1-episodul-2-ca-un-egiptean-partea-ii/",
+      "data": {
+        "tmdbID": 19123,
+        "movieName": "Turneul Mondial al Dramei Totale",
+        "localTitle": "Turneul Mondial al Dramei Totale",
+        "originalTitle": "Total Drama World Tour",
+        "releaseYear": 2010,
+        "season": 1,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Drama Totală: Insula Pacatel",
+      "expectedPage": "https://www.dozaanimata.net/episode/drama-totala-insula-pacatel-sezonul-1-episodul-3-familia-nu-e-totul/",
+      "data": {
+        "tmdbID": 296168,
+        "movieName": "Total Drama Pahkitew Island",
+        "localTitle": "Total Drama Pahkitew Island",
+        "originalTitle": "Total Drama Pahkitew Island",
+        "releaseYear": 2014,
+        "season": 1,
+        "episode": 3
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Trenul Infinitului",
+      "expectedPage": "https://www.dozaanimata.net/episode/trenul-infinitului-sezonul-1-episodul-4-vagonul-de-cristal/",
+      "data": {
+        "tmdbID": 91425,
+        "movieName": "Trenul infinitului",
+        "localTitle": "Trenul infinitului",
+        "originalTitle": "Infinity Train",
+        "releaseYear": 2019,
+        "season": 1,
+        "episode": 4
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Steven Universe Future",
+      "expectedPage": "https://www.dozaanimata.net/episode/steven-universe-future-episodul-1-mica-scoala-de-acasa/",
+      "data": {
+        "tmdbID": 94280,
+        "movieName": "Steven Univers: Viitor",
+        "localTitle": "Steven Univers: Viitor",
+        "originalTitle": "Steven Universe Future",
+        "releaseYear": 2019,
+        "season": 1,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Jentry Chau Împotriva Infernului",
+      "expectedPage": "https://www.dozaanimata.net/episode/jentry-chau-impotriva-infernului-sezonul-1-episodul-6-in-dragoste-si-n-razboi/",
+      "data": {
+        "tmdbID": 223447,
+        "movieName": "Jentry Chau împotriva infernului",
+        "localTitle": "Jentry Chau împotriva infernului",
+        "originalTitle": "Jentry Chau vs the Underworld",
+        "releaseYear": 2024,
+        "season": 1,
+        "episode": 6
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Academia Unicornilor",
+      "expectedPage": "https://www.dozaanimata.net/episode/academia-unicornilor-sezonul-2-episodul-10-grimoria-reapare/",
+      "data": {
+        "tmdbID": 221504,
+        "movieName": "Academia Unicornilor",
+        "localTitle": "Academia Unicornilor",
+        "originalTitle": "Unicorn Academy",
+        "releaseYear": 2023,
+        "season": 2,
+        "episode": 10
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Minecraft: Modul Narativ",
+      "expectedPage": "https://www.dozaanimata.net/episode/minecraft-modul-narativ-sezonul-1-episodul-2-reunire-necesara/",
+      "data": {
+        "tmdbID": 98545,
+        "movieName": "Minecraft: Modul narativ",
+        "localTitle": "Minecraft: Modul narativ",
+        "originalTitle": "Minecraft: Story Mode",
+        "releaseYear": 2018,
+        "season": 1,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Micul meu Ponei: Prietenia este Magică",
+      "expectedPage": "https://www.dozaanimata.net/episode/micul-meu-ponei-prietenia-este-magica-sezonul-8-episodul-9-competitia/",
+      "data": {
+        "tmdbID": 33765,
+        "movieName": "Micul meu Ponei: Prietenia este magică",
+        "localTitle": "Micul meu Ponei: Prietenia este magică",
+        "originalTitle": "My Little Pony: Friendship Is Magic",
+        "releaseYear": 2010,
+        "season": 8,
+        "episode": 9
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Armura de Jad",
+      "expectedPage": "https://www.dozaanimata.net/episode/armura-de-jad-sezonul-1-episodul-5-basticonul-rebel/",
+      "data": {
+        "tmdbID": 128023,
+        "movieName": "Armura de Jad",
+        "localTitle": "Armura de Jad",
+        "originalTitle": "L'armure de Jade",
+        "releaseYear": 2022,
+        "season": 1,
+        "episode": 5
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Jurassic World: Teoria Haosului",
+      "expectedPage": "https://www.dozaanimata.net/episode/jurassic-world-teoria-haosului-sezonul-2-episodul-1-asteapta-te-la-ce-e-mai-rau/",
+      "data": {
+        "tmdbID": 237512,
+        "movieName": "Jurassic World: Teoria haosului",
+        "localTitle": "Jurassic World: Teoria haosului",
+        "originalTitle": "Jurassic World: Chaos Theory",
+        "releaseYear": 2024,
+        "season": 2,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "LEGO: Cavalerii Nexo",
+      "expectedPage": "https://www.dozaanimata.net/episode/lego-cavalerii-nexo-sezonul-1-episodul-2-cartea-monstrilor-partea-ii/",
+      "data": {
+        "tmdbID": 65858,
+        "movieName": "Lego: Cavalerii Nexo",
+        "localTitle": "Lego: Cavalerii Nexo",
+        "originalTitle": "LEGO Nexo Knights",
+        "releaseYear": 2015,
+        "season": 1,
+        "episode": 2
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Looniversitatea Micuților",
+      "expectedPage": "https://www.dozaanimata.net/episode/looniversitatea-micutilor-sezonul-1-episodul-8-souffle-fata/",
+      "data": {
+        "tmdbID": 155779,
+        "movieName": "Tiny Toons Looniversity",
+        "localTitle": "Tiny Toons Looniversity",
+        "originalTitle": "Tiny Toons Looniversity",
+        "releaseYear": 2023,
+        "season": 1,
+        "episode": 8
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Ninjago: Ascensiunea Dragonilor",
+      "expectedPage": "https://www.dozaanimata.net/episode/ninjago-ascensiunea-dragonilor-sezonul-3-episodul-14-sicriul-cu-oase/",
+      "data": {
+        "tmdbID": 212989,
+        "movieName": "Ninjago: Ascensiunea dragonilor",
+        "localTitle": "Ninjago: Ascensiunea dragonilor",
+        "originalTitle": "LEGO Ninjago: Dragons Rising",
+        "releaseYear": 2023,
+        "season": 3,
+        "episode": 14
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Regele Lup",
+      "expectedPage": "https://www.dozaanimata.net/episode/regele-lup-sezonul-1-episodul-3-fiara-in-cusca/",
+      "data": {
+        "tmdbID": 231727,
+        "movieName": "Regele Lup",
+        "localTitle": "Regele Lup",
+        "originalTitle": "Wolf King",
+        "releaseYear": 2025,
+        "season": 1,
+        "episode": 3
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Voltron: Apărătorul Legendar",
+      "expectedPage": "https://www.dozaanimata.net/episode/voltron-aparatorul-legendar-sezonul-2-episodul-1-de-la-un-capat-la-altul-al-universului/",
+      "data": {
+        "tmdbID": 66558,
+        "movieName": "Voltron : Apărătorul Legendar",
+        "localTitle": "Voltron : Apărătorul Legendar",
+        "originalTitle": "Voltron: Legendary Defender",
+        "releaseYear": 2016,
+        "season": 2,
+        "episode": 1
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Scooby-Doo și Echipa Misterelor",
+      "expectedPage": "https://www.dozaanimata.net/episode/scooby-doo-si-echipa-misterelor-sezonul-1-episodul-17-evadarea-din-conacul-misterios/",
+      "data": {
+        "tmdbID": 18123,
+        "movieName": "Scooby-Doo și Echipa Misterelor",
+        "localTitle": "Scooby-Doo și Echipa Misterelor",
+        "originalTitle": "Scooby-Doo! Mystery Incorporated",
+        "releaseYear": 2010,
+        "season": 1,
+        "episode": 17
+      }
+    },
+    {
+      "type": "tv",
+      "websiteTitle": "Maya și cei Trei",
+      "expectedPage": "https://www.dozaanimata.net/episode/maya-si-cei-trei-sezonul-1-episodul-3-primul-luptator/",
+      "data": {
+        "tmdbID": 132141,
+        "movieName": "Maya y los tres",
+        "localTitle": "Maya y los tres",
+        "originalTitle": "Maya y los tres",
+        "releaseYear": 2021,
+        "season": 1,
+        "episode": 3
+      }
+    }
+  ]
+}

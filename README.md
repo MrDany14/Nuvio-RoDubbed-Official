@@ -22,6 +22,10 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Checks the playlist and an initial media segment before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
 - Netu and Playmogo/DoodStream are deferred and excluded. Player4me is not supported. DeseneleDublate integration is planned, not included.
 
+## Version 4: DozaAnimata address fixes
+
+A further **25 movies and 25 distinct series passed 50/50 address checks on Android TV**, with no overlap with the earlier Doza sample. The previous 14 Doza cases also pass. Original-title tags, verified article artwork, legacy episode URLs and guarded broadcast-segment mapping improve title discovery. No streams were resolved in this audit. See the [50-title Doza report](doza-expanded-audit.md).
+
 ## Expanded verification
 
 A further **50 movies and 50 distinct series** passed Android address checks: 99 exact/canonical matches and 1 verified duplicate page. None overlap the previous 50. The earlier 50 DeseneFaine cases and 14 Doza cases also pass. Legacy URL spellings and independently verified premiere-year differences are now handled. See the [100-title report](desenefaine-expanded-audit.md). No streams were resolved during these audits.

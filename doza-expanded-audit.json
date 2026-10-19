@@ -1,0 +1,882 @@
+{
+  "date": "2026-10-19",
+  "version": 4,
+  "environment": "Android TV 14 ART using the official Nuvio TV 1.0.0 APK classes",
+  "seed": 3950667988,
+  "poolCounts": {
+    "movie": 225,
+    "tv": 54
+  },
+  "method": "25 movies and 25 distinct series, with zero TMDB identity overlap with the earlier 14 Doza cases. Independent TMDB title/year/episode inputs checked against website title and episode pages. No player hosts, stream wrappers, playlists or media requested.",
+  "eligibilityExclusions": [
+    {
+      "title": "Scooby-Doo și Vedetele: Olimpiada Râsului",
+      "url": "https://www.dozaanimata.net/scooby-doo-si-vedetele-olimpiada-rasului-1977-dublat-in-romana/",
+      "reason": "Site categorizes a TV-series compilation as a movie; no independently identified TMDB movie"
+    },
+    {
+      "title": "Bakugan: Evoluții",
+      "url": "https://www.dozaanimata.net/series/bakugan-evolutii-2022-dublat-in-romana/",
+      "reason": "Separate page for season 4 of Bakugan, not a distinct TMDB series"
+    },
+    {
+      "title": "Bakugan Armored Alliance",
+      "url": "https://www.dozaanimata.net/series/bakugan-armored-alliance-2020-dublat-in-romana/",
+      "reason": "Separate page for season 2 of the same Bakugan series, not a distinct TMDB series"
+    }
+  ],
+  "fixtureCorrections": [
+    {
+      "index": 3,
+      "reason": "Scrooge artwork/director verification identified the Netflix film TMDB 1001865 rather than the unrelated same-year short."
+    },
+    {
+      "index": 32,
+      "reason": "TMDB S2E10 The Koos is Loose is Doza broadcast episode 4 segment 2, not broadcast episode 10 segment 3."
+    }
+  ],
+  "final": {
+    "passed": 50,
+    "total": 50,
+    "wrong": 0,
+    "movies": 25,
+    "series": 25
+  },
+  "priorDozaRegression": {
+    "passed": 14,
+    "total": 14
+  },
+  "addressLookupMs": {
+    "median": 908,
+    "p95": 2706,
+    "max": 4457,
+    "note": "Emulator address lookup timings only; not a playback or physical Mi Box speed benchmark."
+  },
+  "cases": [
+    {
+      "title": "Cracovia Freestyle",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/cracovia-freestyle-2023-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/cracovia-freestyle-2023-dublat-in-romana/",
+      "pass": true,
+      "ms": 480,
+      "tmdbId": 1152797,
+      "tmdbTitle": "Cracovia Freestyle",
+      "tmdbYear": 2023,
+      "websiteYear": 2023,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Snicii",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/snicii-2025-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/snicii-2025-dublat-in-romana/",
+      "pass": true,
+      "ms": 351,
+      "tmdbId": 1497036,
+      "tmdbTitle": "Snicii",
+      "tmdbYear": 2025,
+      "websiteYear": 2025,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Cum să Ascunzi un Câine în New York",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/cum-sa-ascunzi-un-caine-in-new-york-2004-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/cum-sa-ascunzi-un-caine-in-new-york-2004-dublat-in-romana/",
+      "pass": true,
+      "ms": 858,
+      "tmdbId": 34672,
+      "tmdbTitle": "Chestnut: Hero of Central Park",
+      "tmdbYear": 2004,
+      "websiteYear": 2004,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Scrooge: Poveste de Crăciun",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/scrooge-poveste-de-craciun-2022-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/scrooge-poveste-de-craciun-2022-dublat-in-romana/",
+      "pass": true,
+      "ms": 820,
+      "tmdbId": 1001865,
+      "tmdbTitle": "Scrooge: O colindă de Crăciun",
+      "tmdbYear": 2022,
+      "websiteYear": 2022,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Tom și Jerry: Pe Mustața Mea",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/tom-si-jerry-pe-mustata-mea-2006-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/tom-si-jerry-pe-mustata-mea-2006-dublat-in-romana/",
+      "pass": true,
+      "ms": 347,
+      "tmdbId": 60293,
+      "tmdbTitle": "Tom și Jerry: Pe mustața mea!",
+      "tmdbYear": 2006,
+      "websiteYear": 2006,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Aventură în Natură 3: Marea Întrecere",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/aventura-in-natura-3-marea-intrecere-2024-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/aventura-in-natura-3-marea-intrecere-2024-dublat-in-romana/",
+      "pass": true,
+      "ms": 579,
+      "tmdbId": 1239870,
+      "tmdbTitle": "Большое путешествие. Вокруг света",
+      "tmdbYear": 2024,
+      "websiteYear": 2024,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Un Crăciun de Groază",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/un-craciun-de-groaza-2012-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/un-craciun-de-groaza-2012-dublat-in-romana/",
+      "pass": true,
+      "ms": 629,
+      "tmdbId": 150776,
+      "tmdbTitle": "Abominable Christmas",
+      "tmdbYear": 2012,
+      "websiteYear": 2012,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Patrula Cățelușilor: Salvare cu Reacție",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/patrula-catelusilor-salvare-cu-reactie-2020-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/patrula-catelusilor-salvare-cu-reactie-2020-dublat-in-romana/",
+      "pass": true,
+      "ms": 358,
+      "tmdbId": 743439,
+      "tmdbTitle": "Patrula cățelușilor: Salvare cu reacție",
+      "tmdbYear": 2020,
+      "websiteYear": 2020,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Ne-am pierdut Omul",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/ne-am-pierdut-omul-2023-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/ne-am-pierdut-omul-2023-dublat-in-romana/",
+      "pass": true,
+      "ms": 908,
+      "tmdbId": 973883,
+      "tmdbTitle": "Ne-am pierdut omul",
+      "tmdbYear": 2023,
+      "websiteYear": 2023,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Dumbo",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/dumbo-1941-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/dumbo-1941-dublat-in-romana/",
+      "pass": true,
+      "ms": 388,
+      "tmdbId": 11360,
+      "tmdbTitle": "Dumbo",
+      "tmdbYear": 1941,
+      "websiteYear": 1941,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Cartea dragonilor",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/cartea-dragonilor-2011-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/cartea-dragonilor-2011-dublat-in-romana/",
+      "pass": true,
+      "ms": 659,
+      "tmdbId": 79379,
+      "tmdbTitle": "Book of Dragons",
+      "tmdbYear": 2011,
+      "websiteYear": 2011,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Dog Man",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/dog-man-2025-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/dog-man-2025-dublat-in-romana/",
+      "pass": true,
+      "ms": 422,
+      "tmdbId": 774370,
+      "tmdbTitle": "Dog Man",
+      "tmdbYear": 2025,
+      "websiteYear": 2025,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Supermonstruleții Salvează Crăciunul",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/supermonstruletii-salveaza-craciunul-2019-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/supermonstruletii-salveaza-craciunul-2019-dublat-in-romana/",
+      "pass": true,
+      "ms": 760,
+      "tmdbId": 643533,
+      "tmdbTitle": "Super Monsters Save Christmas",
+      "tmdbYear": 2019,
+      "websiteYear": 2019,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Scooby-Doo în Nopțile Arabe",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/scooby-doo-in-noptile-arabe-1994-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/scooby-doo-in-noptile-arabe-1994-dublat-in-romana/",
+      "pass": true,
+      "ms": 4457,
+      "tmdbId": 13351,
+      "tmdbTitle": "Scooby-Doo în Nopțile Arabe",
+      "tmdbYear": 1994,
+      "websiteYear": 1994,
+      "identityEvidence": "Independent title/artwork-name search and release year"
+    },
+    {
+      "title": "Dragoste la Pătrat pentru Totdeauna",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/dragoste-la-patrat-pentru-totdeauna-2023-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/dragoste-la-patrat-pentru-totdeauna-2023-dublat-in-romana/",
+      "pass": true,
+      "ms": 701,
+      "tmdbId": 1150215,
+      "tmdbTitle": "Miłość do kwadratu bez granic",
+      "tmdbYear": 2023,
+      "websiteYear": 2023,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Lista Moșului",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/lista-mosului-2013-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/lista-mosului-2013-dublat-in-romana/",
+      "pass": true,
+      "ms": 697,
+      "tmdbId": 242682,
+      "tmdbTitle": "The Naughty List",
+      "tmdbYear": 2013,
+      "websiteYear": 2013,
+      "identityEvidence": "Independent title/artwork-name search and release year"
+    },
+    {
+      "title": "Looney Looney Looney: Filmul lui Bugs Bunny",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/looney-looney-looney-filmul-lui-bugs-bunny-1981-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/looney-looney-looney-filmul-lui-bugs-bunny-1981-dublat-in-romana/",
+      "pass": true,
+      "ms": 1154,
+      "tmdbId": 41394,
+      "tmdbTitle": "Looney, Looney, Looney Bugs Bunny Film",
+      "tmdbYear": 1981,
+      "websiteYear": 1981,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Micul meu Ponei: Fetele Equestriei – Caruselul Prieteniei",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/micul-meu-ponei-fetele-equestriei-caruselul-prieteniei-2018-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/micul-meu-ponei-fetele-equestriei-caruselul-prieteniei-2018-dublat-in-romana/",
+      "pass": true,
+      "ms": 351,
+      "tmdbId": 537170,
+      "tmdbTitle": "Micul Meu Ponei: Fetele Equestriei – Caruselul Prieteniei",
+      "tmdbYear": 2018,
+      "websiteYear": 2018,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "The Legend of Ochi",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/the-legend-of-ochi-2025-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/the-legend-of-ochi-2025-dublat-in-romana/",
+      "pass": true,
+      "ms": 1004,
+      "tmdbId": 896536,
+      "tmdbTitle": "Legenda lui Ochi",
+      "tmdbYear": 2025,
+      "websiteYear": 2025,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Lumea Miraculoasă: Tokyo Forța Stelară",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/lumea-miraculoasa-tokyo-forta-stelara-2025-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/lumea-miraculoasa-tokyo-forta-stelara-2025-dublat-in-romana/",
+      "pass": true,
+      "ms": 353,
+      "tmdbId": 1147411,
+      "tmdbTitle": "Lumea Miraculoasă, Tokyo: Forța Stelară",
+      "tmdbYear": 2025,
+      "websiteYear": 2025,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Înapoi în Viitor",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/inapoi-in-viitor-1985-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/inapoi-in-viitor-1985-dublat-in-romana/",
+      "pass": true,
+      "ms": 415,
+      "tmdbId": 105,
+      "tmdbTitle": "Înapoi în viitor",
+      "tmdbYear": 1985,
+      "websiteYear": 1985,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Scooby-Doo merge la Hollywood",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/scooby-doo-merge-la-hollywood-1979-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/scooby-doo-merge-la-hollywood-1979-dublat-in-romana/",
+      "pass": true,
+      "ms": 3035,
+      "tmdbId": 36972,
+      "tmdbTitle": "Scooby-Doo merge la Hollywood",
+      "tmdbYear": 1979,
+      "websiteYear": 1979,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Epoca de Gheață 4: Continente în Derivă",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/epoca-de-gheata-4-continente-in-deriva-2012-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/epoca-de-gheata-4-continente-in-deriva-2012-dublat-in-romana/",
+      "pass": true,
+      "ms": 426,
+      "tmdbId": 57800,
+      "tmdbTitle": "Epoca de gheață 4: Continente în derivă",
+      "tmdbYear": 2012,
+      "websiteYear": 2012,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Îmblânzirea Scorpiei",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/imblanzirea-scorpiei-2022-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/imblanzirea-scorpiei-2022-dublat-in-romana/",
+      "pass": true,
+      "ms": 698,
+      "tmdbId": 953233,
+      "tmdbTitle": "Poskromienie złośnicy",
+      "tmdbYear": 2022,
+      "websiteYear": 2022,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Wallace și Gromit: Răzbunare Împănată",
+      "type": "movie",
+      "expected": "https://www.dozaanimata.net/wallace-si-gromit-razbunare-impanata-2024-dublat-in-romana/",
+      "actual": "https://www.dozaanimata.net/wallace-si-gromit-razbunare-impanata-2024-dublat-in-romana/",
+      "pass": true,
+      "ms": 341,
+      "tmdbId": 929204,
+      "tmdbTitle": "Wallace și Gromit: Răzbunare împănată",
+      "tmdbYear": 2024,
+      "websiteYear": 2024,
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Haideți Tineri Titani",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/haideti-tineri-titani-sezonul-1-episodul-4-mana-de-caine/",
+      "actual": "https://www.dozaanimata.net/episode/haideti-tineri-titani-sezonul-1-episodul-4-mana-de-caine/",
+      "pass": true,
+      "ms": 979,
+      "tmdbId": 45140,
+      "tmdbTitle": "Haideți, Tineri Titani!",
+      "tmdbYear": 2013,
+      "websiteYear": 2013,
+      "season": 1,
+      "episode": 4,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 4,
+        "name": "Dog Hand"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Hero Inside",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/hero-inside-sezonul-2-episodul-4-cel-bun-cel-rau-cel-jeleu/",
+      "actual": "https://www.dozaanimata.net/episode/hero-inside-sezonul-2-episodul-4-cel-bun-cel-rau-cel-jeleu/",
+      "pass": true,
+      "ms": 818,
+      "tmdbId": 238841,
+      "tmdbTitle": "Hero Inside",
+      "tmdbYear": 2023,
+      "websiteYear": 2023,
+      "season": 2,
+      "episode": 4,
+      "tmdbEpisode": {
+        "season": 2,
+        "episode": 4,
+        "name": "Episode 4"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Chop Socky Chooks",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/chop-socky-chooks-sezonul-1-episodul-22-primire-de-gandaci/",
+      "actual": "https://www.dozaanimata.net/episode/chop-socky-chooks-sezonul-1-episodul-22-primire-de-gandaci/",
+      "pass": true,
+      "ms": 968,
+      "tmdbId": 6682,
+      "tmdbTitle": "Chop Socky Chooks",
+      "tmdbYear": 2008,
+      "websiteYear": 2008,
+      "season": 1,
+      "episode": 22,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 22,
+        "name": "Swarm Welcome"
+      },
+      "identityEvidence": "Independent title/artwork-name search and release year"
+    },
+    {
+      "title": "Cronicile Xiaolin",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/cronicile-xiaolin-sezonul-1-episodul-23-din-nou-in-carne-si-oase/",
+      "actual": "https://www.dozaanimata.net/episode/cronicile-xiaolin-sezonul-1-episodul-23-din-nou-in-carne-si-oase/",
+      "pass": true,
+      "ms": 901,
+      "tmdbId": 60306,
+      "tmdbTitle": "Cronicile Xiaolin",
+      "tmdbYear": 2013,
+      "websiteYear": 2013,
+      "season": 1,
+      "episode": 23,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 23,
+        "name": "Back in the Flesh Again"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Minunata și Năstrușnica Lume a lui Gumball",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/minunata-si-nastrusnica-lume-a-lui-gumball-sezonul-1-episodul-18-portretul/",
+      "actual": "https://www.dozaanimata.net/episode/minunata-si-nastrusnica-lume-a-lui-gumball-sezonul-1-episodul-18-portretul/",
+      "pass": true,
+      "ms": 1395,
+      "tmdbId": 291904,
+      "tmdbTitle": "Năstrușnica lume a lui Gumball",
+      "tmdbYear": 2025,
+      "websiteYear": 2025,
+      "season": 1,
+      "episode": 18,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 18,
+        "name": "The Portrait"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Să-nceapă Aventura",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/sa-nceapa-aventura-sezonul-6-episodul-22-racirea/",
+      "actual": "https://www.dozaanimata.net/episode/sa-nceapa-aventura-sezonul-6-episodul-22-racirea/",
+      "pass": true,
+      "ms": 2706,
+      "tmdbId": 15260,
+      "tmdbTitle": "Să-nceapă aventura",
+      "tmdbYear": 2010,
+      "websiteYear": 2010,
+      "season": 6,
+      "episode": 22,
+      "tmdbEpisode": {
+        "season": 6,
+        "episode": 22,
+        "name": "The Cooler"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "LEGO Monkie Kid",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/lego-monkie-kid-sezonul-3-episodul-2-stra-dragonul-din-est/",
+      "actual": "https://www.dozaanimata.net/episode/lego-monkie-kid-sezonul-3-episodul-2-stra-dragonul-din-est/",
+      "pass": true,
+      "ms": 1441,
+      "tmdbId": 106251,
+      "tmdbTitle": "Monkie Kid",
+      "tmdbYear": 2020,
+      "websiteYear": 2020,
+      "season": 3,
+      "episode": 2,
+      "tmdbEpisode": {
+        "season": 3,
+        "episode": 2,
+        "name": "Great Grand Dragon of the East"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Laboratorul lui Dexter",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/laboratorul-lui-dexter-sezonul-2-episodul-4-2-koosy-in-libertate/",
+      "actual": "https://www.dozaanimata.net/episode/laboratorul-lui-dexter-sezonul-2-episodul-4-2-koosy-in-libertate/",
+      "pass": true,
+      "ms": 2209,
+      "tmdbId": 4229,
+      "tmdbTitle": "Laboratorul lui Dexter",
+      "tmdbYear": 1996,
+      "websiteYear": 1996,
+      "season": 2,
+      "episode": 10,
+      "tmdbEpisode": {
+        "season": 2,
+        "episode": 10,
+        "name": "The Koos is Loose"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Turneul Mondial al Dramei Totale",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/turneul-mondial-al-dramei-totale-sezonul-1-episodul-2-ca-un-egiptean-partea-ii/",
+      "actual": "https://www.dozaanimata.net/episode/turneul-mondial-al-dramei-totale-sezonul-1-episodul-2-ca-un-egiptean-partea-ii/",
+      "pass": true,
+      "ms": 1404,
+      "tmdbId": 19123,
+      "tmdbTitle": "Turneul Mondial al Dramei Totale",
+      "tmdbYear": 2010,
+      "websiteYear": 2010,
+      "season": 1,
+      "episode": 2,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 2,
+        "name": "Walk Like An Egyptian, Part 2"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Drama Totală: Insula Pacatel",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/drama-totala-insula-pacatel-sezonul-1-episodul-3-familia-nu-e-totul/",
+      "actual": "https://www.dozaanimata.net/episode/drama-totala-insula-pacatel-sezonul-1-episodul-3-familia-nu-e-totul/",
+      "pass": true,
+      "ms": 2000,
+      "tmdbId": 296168,
+      "tmdbTitle": "Total Drama Pahkitew Island",
+      "tmdbYear": 2014,
+      "websiteYear": 2014,
+      "season": 1,
+      "episode": 3,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 3,
+        "name": "Twinning Isn't Everything"
+      },
+      "identityEvidence": "Independent title/artwork-name search and release year"
+    },
+    {
+      "title": "Trenul Infinitului",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/trenul-infinitului-sezonul-1-episodul-4-vagonul-de-cristal/",
+      "actual": "https://www.dozaanimata.net/episode/trenul-infinitului-sezonul-1-episodul-4-vagonul-de-cristal/",
+      "pass": true,
+      "ms": 709,
+      "tmdbId": 91425,
+      "tmdbTitle": "Trenul infinitului",
+      "tmdbYear": 2019,
+      "websiteYear": 2019,
+      "season": 1,
+      "episode": 4,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 4,
+        "name": "The Crystal Car"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Steven Universe Future",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/steven-universe-future-episodul-1-mica-scoala-de-acasa/",
+      "actual": "https://www.dozaanimata.net/episode/steven-universe-future-episodul-1-mica-scoala-de-acasa/",
+      "pass": true,
+      "ms": 858,
+      "tmdbId": 94280,
+      "tmdbTitle": "Steven Univers: Viitor",
+      "tmdbYear": 2019,
+      "websiteYear": 2019,
+      "season": 1,
+      "episode": 1,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 1,
+        "name": "Little Homeschool"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Jentry Chau Împotriva Infernului",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/jentry-chau-impotriva-infernului-sezonul-1-episodul-6-in-dragoste-si-n-razboi/",
+      "actual": "https://www.dozaanimata.net/episode/jentry-chau-impotriva-infernului-sezonul-1-episodul-6-in-dragoste-si-n-razboi/",
+      "pass": true,
+      "ms": 975,
+      "tmdbId": 223447,
+      "tmdbTitle": "Jentry Chau împotriva infernului",
+      "tmdbYear": 2024,
+      "websiteYear": 2024,
+      "season": 1,
+      "episode": 6,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 6,
+        "name": "All's Fair in Love and War"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Academia Unicornilor",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/academia-unicornilor-sezonul-2-episodul-10-grimoria-reapare/",
+      "actual": "https://www.dozaanimata.net/episode/academia-unicornilor-sezonul-2-episodul-10-grimoria-reapare/",
+      "pass": true,
+      "ms": 1053,
+      "tmdbId": 221504,
+      "tmdbTitle": "Academia Unicornilor",
+      "tmdbYear": 2023,
+      "websiteYear": 2023,
+      "season": 2,
+      "episode": 10,
+      "tmdbEpisode": {
+        "season": 2,
+        "episode": 10,
+        "name": "Grimoria's Return"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Minecraft: Modul Narativ",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/minecraft-modul-narativ-sezonul-1-episodul-2-reunire-necesara/",
+      "actual": "https://www.dozaanimata.net/episode/minecraft-modul-narativ-sezonul-1-episodul-2-reunire-necesara/",
+      "pass": true,
+      "ms": 2384,
+      "tmdbId": 98545,
+      "tmdbTitle": "Minecraft: Modul narativ",
+      "tmdbYear": 2018,
+      "websiteYear": 2015,
+      "season": 1,
+      "episode": 2,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 2,
+        "name": "Assembly Required"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Micul meu Ponei: Prietenia este Magică",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/micul-meu-ponei-prietenia-este-magica-sezonul-8-episodul-9-competitia/",
+      "actual": "https://www.dozaanimata.net/episode/micul-meu-ponei-prietenia-este-magica-sezonul-8-episodul-9-competitia/",
+      "pass": true,
+      "ms": 1614,
+      "tmdbId": 33765,
+      "tmdbTitle": "Micul meu Ponei: Prietenia este magică",
+      "tmdbYear": 2010,
+      "websiteYear": 2010,
+      "season": 8,
+      "episode": 9,
+      "tmdbEpisode": {
+        "season": 8,
+        "episode": 9,
+        "name": "Non-Compete Clause"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Armura de Jad",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/armura-de-jad-sezonul-1-episodul-5-basticonul-rebel/",
+      "actual": "https://www.dozaanimata.net/episode/armura-de-jad-sezonul-1-episodul-5-basticonul-rebel/",
+      "pass": true,
+      "ms": 1450,
+      "tmdbId": 128023,
+      "tmdbTitle": "Armura de Jad",
+      "tmdbYear": 2022,
+      "websiteYear": 2022,
+      "season": 1,
+      "episode": 5,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 5,
+        "name": "Rogue Beasticon"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Jurassic World: Teoria Haosului",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/jurassic-world-teoria-haosului-sezonul-2-episodul-1-asteapta-te-la-ce-e-mai-rau/",
+      "actual": "https://www.dozaanimata.net/episode/jurassic-world-teoria-haosului-sezonul-2-episodul-1-asteapta-te-la-ce-e-mai-rau/",
+      "pass": true,
+      "ms": 1282,
+      "tmdbId": 237512,
+      "tmdbTitle": "Jurassic World: Teoria haosului",
+      "tmdbYear": 2024,
+      "websiteYear": 2024,
+      "season": 2,
+      "episode": 1,
+      "tmdbEpisode": {
+        "season": 2,
+        "episode": 1,
+        "name": "Batten Down the Hatches"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "LEGO: Cavalerii Nexo",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/lego-cavalerii-nexo-sezonul-1-episodul-2-cartea-monstrilor-partea-ii/",
+      "actual": "https://www.dozaanimata.net/episode/lego-cavalerii-nexo-sezonul-1-episodul-2-cartea-monstrilor-partea-ii/",
+      "pass": true,
+      "ms": 1058,
+      "tmdbId": 65858,
+      "tmdbTitle": "Lego: Cavalerii Nexo",
+      "tmdbYear": 2015,
+      "websiteYear": 2015,
+      "season": 1,
+      "episode": 2,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 2,
+        "name": "The Book of Monsters Part 2"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Looniversitatea Micuților",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/looniversitatea-micutilor-sezonul-1-episodul-8-souffle-fata/",
+      "actual": "https://www.dozaanimata.net/episode/looniversitatea-micutilor-sezonul-1-episodul-8-souffle-fata/",
+      "pass": true,
+      "ms": 1171,
+      "tmdbId": 155779,
+      "tmdbTitle": "Tiny Toons Looniversity",
+      "tmdbYear": 2023,
+      "websiteYear": 2023,
+      "season": 1,
+      "episode": 8,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 8,
+        "name": "Soufflé, Girl Hey"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Ninjago: Ascensiunea Dragonilor",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/ninjago-ascensiunea-dragonilor-sezonul-3-episodul-14-sicriul-cu-oase/",
+      "actual": "https://www.dozaanimata.net/episode/ninjago-ascensiunea-dragonilor-sezonul-3-episodul-14-sicriul-cu-oase/",
+      "pass": true,
+      "ms": 1258,
+      "tmdbId": 212989,
+      "tmdbTitle": "Ninjago: Ascensiunea dragonilor",
+      "tmdbYear": 2023,
+      "websiteYear": 2023,
+      "season": 3,
+      "episode": 14,
+      "tmdbEpisode": {
+        "season": 3,
+        "episode": 14,
+        "name": "Casket of Bones"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Regele Lup",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/regele-lup-sezonul-1-episodul-3-fiara-in-cusca/",
+      "actual": "https://www.dozaanimata.net/episode/regele-lup-sezonul-1-episodul-3-fiara-in-cusca/",
+      "pass": true,
+      "ms": 984,
+      "tmdbId": 231727,
+      "tmdbTitle": "Regele Lup",
+      "tmdbYear": 2025,
+      "websiteYear": 2025,
+      "season": 1,
+      "episode": 3,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 3,
+        "name": "The Caged Beast"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Voltron: Apărătorul Legendar",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/voltron-aparatorul-legendar-sezonul-2-episodul-1-de-la-un-capat-la-altul-al-universului/",
+      "actual": "https://www.dozaanimata.net/episode/voltron-aparatorul-legendar-sezonul-2-episodul-1-de-la-un-capat-la-altul-al-universului/",
+      "pass": true,
+      "ms": 1093,
+      "tmdbId": 66558,
+      "tmdbTitle": "Voltron : Apărătorul Legendar",
+      "tmdbYear": 2016,
+      "websiteYear": 2016,
+      "season": 2,
+      "episode": 1,
+      "tmdbEpisode": {
+        "season": 2,
+        "episode": 1,
+        "name": "Across the Universe"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Scooby-Doo și Echipa Misterelor",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/scooby-doo-si-echipa-misterelor-sezonul-1-episodul-17-evadarea-din-conacul-misterios/",
+      "actual": "https://www.dozaanimata.net/episode/scooby-doo-si-echipa-misterelor-sezonul-1-episodul-17-evadarea-din-conacul-misterios/",
+      "pass": true,
+      "ms": 1730,
+      "tmdbId": 18123,
+      "tmdbTitle": "Scooby-Doo și Echipa Misterelor",
+      "tmdbYear": 2010,
+      "websiteYear": 2010,
+      "season": 1,
+      "episode": 17,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 17,
+        "name": "Escape from Mystery Manor"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    },
+    {
+      "title": "Maya și cei Trei",
+      "type": "tv",
+      "expected": "https://www.dozaanimata.net/episode/maya-si-cei-trei-sezonul-1-episodul-3-primul-luptator/",
+      "actual": "https://www.dozaanimata.net/episode/maya-si-cei-trei-sezonul-1-episodul-3-primul-luptator/",
+      "pass": true,
+      "ms": 1145,
+      "tmdbId": 132141,
+      "tmdbTitle": "Maya y los tres",
+      "tmdbYear": 2021,
+      "websiteYear": 2021,
+      "season": 1,
+      "episode": 3,
+      "tmdbEpisode": {
+        "season": 1,
+        "episode": 3,
+        "name": "Chapter 3: The Rooster"
+      },
+      "identityEvidence": "Exact main-article TMDB artwork identifier verified against independent TMDB entity metadata"
+    }
+  ]
+}
