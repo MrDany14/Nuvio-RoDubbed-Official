@@ -1,0 +1,250 @@
+{
+  "date": "2026-10-19",
+  "version": 8,
+  "environment": "Android TV14 ART and actual Nuvio TV1.0.0 classes; emulator, not physical Mi Box",
+  "scope": "DozaAnimata players using six verified Dood aliases; direct Playmogo remains supported",
+  "aliases": [
+    "d000d.com",
+    "dood.li",
+    "do0od.com",
+    "doods.pro",
+    "d0o0d.com",
+    "ds2play.com"
+  ],
+  "implementation": "Follow at most four explicit HTTPS redirects between the known player hosts. Preserve the exact video ID (12 or32 characters) and require final playmogo.com identity. Never invent or truncate IDs. Reuse the existing native public-player handshake and media checks. No ads/scripts/browser/helper server.",
+  "resources": "Shared native HTTP pool; each request respects the six-second cap and provider deadline; cancellation hooks apply at every hop.",
+  "discoveryGuards": "Verified Doza title/episode provenance and Romanian dubbing declarations remain required. Mismatched explicit player episode labels, changed redirect IDs, unrelated hosts, query-bearing player URLs, userinfo and nonstandard ports are rejected.",
+  "twentyMirrorInventory": {
+    "total": 20,
+    "availablePlayers": 3,
+    "removedUploads": 15,
+    "dnsFailures": 2,
+    "workingDomainsInSample": [
+      "d000d.com",
+      "dood.li"
+    ],
+    "unregisteredDomain": "dsvplay.com",
+    "note": "Redirects alone did not establish playable uploads. The15 unavailable uploads were subsequently rejected by the resolver; dsvplay.com remains excluded."
+  },
+  "newMediaChecks": {
+    "passed": 3,
+    "total": 3,
+    "results": [
+      {
+        "title": "Disenchanted",
+        "addressPass": true,
+        "supportedHosts": [
+          "Playmogo"
+        ],
+        "durationMs": 7096981,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 3591
+      },
+      {
+        "title": "Ciocănitoarea Woody merge în Tabără",
+        "addressPass": true,
+        "supportedHosts": [
+          "Playmogo"
+        ],
+        "durationMs": 6013952,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 3485
+      },
+      {
+        "title": "Felinele Fulger",
+        "addressPass": true,
+        "supportedHosts": [
+          "Playmogo"
+        ],
+        "durationMs": 1363458,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 3392
+      }
+    ]
+  },
+  "existingDirectPlaymogoRegression": {
+    "passed": 3,
+    "total": 3,
+    "results": [
+      {
+        "title": "Miraculos: Buburuza și Motan Noir",
+        "addressPass": true,
+        "supportedHosts": [
+          "Playmogo",
+          "Vidmoly"
+        ],
+        "durationMs": 1298300,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 5421
+      },
+      {
+        "title": "Wednesday",
+        "addressPass": true,
+        "supportedHosts": [
+          "Playmogo",
+          "Vidmoly"
+        ],
+        "durationMs": 3623392,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 3505
+      },
+      {
+        "title": "Un show obișnuit: Casetele pierdute",
+        "addressPass": true,
+        "supportedHosts": [
+          "Vidmoly",
+          "Playmogo"
+        ],
+        "durationMs": 669125,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 3895
+      }
+    ]
+  },
+  "removedUploadRejection": {
+    "passed": 15,
+    "total": 15,
+    "results": [
+      {
+        "title": "Operationea: Narațiunea",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 321
+      },
+      {
+        "title": "Casa Loud Filmul: Nu e timp de spionaj",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 214
+      },
+      {
+        "title": "Riverdance: Aventura Animată",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 223
+      },
+      {
+        "title": "Casa Loud: Filmul",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 137
+      },
+      {
+        "title": "Johnny: A Doua Șansă",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 125
+      },
+      {
+        "title": "Doctor Who: Biserica de pe strada Ruby",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 248
+      },
+      {
+        "title": "Barbie: Un Strop de Magie",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 286
+      },
+      {
+        "title": "Angry Birds: O Vară Nebună",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 138
+      },
+      {
+        "title": "Agentul 203",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 140
+      },
+      {
+        "title": "Familia Crood: Copacul Familiei",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 245
+      },
+      {
+        "title": "Erin și Aaron",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 142
+      },
+      {
+        "title": "Secrete Miraculoase",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 138
+      },
+      {
+        "title": "Avatar: Ultimul Războinic al Aerului",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 244
+      },
+      {
+        "title": "Kiff",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 152
+      },
+      {
+        "title": "Liceul Monștrilor",
+        "pass": true,
+        "reason": "java.lang.Exception: Playmogo video unavailable",
+        "ms": 147
+      }
+    ]
+  },
+  "playback": [
+    {
+      "title": "Disenchanted",
+      "pass": true,
+      "player": "Android MediaPlayer, muted",
+      "seekCompleted": true,
+      "durationMs": 7096981,
+      "positionBeforeMs": 54511,
+      "positionMs": 56701,
+      "videoWidth": 1280,
+      "videoHeight": 532,
+      "isPlaying": true
+    },
+    {
+      "title": "Felinele Fulger",
+      "pass": true,
+      "player": "Android MediaPlayer, muted",
+      "seekCompleted": true,
+      "durationMs": 1363459,
+      "positionBeforeMs": 58463,
+      "positionMs": 60652,
+      "videoWidth": 1280,
+      "videoHeight": 720,
+      "isPlaying": true
+    }
+  ],
+  "productionDex": {
+    "testedAndFinalIdentical": true,
+    "sha256": "d1984f73cd8ae52b237c1f3aa5da5533ed89da0e5b7ae2700b7795749dc6d416"
+  },
+  "unitChecks": "PASS mirror discovery, redirect identity, changed-ID/unrelated-host rejection, token/CDN/episode/deleted-video guards, Romanian-language/catalog safeguards",
+  "finalArtifactRegression": {
+    "dozaBothHosts": "PASS Vidmoly + Playmogo on Regular Show Lost Tapes and Wednesday",
+    "subtitledAvatar": "PASS excluded",
+    "toyStory5": "PASS Byse + SeekStreaming + StreamP2P;1375ms"
+  },
+  "limits": [
+    "Only three of the20 sampled mirror links were available; this is not18 additional working streams.",
+    "Removed uploads and DNS failures cannot be repaired by a resolver.",
+    "The four remaining recognized alias domains had removed sample uploads; playback was not established for those samples.",
+    "Emulator playback was muted and confirms audio/video presence, not independently listened-to Romanian speech; Romanian eligibility follows the verified publisher declaration.",
+    "Physical Mi Box playback of exact v8 remains unverified.",
+    "Netu, Sendvid and dsvplay.com remain excluded. The prior address-audit misses and Ninjago mapping are unchanged."
+  ]
+}

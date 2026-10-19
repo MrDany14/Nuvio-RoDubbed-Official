@@ -1,9 +1,9 @@
 {
-  "version": 7,
-  "sha256": "324b4543c77ee8b503e48a15793931acadfa9b4a9ebfafdb17480b703cb63005",
-  "bytes": 41292,
+  "version": 8,
+  "sha256": "75ee418065f76785f81675c350efbcf32bae41c509f94d87ffa90feec98f8a43",
+  "bytes": 42025,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
-  "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors; PASS independent Abyss AES-CTR/numeric-key/token fixtures, video/CDN identity, provenance and playback headers; PASS Playmogo token/CDN/episode/provenance guards and narrow corroborated series spelling",
+  "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors; PASS independent Abyss AES-CTR/numeric-key/token fixtures, video/CDN identity, provenance and playback headers; PASS Playmogo token/CDN/episode/provenance guards and narrow corroborated series spelling; PASS verified Dood mirror routing and exact redirect video-ID guards",
   "runs": [
     {
       "title": "Avatar",
@@ -271,5 +271,20 @@
     "androidPlayerSeekAndPlaybackCases": 3,
     "physicalMiBoxExactBuild": false
   },
-  "physicalTvPreviousRelease": "User confirms official v6 works on TV"
+  "physicalTvPreviousRelease": "User confirms official v6 works on TV",
+  "doodMirrors": {
+    "report": "dood-mirrors-validation.json",
+    "aliases": [
+      "d000d.com",
+      "dood.li",
+      "do0od.com",
+      "doods.pro",
+      "d0o0d.com",
+      "ds2play.com"
+    ],
+    "newDecodedVideoCases": 3,
+    "newAndroidPlaybackAndSeekCases": 2,
+    "removedUploadRejections": 15,
+    "existingDirectPlaymogoDecodedCases": 3
+  }
 }

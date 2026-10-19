@@ -20,7 +20,15 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Discovers the title's available servers once, then resolves only relevant supported hosts. Legacy Filemoon labels can lead to Byse.
 - Requires Romanian server declarations. For older bare host labels, accepts the title page's explicit Romanian-dubbing declaration. English/subtitled labels are excluded, and explicit foreign default audio in host/HLS metadata is rejected.
 - Checks HLS playlists and an initial media segment; Streamtape and Abyss MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
-- Netu and unverified Dood mirror domains remain excluded. Playmogo.com is enabled for DozaAnimata. Player4me is not supported. DeseneleDublate is paused and not included. Morencius is not implemented. Abyss is enabled for FilmeDublate.
+- Playmogo.com and six verified Dood mirror domains are recognized on DozaAnimata. Netu, Sendvid, dsvplay.com and other unverified mirrors remain excluded. Player4me is not supported. DeseneleDublate is paused and not included. Morencius is not implemented. Abyss is enabled for FilmeDublate.
+
+## Version 8: Dood mirrors on DozaAnimata
+
+Recognizes **d000d.com, dood.li, do0od.com, doods.pro, d0o0d.com and ds2play.com** through their verified Playmogo redirects. The resolver preserves the exact video ID and accepts only known HTTPS player destinations; it never invents a replacement ID. Requests retain the shared pool, deadlines and cancellation. The total remains up to three streams.
+
+Of20 mirror links from the recent sample, **three were available, fifteen were removed and two failed DNS**. The available Disenchanted, Woody Goes to Camp and ThunderCats episode links passed exact-address checks, full-length MP4 metadata and two distinct decoded frames. Disenchanted (d000d.com) and ThunderCats (dood.li) passed native Android MediaPlayer playback and completed seeking. All15 removed uploads were rejected without returning streams, in about0.1–0.3seconds each. dsvplay.com remains excluded.
+
+The three existing direct Playmogo examples still decode; both Doza hosts, subtitled-title exclusion and ToyStory5's three original hosts pass with the final artifact. These are emulator tests, not physical Mi Box verification or independent language listening. See [mirror validation](dood-mirrors-validation.json). Title-matching/Ninjago fixes are not included in this release.
 
 ## Version 7: Playmogo on DozaAnimata
 

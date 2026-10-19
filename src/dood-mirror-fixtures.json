@@ -1,0 +1,42 @@
+{
+  "fixtures": [
+    {
+      "title": "Disenchanted",
+      "page": "https://www.dozaanimata.net/disenchanted-2022-dublat-in-romana/",
+      "data": {
+        "tmdbID": 338958,
+        "movieName": "În căutarea magiei",
+        "localTitle": "În căutarea magiei",
+        "originalTitle": "Disenchanted",
+        "releaseYear": 2022
+      },
+      "expectedPlaymogo": "https://d000d.com/e/tprfn6pjglt9"
+    },
+    {
+      "title": "Ciocănitoarea Woody merge în Tabără",
+      "page": "https://www.dozaanimata.net/ciocanitoarea-woody-merge-in-tabara-2024-dublat-in-romana/",
+      "data": {
+        "tmdbID": 1239146,
+        "movieName": "Ciocănitoarea Woody merge în tabără",
+        "localTitle": "Ciocănitoarea Woody merge în tabără",
+        "originalTitle": "Woody Woodpecker Goes to Camp",
+        "releaseYear": 2024
+      },
+      "expectedPlaymogo": "https://d000d.com/e/tsmmgso2z5c5"
+    },
+    {
+      "title": "Felinele Fulger",
+      "page": "https://www.dozaanimata.net/episode/felinele-fulger-sezonul-1-episodul-5-vechi-prieteni/",
+      "data": {
+        "tmdbID": 38165,
+        "movieName": "Felinele Fulger",
+        "localTitle": "Felinele Fulger",
+        "originalTitle": "ThunderCats",
+        "releaseYear": 2011,
+        "season": 1,
+        "episode": 5
+      },
+      "expectedPlaymogo": "https://dood.li/e/q9f9xpxohstk"
+    }
+  ]
+}
