@@ -1,6 +1,6 @@
 # RoDubbed
 
-Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine, plus Vidmoly from DozaAnimata. No PC or helper server is needed.
+Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine, plus Vidmoly from DozaAnimata and Byse/Streamtape from FilmeDublate. No PC or helper server is needed.
 
 ## Install on Nuvio TV
 
@@ -19,8 +19,16 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Returns up to three distinct validated streams, preferring different hosts. A title with one available stream returns one.
 - Discovers the title's available servers once, then resolves only relevant supported hosts. Legacy Filemoon labels can lead to Byse.
 - Requires Romanian server declarations. For older bare host labels, accepts the title page's explicit Romanian-dubbing declaration. English/subtitled labels are excluded, and explicit foreign default audio in host/HLS metadata is rejected.
-- Checks the playlist and an initial media segment before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
-- Netu and Playmogo/DoodStream are deferred and excluded. Player4me is not supported. DeseneleDublate integration is planned, not included.
+- Checks HLS playlists and an initial media segment; Streamtape MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
+- Netu and Playmogo/DoodStream are deferred and excluded. Player4me is not supported. DeseneleDublate is paused and not included. Abyss and morencius are not implemented.
+
+## Version 5: FilmeDublate
+
+Adds FilmeDublate Byse and Streamtape as a fallback when existing sites return fewer than three results. The provider still returns at most three distinct streams. Streamtape is enabled only with FilmeDublate provenance; an English-only copy tested on another site remains excluded.
+
+**Twenty title/episode addresses passed 20/20 on Android**, including fifteen movies and five distinct series with requested episodes. No hosts were requested during that audit. Four other catalog entries remain unverified because independent TMDB mapping failed. See the [twenty-title report](filmedublate-audit.md). Separate media checks passed eight links across six cases; Mario Streamtape was rejected for runtime disagreement. The user confirms Toy Story5 Byse and Streamtape play on physical TV in the isolated FD build. Exact combined v5 physical playback is pending.
+
+Abyss, morencius, Netu and Sendvid remain excluded. The original repository and all test folders are unchanged.
 
 ## Version 4: DozaAnimata address fixes
 

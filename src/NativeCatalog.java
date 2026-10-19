@@ -11,7 +11,9 @@ final class NativeCatalog {
     static final String SITE="https://desenefaine.com",TMDB_KEY="e6333b32409e02a4a6eba6fb7ff866bb";
     static final class Candidate {
         final String host,page,wrapper,label,embed;
-        Candidate(String host,String page,String wrapper,String label,String embed){this.host=host;this.page=page;this.wrapper=wrapper;this.label=label;this.embed=embed;}
+        final JSONObject expected;
+        Candidate(String host,String page,String wrapper,String label,String embed){this(host,page,wrapper,label,embed,null);}
+        Candidate(String host,String page,String wrapper,String label,String embed,JSONObject expected){this.host=host;this.page=page;this.wrapper=wrapper;this.label=label;this.embed=embed;this.expected=expected;}
         String identity()throws Exception{URL u=new URL(embed);String ref=u.getRef();return host+":"+(ref==null?u.getPath():ref.split("&")[0]);}
     }
     final Set<String> visited=new HashSet<>();final Set<String> titles=new LinkedHashSet<>();
@@ -30,6 +32,7 @@ final class NativeCatalog {
             if(host.matches("(?:streamp2p|p2pplay)\\..*"))return "StreamP2P";
             if(host.matches("(?:seekstream(?:ing)?|seeksreaming|embedseek)\\..*"))return "SeekStreaming";
             if(host.equals("vidmoly.org")||host.equals("vidmoly.net"))return "Vidmoly";
+            if(host.equals("streamtape.com")&&new URL(url).getPath().matches("/e/[a-zA-Z0-9]+/?"))return "Streamtape";
             if(host.equals("voe.sx")||host.equals("voe.to"))return "VOE";
                     }catch(Exception ignored){}return "";
     }

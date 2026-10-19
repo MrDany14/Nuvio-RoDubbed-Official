@@ -9,6 +9,7 @@ final class NativeHttp {
         final long deadline;
         final Set<HttpURLConnection> active=Collections.newSetFromMap(new ConcurrentHashMap<HttpURLConnection,Boolean>());
         volatile boolean cancelled;
+        final Map<String,String> resolvedUrls=new ConcurrentHashMap<>();
         final CookieManager cookies=new CookieManager(null,CookiePolicy.ACCEPT_ORIGINAL_SERVER);
         Session(long millis){deadline=System.nanoTime()+millis*1000000L;}
         void check()throws IOException{if(cancelled||Thread.currentThread().isInterrupted()||System.nanoTime()>deadline)throw new IOException("Lookup stopped or timed out");}
@@ -34,7 +35,7 @@ final class NativeHttp {
         if(partial)c.setRequestProperty("Range","bytes=0-4095");
         try{
             if(body!=null){c.setRequestMethod("POST");c.setDoOutput(true);c.setRequestProperty("Content-Type","application/json");byte[] data=body.getBytes(StandardCharsets.UTF_8);c.setFixedLengthStreamingMode(data.length);try(OutputStream out=c.getOutputStream()){out.write(data);}}
-            int status=c.getResponseCode();synchronized(s.cookies){s.cookies.put(u.toURI(),c.getHeaderFields());}if(status!=200&&status!=206)throw new IOException("HTTP "+status);
+            int status=c.getResponseCode();synchronized(s.cookies){s.cookies.put(u.toURI(),c.getHeaderFields());}if(status!=200&&status!=206)throw new IOException("HTTP "+status);s.resolvedUrls.put(url,c.getURL().toString());
             ByteArrayOutputStream out=new ByteArrayOutputStream();
             try(InputStream in=c.getInputStream()){
                 byte[] buf=new byte[Math.min(limit,8192)];int n;

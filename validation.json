@@ -1,7 +1,7 @@
 {
-  "version": 4,
-  "sha256": "e7cddcf876ed14bb269f9f99322ba2595c52bd7f9de180e6ad056e161cde0783",
-  "bytes": 31339,
+  "version": 5,
+  "sha256": "45a87c5cba17a5a3a8cd5c64315d0833fa4d151c217e33b479ce2ff58ab89a45",
+  "bytes": 35203,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
   "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors",
   "runs": [
@@ -42,7 +42,8 @@
   "netu": "Deferred; excluded",
   "websites": [
     "desenefaine.com",
-    "www.dozaanimata.net"
+    "www.dozaanimata.net",
+    "filmedublate.net"
   ],
   "catalogAudit": {
     "passed": 14,
@@ -103,5 +104,153 @@
     "seed": 3950667988,
     "streamsResolved": false,
     "report": "doza-expanded-audit.json"
-  }
+  },
+  "filmedublate": {
+    "addressAudit": {
+      "passed": 20,
+      "total": 20,
+      "movies": 15,
+      "series": 5,
+      "streamHostsRequested": false,
+      "report": "filmedublate-audit.json"
+    },
+    "mediaChecks": {
+      "addressesPassed": 6,
+      "total": 6,
+      "streamsPassed": 8,
+      "results": [
+        {
+          "title": "Vaiana",
+          "addressPass": true,
+          "streams": [
+            {
+              "host": "Byse",
+              "pass": true,
+              "format": "M3U8"
+            },
+            {
+              "host": "Streamtape",
+              "pass": true,
+              "format": "VIDEO"
+            }
+          ],
+          "ms": 1574
+        },
+        {
+          "title": "Povestea jucăriilor 5",
+          "addressPass": true,
+          "streams": [
+            {
+              "host": "Byse",
+              "pass": true,
+              "format": "M3U8"
+            },
+            {
+              "host": "Streamtape",
+              "pass": true,
+              "format": "VIDEO"
+            }
+          ],
+          "ms": 2246
+        },
+        {
+          "title": "72 DE ORE",
+          "addressPass": true,
+          "streams": [
+            {
+              "host": "Byse",
+              "pass": true,
+              "format": "M3U8"
+            }
+          ],
+          "ms": 1070
+        },
+        {
+          "title": "Iubire la birou",
+          "addressPass": true,
+          "streams": [
+            {
+              "host": "Byse",
+              "pass": true,
+              "format": "M3U8"
+            }
+          ],
+          "ms": 1106
+        },
+        {
+          "title": "Super Mario Galaxia: Filmul",
+          "addressPass": true,
+          "streams": [
+            {
+              "host": "Byse",
+              "pass": true,
+              "format": "M3U8"
+            },
+            {
+              "host": "Streamtape",
+              "pass": false,
+              "error": "Streamtape duration mismatch/error clip: expected 5400s, actual 6250s"
+            }
+          ],
+          "ms": 1236
+        },
+        {
+          "title": "Inimă de fier",
+          "addressPass": true,
+          "streams": [
+            {
+              "host": "Streamtape",
+              "pass": true,
+              "format": "VIDEO"
+            }
+          ],
+          "ms": 512
+        }
+      ]
+    },
+    "physicalTv": "User confirms ToyStory5 Byse and Streamtape both play in FD Test v1; exact merged official v5 pending",
+    "fullProvider": [
+      {
+        "title": "Toy Story5",
+        "sources": [
+          "SeekStreaming / DeseneFaine",
+          "StreamP2P / DeseneFaine",
+          "Byse / DeseneFaine"
+        ],
+        "ms": 1470
+      },
+      {
+        "title": "Ironheart S1E2",
+        "sources": [
+          "Byse / DeseneFaine",
+          "Streamtape / FilmeDublate"
+        ],
+        "ms": 4304
+      }
+    ],
+    "skippedMappingCandidates": [
+      {
+        "slug": "klaus-barroso-2023",
+        "error": "Independent TMDB identity unresolved"
+      },
+      {
+        "slug": "rabbids-invasion-misiune-pe-marte",
+        "error": "Independent TMDB identity unresolved"
+      },
+      {
+        "slug": "romania-neimblanzita-2019",
+        "error": "Independent TMDB identity unresolved"
+      },
+      {
+        "slug": "carbon-2022",
+        "error": "Independent TMDB identity unresolved"
+      }
+    ],
+    "limitations": [
+      "Abyss and morencius unimplemented",
+      "Mario Streamtape runtime mismatch excluded",
+      "Publisher language declarations alone do not prove spoken audio on untested titles"
+    ]
+  },
+  "deseneleDublate": "Paused; not included"
 }

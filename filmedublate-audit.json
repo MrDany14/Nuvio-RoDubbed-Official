@@ -1,0 +1,380 @@
+{
+  "date": "2026-10-19",
+  "version": 5,
+  "seed": 19390451,
+  "pool": 82,
+  "method": "Seeded catalog sample; title/original name, year and requested episode independently verified against TMDB; no stream host requests",
+  "environment": "Android TV14 ART, actual Nuvio TV1.0.0 classes; address-only",
+  "passed": 20,
+  "total": 20,
+  "cases": [
+    {
+      "title": "Roboțica Roz: Gardiana insulei",
+      "type": "movie",
+      "actual": "https://filmedublate.net/desen-animat/robotica-roz-gardiana-insulei-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=robotica-roz-gardiana-insulei",
+      "pass": true,
+      "ms": 170,
+      "expectedPage": "https://filmedublate.net/desen-animat/robotica-roz-gardiana-insulei-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=robotica-roz-gardiana-insulei",
+      "data": {
+        "tmdbID": 1184918,
+        "movieName": "Roboțica roz: Gardiana insulei",
+        "localTitle": "Roboțica roz: Gardiana insulei",
+        "originalTitle": "The Wild Robot",
+        "releaseYear": 2024
+      }
+    },
+    {
+      "title": "Barbie: Aventura prințesei",
+      "type": "movie",
+      "actual": "https://filmedublate.net/desen-animat/barbie-aventura-printesei-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=barbie-aventura-printesei",
+      "pass": true,
+      "ms": 90,
+      "expectedPage": "https://filmedublate.net/desen-animat/barbie-aventura-printesei-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=barbie-aventura-printesei",
+      "data": {
+        "tmdbID": 738215,
+        "movieName": "Barbie: Aventura prințesei",
+        "localTitle": "Barbie: Aventura prințesei",
+        "originalTitle": "Barbie: Princess Adventure",
+        "releaseYear": 2020
+      }
+    },
+    {
+      "title": "Mandalorianul și Grogu",
+      "type": "movie",
+      "actual": "https://filmedublate.net/film-dublat/mandalorianul-si-grogu-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=mandalorianul-si-grogu",
+      "pass": true,
+      "ms": 84,
+      "expectedPage": "https://filmedublate.net/film-dublat/mandalorianul-si-grogu-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=mandalorianul-si-grogu",
+      "data": {
+        "tmdbID": 1228710,
+        "movieName": "The Mandalorian and Grogu",
+        "localTitle": "The Mandalorian and Grogu",
+        "originalTitle": "The Mandalorian and Grogu",
+        "releaseYear": 2026
+      }
+    },
+    {
+      "title": "Vom Fi Eroi",
+      "type": "movie",
+      "actual": "https://filmedublate.net/film-dublat/vom-fi-eroi-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=vom-fi-eroi",
+      "pass": true,
+      "ms": 74,
+      "expectedPage": "https://filmedublate.net/film-dublat/vom-fi-eroi-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=vom-fi-eroi",
+      "data": {
+        "tmdbID": 615677,
+        "movieName": "Vom fi eroi",
+        "localTitle": "Vom fi eroi",
+        "originalTitle": "We Can Be Heroes",
+        "releaseYear": 2020
+      }
+    },
+    {
+      "title": "Castelul Crăiței",
+      "type": "movie",
+      "actual": "https://filmedublate.net/film-dublat/castelul-craitei-2023-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=castelul-craitei-2023",
+      "pass": true,
+      "ms": 88,
+      "expectedPage": "https://filmedublate.net/film-dublat/castelul-craitei-2023-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=castelul-craitei-2023",
+      "data": {
+        "tmdbID": 1208422,
+        "movieName": "Castelul Crăiței",
+        "localTitle": "Castelul Crăiței",
+        "originalTitle": "Castelul Crăiței",
+        "releaseYear": 2023
+      }
+    },
+    {
+      "title": "Dragonii: Salvatorii înaripați: Goana după dragonul auriu",
+      "type": "movie",
+      "actual": "https://filmedublate.net/desen-animat/dragonii-salvatorii-inaripati-goana-dupa-dragonul-auriu-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=dragonii-salvatorii-inaripati-goana-dupa-dragonul-auriu",
+      "pass": true,
+      "ms": 99,
+      "expectedPage": "https://filmedublate.net/desen-animat/dragonii-salvatorii-inaripati-goana-dupa-dragonul-auriu-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=dragonii-salvatorii-inaripati-goana-dupa-dragonul-auriu",
+      "data": {
+        "tmdbID": 686941,
+        "movieName": "Dragonii: Salvatorii înaripați: Goana după dragonul auriu",
+        "localTitle": "Dragonii: Salvatorii înaripați: Goana după dragonul auriu",
+        "originalTitle": "Dragons: Rescue Riders: Hunt for the Golden Dragon",
+        "releaseYear": 2020
+      }
+    },
+    {
+      "title": "72 DE ORE",
+      "type": "movie",
+      "actual": "https://filmedublate.net/film-dublat/72-de-ore-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=72-de-ore",
+      "pass": true,
+      "ms": 113,
+      "expectedPage": "https://filmedublate.net/film-dublat/72-de-ore-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=72-de-ore",
+      "data": {
+        "tmdbID": 949838,
+        "movieName": "72 DE ORE",
+        "localTitle": "72 DE ORE",
+        "originalTitle": "72 HOURS",
+        "releaseYear": 2026
+      }
+    },
+    {
+      "title": "Confruntarea familiei Thunderman",
+      "type": "movie",
+      "actual": "https://filmedublate.net/film-dublat/confruntarea-familiei-thunderman-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=confruntarea-familiei-thunderman",
+      "pass": true,
+      "ms": 85,
+      "expectedPage": "https://filmedublate.net/film-dublat/confruntarea-familiei-thunderman-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=confruntarea-familiei-thunderman",
+      "data": {
+        "tmdbID": 1506560,
+        "movieName": "Clash of the Thundermans",
+        "localTitle": "Clash of the Thundermans",
+        "originalTitle": "Clash of the Thundermans",
+        "releaseYear": 2026
+      }
+    },
+    {
+      "title": "Te voi găsi",
+      "type": "tv",
+      "actual": "https://filmedublate.net/serial-dublat/te-voi-gasi-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=te-voi-gasi-s01e06",
+      "pass": true,
+      "ms": 76,
+      "expectedPage": "https://filmedublate.net/serial-dublat/te-voi-gasi-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=te-voi-gasi-s01e06",
+      "data": {
+        "tmdbID": 278178,
+        "movieName": "Te voi găsi",
+        "localTitle": "Te voi găsi",
+        "originalTitle": "I Will Find You",
+        "releaseYear": 2026,
+        "season": 1,
+        "episode": 6
+      }
+    },
+    {
+      "title": "Super Mario Galaxia: Filmul",
+      "type": "movie",
+      "actual": "https://filmedublate.net/desen-animat/super-mario-galaxia-filmul-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=super-mario-galaxia-filmul",
+      "pass": true,
+      "ms": 75,
+      "expectedPage": "https://filmedublate.net/desen-animat/super-mario-galaxia-filmul-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=super-mario-galaxia-filmul",
+      "data": {
+        "tmdbID": 1226863,
+        "movieName": "Super Mario Galaxia: Filmul",
+        "localTitle": "Super Mario Galaxia: Filmul",
+        "originalTitle": "The Super Mario Galaxy Movie",
+        "releaseYear": 2026
+      }
+    },
+    {
+      "title": "Mickey și prietenii: vrăjiți de Halloween",
+      "type": "movie",
+      "actual": "https://filmedublate.net/desen-animat/mickey-si-prietenii-vrajiti-de-halloween-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=mickey-si-prietenii-vrajiti-de-halloween",
+      "pass": true,
+      "ms": 92,
+      "expectedPage": "https://filmedublate.net/desen-animat/mickey-si-prietenii-vrajiti-de-halloween-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=mickey-si-prietenii-vrajiti-de-halloween",
+      "data": {
+        "tmdbID": 1166714,
+        "movieName": "Mickey and Friends: Trick or Treats",
+        "localTitle": "Mickey and Friends: Trick or Treats",
+        "originalTitle": "Mickey and Friends: Trick or Treats",
+        "releaseYear": 2023
+      }
+    },
+    {
+      "title": "Neînfricatul",
+      "type": "movie",
+      "actual": "https://filmedublate.net/desen-animat/neinfricatul-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=neinfricatul",
+      "pass": true,
+      "ms": 138,
+      "expectedPage": "https://filmedublate.net/desen-animat/neinfricatul-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=neinfricatul",
+      "data": {
+        "tmdbID": 726664,
+        "movieName": "Neînfricatul",
+        "localTitle": "Neînfricatul",
+        "originalTitle": "Fearless",
+        "releaseYear": 2020
+      }
+    },
+    {
+      "title": "Naufragiu: Coșmar pe mare",
+      "type": "movie",
+      "actual": "https://filmedublate.net/film-dublat/naufragiu-cosmar-pe-mare-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=naufragiu-cosmar-pe-mare",
+      "pass": true,
+      "ms": 88,
+      "expectedPage": "https://filmedublate.net/film-dublat/naufragiu-cosmar-pe-mare-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=naufragiu-cosmar-pe-mare",
+      "data": {
+        "tmdbID": 1715492,
+        "movieName": "Naufragiu: Coșmar pe mare",
+        "localTitle": "Naufragiu: Coșmar pe mare",
+        "originalTitle": "Shipwrecked: Nightmare at Sea",
+        "releaseYear": 2026
+      }
+    },
+    {
+      "title": "Călătoria fantastică a Maronei",
+      "type": "movie",
+      "actual": "https://filmedublate.net/desen-animat/calatoria-fantastica-a-maronei-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=calatoria-fantastica-a-maronei",
+      "pass": true,
+      "ms": 82,
+      "expectedPage": "https://filmedublate.net/desen-animat/calatoria-fantastica-a-maronei-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=calatoria-fantastica-a-maronei",
+      "data": {
+        "tmdbID": 568381,
+        "movieName": "Călătoria fantastică a Maronei",
+        "localTitle": "Călătoria fantastică a Maronei",
+        "originalTitle": "L'Extraordinaire Voyage de Marona",
+        "releaseYear": 2020
+      }
+    },
+    {
+      "title": "Mâț și Chiț: Spioni Blană",
+      "type": "movie",
+      "actual": "https://filmedublate.net/desen-animat/mat-si-chit-spioni-blana-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=mat-si-chit-spioni-blana",
+      "pass": true,
+      "ms": 70,
+      "expectedPage": "https://filmedublate.net/desen-animat/mat-si-chit-spioni-blana-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=mat-si-chit-spioni-blana",
+      "data": {
+        "tmdbID": 550738,
+        "movieName": "Mâț și Chiț: Spioni Blană",
+        "localTitle": "Mâț și Chiț: Spioni Blană",
+        "originalTitle": "Spycies",
+        "releaseYear": 2020
+      }
+    },
+    {
+      "title": "Fanfik",
+      "type": "movie",
+      "actual": "https://filmedublate.net/film-dublat/fanfik-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=fanfik",
+      "pass": true,
+      "ms": 390,
+      "expectedPage": "https://filmedublate.net/film-dublat/fanfik-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=fanfik",
+      "data": {
+        "tmdbID": 1117698,
+        "movieName": "Fanfic",
+        "localTitle": "Fanfic",
+        "originalTitle": "Fanfik",
+        "releaseYear": 2023
+      }
+    },
+    {
+      "title": "Outlast: Jungla",
+      "type": "tv",
+      "actual": "https://filmedublate.net/serial-dublat/outlast-jungla-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=outlast-jungla-s01e03",
+      "pass": true,
+      "ms": 92,
+      "expectedPage": "https://filmedublate.net/serial-dublat/outlast-jungla-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=outlast-jungla-s01e03",
+      "data": {
+        "tmdbID": 322803,
+        "movieName": "Outlast: Jungla",
+        "localTitle": "Outlast: Jungla",
+        "originalTitle": "Outlast: The Jungle",
+        "releaseYear": 2026,
+        "season": 1,
+        "episode": 3
+      }
+    },
+    {
+      "title": "Dacă dorințele ar putea ucide",
+      "type": "tv",
+      "actual": "https://filmedublate.net/serial-dublat/daca-dorintele-ar-putea-ucide-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=daca-dorintele-ar-putea-ucide-s01e07",
+      "pass": true,
+      "ms": 71,
+      "expectedPage": "https://filmedublate.net/serial-dublat/daca-dorintele-ar-putea-ucide-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=daca-dorintele-ar-putea-ucide-s01e07",
+      "data": {
+        "tmdbID": 285838,
+        "movieName": "Dacă dorințele ar putea ucide",
+        "localTitle": "Dacă dorințele ar putea ucide",
+        "originalTitle": "기리고",
+        "releaseYear": 2026,
+        "season": 1,
+        "episode": 7
+      }
+    },
+    {
+      "title": "Inimă de fier",
+      "type": "tv",
+      "actual": "https://filmedublate.net/serial-dublat/inima-de-fier-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=inima-de-fier-s01e04",
+      "pass": true,
+      "ms": 83,
+      "expectedPage": "https://filmedublate.net/serial-dublat/inima-de-fier-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=inima-de-fier-s01e04",
+      "data": {
+        "tmdbID": 114471,
+        "movieName": "Inimă de fier",
+        "localTitle": "Inimă de fier",
+        "originalTitle": "Ironheart",
+        "releaseYear": 2025,
+        "season": 1,
+        "episode": 4
+      }
+    },
+    {
+      "title": "Neales",
+      "type": "tv",
+      "actual": "https://filmedublate.net/serial-dublat/neales-dublat-in-romana",
+      "wrapper": "https://filmedublate.net/embed/filmsrv.php?search=neales-s01e06",
+      "pass": true,
+      "ms": 91,
+      "expectedPage": "https://filmedublate.net/serial-dublat/neales-dublat-in-romana",
+      "expectedWrapper": "https://filmedublate.net/embed/filmsrv.php?search=neales-s01e06",
+      "data": {
+        "tmdbID": 262848,
+        "movieName": "Neales",
+        "localTitle": "Neales",
+        "originalTitle": "Unchosen",
+        "releaseYear": 2026,
+        "season": 1,
+        "episode": 6
+      }
+    }
+  ],
+  "unverified": [
+    {
+      "slug": "klaus-barroso-2023",
+      "error": "Independent TMDB identity unresolved"
+    },
+    {
+      "slug": "rabbids-invasion-misiune-pe-marte",
+      "error": "Independent TMDB identity unresolved"
+    },
+    {
+      "slug": "romania-neimblanzita-2019",
+      "error": "Independent TMDB identity unresolved"
+    },
+    {
+      "slug": "carbon-2022",
+      "error": "Independent TMDB identity unresolved"
+    }
+  ]
+}

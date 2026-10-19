@@ -1,6 +1,6 @@
 {
   "name": "RoDubbed",
-  "description": "Romanian dubbed streams from DeseneFaine and DozaAnimata for Nuvio TV.",
+  "description": "Romanian dubbed streams from DeseneFaine, DozaAnimata and FilmeDublate for Nuvio TV.",
   "manifestVersion": 1,
   "pluginLists": [
     "https://raw.githubusercontent.com/MrDany14/Nuvio-RoDubbed-Official/main/plugins.json"
