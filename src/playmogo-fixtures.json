@@ -1,0 +1,49 @@
+{
+  "fixtures": [
+    {
+      "title": "Miraculos: Buburuza și Motan Noir",
+      "page": "https://www.dozaanimata.net/episode/miraculos-buburuza-si-motan-noir-sezonul-1-episodul-1-vreme-tulbure/",
+      "expectedParent": "https://www.dozaanimata.net/series/miraculos-buburuza-si-motan-noir",
+      "expectedPlaymogo": "https://playmogo.com/e/m941m940ebqq",
+      "data": {
+        "tmdbID": 65334,
+        "localTitle": "Miraculous: Buburuza și Motan Noir",
+        "movieName": "Miraculous: Buburuza și Motan Noir",
+        "originalTitle": "Miraculous, les aventures de Ladybug et Chat Noir",
+        "releaseYear": 2015,
+        "season": 1,
+        "episode": 1
+      }
+    },
+    {
+      "title": "Wednesday",
+      "page": "https://www.dozaanimata.net/episode/wednesday-sezonul-1-episodul-1-copiii-nascuti-miercuri-sunt-plini-de-amaraciune/",
+      "expectedParent": "https://www.dozaanimata.net/series/wednesday",
+      "expectedPlaymogo": "https://playmogo.com/e/l7v1v3w4pkyv",
+      "data": {
+        "tmdbID": 119051,
+        "localTitle": "Wednesday",
+        "movieName": "Wednesday",
+        "originalTitle": "Wednesday",
+        "releaseYear": 2022,
+        "season": 1,
+        "episode": 1
+      }
+    },
+    {
+      "title": "Un show obișnuit: Casetele pierdute",
+      "page": "https://www.dozaanimata.net/episode/un-show-obisnuit-casetele-pierdute-sezonul-1-episodul-1-repara-caseta-aia/",
+      "expectedParent": "https://www.dozaanimata.net/series/un-show-obisnuit-casetele-pierdute",
+      "expectedPlaymogo": "https://playmogo.com/e/naryqasnfvll",
+      "data": {
+        "tmdbID": 256695,
+        "localTitle": "Un Show Obișnuit: Casetele Pierdute",
+        "movieName": "Un Show Obișnuit: Casetele Pierdute",
+        "originalTitle": "Regular Show: The Lost Tapes",
+        "releaseYear": 2026,
+        "season": 1,
+        "episode": 1
+      }
+    }
+  ]
+}

@@ -31,6 +31,7 @@ final class NativeCatalog {
             if(host.matches("(?:[a-z0-9-]+\\.)*byse[a-z0-9-]*\\.[a-z]{2,}"))return "Byse";
             if(host.matches("(?:streamp2p|p2pplay)\\..*"))return "StreamP2P";
             if(host.matches("(?:seekstream(?:ing)?|seeksreaming|embedseek)\\..*"))return "SeekStreaming";
+            if(host.equals("playmogo.com")&&new URL(url).getPath().matches("/e/[a-z0-9]{12}/?"))return "Playmogo";
             if(host.equals("vidmoly.org")||host.equals("vidmoly.net"))return "Vidmoly";
             if((host.equals("player.abyssplayer.com")||host.equals("play.abyssplayer.com"))&&new URL(url).getPath().matches("/[a-zA-Z0-9_-]{7,17}/?"))return "Abyss";
             if(host.equals("streamtape.com")&&new URL(url).getPath().matches("/e/[a-zA-Z0-9]+/?"))return "Streamtape";

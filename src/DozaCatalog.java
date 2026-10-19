@@ -17,6 +17,11 @@ final class DozaCatalog {
     static boolean siteUrl(String value){try{URL u=new URL(value);return "https".equals(u.getProtocol())&&"www.dozaanimata.net".equals(u.getHost());}catch(Exception e){return false;}}
     static boolean dubbed(String heading){String n=NativeCatalog.normalize(heading);return RomanianAudio.declaredRomanian(heading)&&n.matches(".*\\bdublat(?:a)? in romana\\b.*");}
     static String heading(Document doc){Element h=doc.select(".mvic-desc h3[itemprop=name]").first();return h==null?"":h.text();}
+    static boolean spellingAlias(String a,String b){
+        String[] left=NativeCatalog.normalize(a).split(" "),right=NativeCatalog.normalize(b).split(" ");if(left.length!=right.length||left.length<4||a.length()<24||b.length()<24)return false;int changes=0,shared=0;
+        for(int word=0;word<left.length;word++){String x=left[word],y=right[word];if(x.equals(y)){if(x.length()>3)shared++;continue;}if(++changes>1||x.length()<8||y.length()<8||!x.matches("[a-z]+")||!y.matches("[a-z]+")||Math.abs(x.length()-y.length())>1)return false;int i=0,j=0,edits=0;while(i<x.length()&&j<y.length()){if(x.charAt(i)==y.charAt(j)){i++;j++;}else{if(++edits>1)return false;if(x.length()>=y.length())i++;if(y.length()>=x.length())j++;}}if(edits+(x.length()-i)+(y.length()-j)!=1)return false;}
+        return changes==1&&shared>=3;
+    }
     static boolean matches(Document doc,JSONObject data){
         String h=heading(doc);if(!dubbed(h))return false;
         boolean artwork=verifiedArtwork(doc,data);
@@ -37,6 +42,7 @@ final class DozaCatalog {
             String src=image.attr("src");if(!src.startsWith(SITE+"/wp-content/uploads/"))continue;
             String name=src.substring(src.lastIndexOf('/')+1).replaceFirst("\\.[a-zA-Z0-9]+$","").replaceFirst("-\\d+x\\d+$","");
             String alias=NativeCatalog.normalize(name),compact=alias.replace(" ","");
+            if(data.optInt("season")>0&&alias.equals(title))for(String key:Arrays.asList("localTitle","movieName","originalTitle"))if(spellingAlias(title,data.optString(key)))return true;
             for(String key:Arrays.asList("originalTitle","englishTitle","localTitle")){
                 String full=NativeCatalog.normalize(data.optString(key)).replace(" ","");
                 if(compact.length()>=8&&compact.equals(full))return true;
@@ -98,7 +104,10 @@ final class DozaCatalog {
         List<NativeCatalog.Candidate> found=new ArrayList<>();Set<String> seen=new HashSet<>();
         for(Element iframe:page.select("#content-embed iframe[src], #media-player iframe[src]")){
             String embed=iframe.absUrl("src"),kind=NativeCatalog.kind(embed);
-            if(!kind.isEmpty()&&seen.add(embed))found.add(new NativeCatalog.Candidate(kind,url,embed,"ROMANA",embed));
+            if(!kind.isEmpty()&&seen.add(embed)){
+                JSONObject expected=null;if(kind.equals("Playmogo")){expected=new JSONObject().put("title",heading(page));Matcher ep=Pattern.compile("(?:-sezonul-(\\d+))?-episodul-(\\d+)(?:-|/|$)").matcher(url);if(ep.find())expected.put("season",ep.group(1)==null?1:Integer.parseInt(ep.group(1))).put("episode",Integer.parseInt(ep.group(2)));}
+                found.add(new NativeCatalog.Candidate(kind,url,embed,"ROMANA",embed,expected));
+            }
         }
         return found;
     }

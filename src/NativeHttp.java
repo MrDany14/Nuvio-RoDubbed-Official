@@ -10,10 +10,11 @@ final class NativeHttp {
         final Set<HttpURLConnection> active=Collections.newSetFromMap(new ConcurrentHashMap<HttpURLConnection,Boolean>());
         volatile boolean cancelled;
         final Map<String,String> resolvedUrls=new ConcurrentHashMap<>();
+        final Set<Runnable> cancelActions=Collections.newSetFromMap(new ConcurrentHashMap<Runnable,Boolean>());
         final CookieManager cookies=new CookieManager(null,CookiePolicy.ACCEPT_ORIGINAL_SERVER);
         Session(long millis){deadline=System.nanoTime()+millis*1000000L;}
         void check()throws IOException{if(cancelled||Thread.currentThread().isInterrupted()||System.nanoTime()>deadline)throw new IOException("Lookup stopped or timed out");}
-        void stop(){cancelled=true;for(HttpURLConnection c:active)c.disconnect();active.clear();}
+        void stop(){cancelled=true;for(HttpURLConnection c:active)c.disconnect();active.clear();for(Runnable action:cancelActions)action.run();cancelActions.clear();}
     }
     static final ThreadLocal<Session> CURRENT=new ThreadLocal<>();
     static Session session(){Session s=CURRENT.get();if(s==null){s=new Session(12000);CURRENT.set(s);}return s;}

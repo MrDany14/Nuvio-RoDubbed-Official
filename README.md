@@ -1,6 +1,6 @@
 # RoDubbed
 
-Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine, plus Vidmoly from DozaAnimata and Byse/Streamtape/Abyss from FilmeDublate. No PC or helper server is needed.
+Romanian dubbed streams for **Nuvio TV**, running entirely on the Android TV device. One provider combines Byse, SeekStreaming, StreamP2P and VOE from DeseneFaine, plus Vidmoly/Playmogo from DozaAnimata and Byse/Streamtape/Abyss from FilmeDublate. No PC or helper server is needed.
 
 ## Install on Nuvio TV
 
@@ -20,7 +20,15 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Discovers the title's available servers once, then resolves only relevant supported hosts. Legacy Filemoon labels can lead to Byse.
 - Requires Romanian server declarations. For older bare host labels, accepts the title page's explicit Romanian-dubbing declaration. English/subtitled labels are excluded, and explicit foreign default audio in host/HLS metadata is rejected.
 - Checks HLS playlists and an initial media segment; Streamtape and Abyss MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
-- Netu and Playmogo/DoodStream are deferred and excluded. Player4me is not supported. DeseneleDublate is paused and not included. Morencius is not implemented. Abyss is enabled for FilmeDublate.
+- Netu and unverified Dood mirror domains remain excluded. Playmogo.com is enabled for DozaAnimata. Player4me is not supported. DeseneleDublate is paused and not included. Morencius is not implemented. Abyss is enabled for FilmeDublate.
+
+## Version 7: Playmogo on DozaAnimata
+
+Adds Playmogo.com alongside Vidmoly on DozaAnimata. The supplied **Miraculos S1E1** page now supports both servers. The new native resolver uses Nuvio's existing Android HTTP client and the public player handshake; it needs no browser, ad execution, desktop cookies or helper server. Links require actual MP4 data and must not be short error clips. Per-source playback headers are preserved. Requests share a connection pool and stop with the provider deadline/cancellation.
+
+The exact episode address, Playmogo link and two distinct video frames passed for **Miraculos, Wednesday and Regular Show: The Lost Tapes**. Actual muted Android MediaPlayer playback and seeking passed for Miraculos and Wednesday; Miraculos was verified again with the final combined release. Both Miraculos hosts resolve with native VIDEO/M3U8 types. **All14 earlier Doza address cases still pass.** See [Playmogo validation](playmogo-validation.json). Physical Mi Box playback of this exact release remains pending.
+
+Doza spells Miraculos differently from TMDB's Miraculous. A narrowly guarded one-letter spelling match now handles that case while requiring a matching premiere year and corroborating primary artwork. Other Dood mirror domains are not enabled. The total remains up to three streams.
 
 ## Version 6: Native Abyss
 

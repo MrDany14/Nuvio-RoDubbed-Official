@@ -1,0 +1,226 @@
+{
+  "date": "2026-10-19",
+  "version": 7,
+  "environment": "Android TV14 ART with actual Nuvio TV1.0.0 classes, MediaMetadataRetriever and MediaPlayer; emulator, not physical Mi Box playback",
+  "scope": "playmogo.com embeds from verified DozaAnimata titles/episodes only; other Dood mirror domains remain unregistered",
+  "implementation": "Native bundled OkHttp fetch -> literal pass_md5 handshake -> ordinary player token/expiry suffix -> bounded MP4 header and full-length duration floor -> native VIDEO link. No WebView/ad scripts, desktop cookies, external helper, TLS overrides or hardcoded content links.",
+  "resources": "Shared HTTP connection pool, per-request/session deadlines, immediate registered-call cancellation when provider stops",
+  "titleFix": "A single inserted/deleted/substituted letter in one long word may match a series when at least three distinctive other words match, premiere year passes and primary artwork filename exactly corroborates the website heading. No title-specific aliases. This handles Miraculos versus Miraculous without accepting unrelated recommendations, short titles or different sequel numbers.",
+  "checks": {
+    "passed": 3,
+    "total": 3,
+    "results": [
+      {
+        "title": "Miraculos: Buburuza și Motan Noir",
+        "addressPass": true,
+        "supportedHosts": [
+          "Playmogo",
+          "Vidmoly"
+        ],
+        "durationMs": 1298300,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 6634
+      },
+      {
+        "title": "Wednesday",
+        "addressPass": true,
+        "supportedHosts": [
+          "Playmogo",
+          "Vidmoly"
+        ],
+        "durationMs": 3623392,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 3392
+      },
+      {
+        "title": "Un show obișnuit: Casetele pierdute",
+        "addressPass": true,
+        "supportedHosts": [
+          "Vidmoly",
+          "Playmogo"
+        ],
+        "durationMs": 669125,
+        "decodedFrames": 2,
+        "pass": true,
+        "ms": 3026
+      }
+    ]
+  },
+  "dozaAddressRegression": {
+    "seed": 784801863,
+    "passed": 14,
+    "total": 14,
+    "results": [
+      {
+        "title": "Crăciunul Angelei",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/craciunul-angelei-2017-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/craciunul-angelei-2017-dublat-in-romana/",
+        "pass": true,
+        "ms": 694
+      },
+      {
+        "title": "Din mintea lui Jimmy: Filmul",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/din-mintea-lui-jimmy-filmul-2006-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/din-mintea-lui-jimmy-filmul-2006-dublat-in-romana/",
+        "pass": true,
+        "ms": 919
+      },
+      {
+        "title": "Școala de Sperieturi a lui Casper",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/scoala-de-sperieturi-a-lui-casper-2006-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/scoala-de-sperieturi-a-lui-casper-2006-dublat-in-romana/",
+        "pass": true,
+        "ms": 530
+      },
+      {
+        "title": "Cursa Grand Prix a Europei",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/cursa-grand-prix-a-europei-2025-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/cursa-grand-prix-a-europei-2025-dublat-in-romana/",
+        "pass": true,
+        "ms": 542
+      },
+      {
+        "title": "Ostatica Eloá: În direct la Televizor",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/ostatica-eloa-in-direct-la-televizor-2025-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/ostatica-eloa-in-direct-la-televizor-2025-dublat-in-romana/",
+        "pass": true,
+        "ms": 1031
+      },
+      {
+        "title": "Craig Înainte de Dumbravă",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/craig-inainte-de-dumbrava-2023-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/craig-inainte-de-dumbrava-2023-dublat-in-romana/",
+        "pass": true,
+        "ms": 528
+      },
+      {
+        "title": "Scooby-Doo! și Krypto Câinele Erou",
+        "type": "movie",
+        "expected": "https://www.dozaanimata.net/scooby-doo-si-krypto-cainele-erou-2023-dublat-in-romana/",
+        "actual": "https://www.dozaanimata.net/scooby-doo-si-krypto-cainele-erou-2023-dublat-in-romana/",
+        "pass": true,
+        "ms": 6471
+      },
+      {
+        "title": "Nașii Mei Vrăjitori: O Nouă Dorință",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/nasii-mei-vrajitori-o-noua-dorinta-sezonul-1-episodul-2-scoala-de-corectie-magica-prietena-invatatoarei/",
+        "actual": "https://www.dozaanimata.net/episode/nasii-mei-vrajitori-o-noua-dorinta-sezonul-1-episodul-2-scoala-de-corectie-magica-prietena-invatatoarei/",
+        "pass": true,
+        "ms": 1528
+      },
+      {
+        "title": "Iwaju: Orașul Viitorului",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/iwaju-orasul-viitorului-sezonul-1-episodul-1-iwaju/",
+        "actual": "https://www.dozaanimata.net/episode/iwaju-orasul-viitorului-sezonul-1-episodul-1-iwaju/",
+        "pass": true,
+        "ms": 1042
+      },
+      {
+        "title": "Lumea Looney Tunes",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/lumea-looney-tunes-sezonul-1-episodul-28/",
+        "actual": "https://www.dozaanimata.net/episode/lumea-looney-tunes-sezonul-1-episodul-28/",
+        "pass": true,
+        "ms": 1500
+      },
+      {
+        "title": "Fetițele Powerpuff",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/fetitele-powerpuff-sezonul-2-episodul-3-la-multi-ani-nu-mai-am-chef/",
+        "actual": "https://www.dozaanimata.net/episode/fetitele-powerpuff-sezonul-2-episodul-3-la-multi-ani-nu-mai-am-chef/",
+        "pass": true,
+        "ms": 2084
+      },
+      {
+        "title": "Ultima Bârfă",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/ultima-barfa-sezonul-1-episodul-2-dansul-locco-locco/",
+        "actual": "https://www.dozaanimata.net/episode/ultima-barfa-sezonul-1-episodul-2-dansul-locco-locco/",
+        "pass": true,
+        "ms": 1669
+      },
+      {
+        "title": "Barbie Mysteries: Goana după Cai",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/barbie-mysteries-goana-dupa-cai-sezonul-1-episodul-1-atentie-la-neatentie/",
+        "actual": "https://www.dozaanimata.net/episode/barbie-mysteries-goana-dupa-cai-sezonul-1-episodul-1-atentie-la-neatentie/",
+        "pass": true,
+        "ms": 1282
+      },
+      {
+        "title": "Clasa lui 3000",
+        "type": "tv",
+        "expected": "https://www.dozaanimata.net/episode/clasa-lui-3000-sezonul-1-episodul-10-iubirea-e-in-aer/",
+        "actual": "https://www.dozaanimata.net/episode/clasa-lui-3000-sezonul-1-episodul-10-iubirea-e-in-aer/",
+        "pass": true,
+        "ms": 1181
+      }
+    ]
+  },
+  "mergedBothHosts": {
+    "title": "Miraculos S1E1",
+    "hosts": {
+      "Playmogo": "VIDEO; full MP4 duration validated",
+      "Vidmoly": "M3U8; playlist and initial media segment validated"
+    },
+    "pass": true
+  },
+  "playback": [
+    {
+      "title": "Miraculos S1E1",
+      "environment": "Final official v7 classes; Android MediaPlayer muted; native link headers",
+      "seekCompleted": true,
+      "durationMs": 1298300,
+      "positionBeforeMs": 59276,
+      "positionMs": 61478,
+      "width": 1280,
+      "height": 720,
+      "pass": true
+    },
+    {
+      "title": "Wednesday S1E1",
+      "environment": "Isolated native build; Android MediaPlayer muted; native link headers",
+      "seekCompleted": true,
+      "durationMs": 3623393,
+      "positionBeforeMs": 58102,
+      "positionMs": 60306,
+      "width": 1280,
+      "height": 720,
+      "pass": true
+    }
+  ],
+  "audioLanguage": "Publisher-declared Romanian; user previously confirms both website servers for Wednesday and Regular Show speak Romanian and both Miraculos servers work. Emulator tests confirm audio/video presence, not spoken language.",
+  "limits": [
+    "Current Nuvio native HTTP API is required; mobile JavaScript installer remains unsupported",
+    "Only directly identified Playmogo.com embeds are enabled, not every Dood alias",
+    "Unknown media/CDN patterns, blocked requests, deleted pages, mismatched explicit episode labels and short error clips fail closed",
+    "Physical Mi Box exact v7 playback remains unverified; previous v6 is user-confirmed stable"
+  ],
+  "existingSiteIntegration": {
+    "regularShowBothHosts": true,
+    "wednesdayBothHosts": true,
+    "subtitledAvatarExcluded": true,
+    "pass": true
+  },
+  "existingHostRegression": {
+    "title": "Toy Story5",
+    "sources": [
+      "SeekStreaming",
+      "StreamP2P",
+      "Byse"
+    ],
+    "site": "DeseneFaine",
+    "ms": 1367,
+    "pass": true
+  }
+}

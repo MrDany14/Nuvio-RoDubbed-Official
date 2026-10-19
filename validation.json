@@ -1,9 +1,9 @@
 {
-  "version": 6,
-  "sha256": "8bf3c0a3d8330b2cc9f114a84595fae5850f072160d8bd2ee58b39604546ef58",
-  "bytes": 37915,
+  "version": 7,
+  "sha256": "324b4543c77ee8b503e48a15793931acadfa9b4a9ebfafdb17480b703cb63005",
+  "bytes": 41292,
   "environment": "Official Nuvio TV 1.0.0 x86 APK classes on Android TV 14 ART, app_process integration harness",
-  "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors; PASS independent Abyss AES-CTR/numeric-key/token fixtures, video/CDN identity, provenance and playback headers",
+  "unitTests": "PASS: host/language safeguards, independent AES/VOE fixtures, Desene identity regressions, Doza artwork/year/legacy-episode checks and complete segmented-season anchors; PASS independent Abyss AES-CTR/numeric-key/token fixtures, video/CDN identity, provenance and playback headers; PASS Playmogo token/CDN/episode/provenance guards and narrow corroborated series spelling",
   "runs": [
     {
       "title": "Avatar",
@@ -56,7 +56,16 @@
     "streamsResolved": false
   },
   "physicalTvBaseline": "User confirmed all four original hosts and Doza Vidmoly on both development episodes; version2 adds catalog discovery improvements",
-  "playmogo": "Direct native requests HTTP403; excluded",
+  "playmogo": {
+    "status": "Supported on DozaAnimata",
+    "report": "playmogo-validation.json",
+    "decodedVideoCases": 3,
+    "androidPlayerSeekAndPlaybackCases": 2,
+    "dozaAddressRegression": {
+      "passed": 14,
+      "total": 14
+    }
+  },
   "desenefaineAddressAudit": {
     "before": {
       "correct": 41,
@@ -261,5 +270,6 @@
     "decodedVideoCases": 4,
     "androidPlayerSeekAndPlaybackCases": 3,
     "physicalMiBoxExactBuild": false
-  }
+  },
+  "physicalTvPreviousRelease": "User confirms official v6 works on TV"
 }
