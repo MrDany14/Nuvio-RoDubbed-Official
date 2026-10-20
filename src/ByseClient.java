@@ -77,7 +77,7 @@ public final class ByseClient {
         }
         try {
             int status=conn.getResponseCode();cookies.put(target.toURI(),conn.getHeaderFields());
-            if(status!=200)throw new IOException(stage+": HTTP "+status);
+            if(status!=200){String reason="";try(InputStream error=conn.getErrorStream()){if(error!=null){byte[] b=new byte[2048];int n=error.read(b);if(n>0)reason=new JSONObject(new String(b,0,n,StandardCharsets.UTF_8)).optString("error");}}catch(Exception ignored){}throw new IOException(stage+": HTTP "+status+(reason.isEmpty()?"":" "+reason.substring(0,Math.min(200,reason.length()))));}
             ByteArrayOutputStream out=new ByteArrayOutputStream();
             try(InputStream in=conn.getInputStream()){
                 byte[] chunk=new byte[8192];int n;
@@ -152,16 +152,23 @@ public final class ByseClient {
         byte[] plain=aes.doFinal(decode(encrypted.getString("payload")));
         return new JSONObject(new String(plain,StandardCharsets.UTF_8));
     }
-    public JSONObject resolve(String embed) throws Exception {
+    public JSONObject resolve(String embed) throws Exception {return resolve(embed,null);}
+    public JSONObject resolve(String embed,String parent) throws Exception {
         long start=System.nanoTime();deadline=Math.min(start+55000000000L,NativeHttp.session().deadline);
         try {
             String[] path=new URL(embed).getPath().split("/");
             if(path.length!=3||!path[1].equals("e")||!path[2].matches("[a-zA-Z0-9_-]+"))throw new IOException("Invalid embed URL");
             String code=path[2];stage="details";
-            JSONObject details=request(origin(embed)+"/api/videos/"+code+"/embed/details",null,headers("Referer",embed));
+            Map<String,String> context=new LinkedHashMap<>();
+            if(parent!=null&&DesenflixCatalog.titleUrl(parent)){context.put("X-Embed-Origin",new URL(parent).getHost());context.put("X-Embed-Referer",parent);context.put("X-Embed-Parent",embed);}
+            Map<String,String> detailHeaders=headers("Referer",embed);detailHeaders.putAll(context);
+            JSONObject details=request(origin(embed)+"/api/videos/"+code+"/embed/details",null,detailHeaders);
             frameUrl=details.getString("embed_frame_url");String apiOrigin=origin(frameUrl);
             JSONObject fingerprint=fingerprint(apiOrigin);
             Map<String,String> h=headers("X-Embed-Parent",embed,"Referer",frameUrl);
+            // The inner playback frame is embedded by the Byse frontend, while
+            // the frontend itself is embedded by the publisher title page.
+            h.putAll(context);
             String api=apiOrigin+"/api/videos/"+code+"/embed/";
             stage="PoW challenge";
             JSONObject challenge=request(api+"captcha",new JSONObject().put("fingerprint",fingerprint),h);

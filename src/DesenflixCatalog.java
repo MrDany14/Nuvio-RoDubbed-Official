@@ -41,7 +41,7 @@ class DesenflixCatalog {
         Element frame=page.select("iframe#dfx-main-player").first();
         return frame==null?"":byse(frame.hasAttr("data-dfx-player-src")?frame.attr("data-dfx-player-src"):frame.attr("src"));
     }
-    static String byse(String url){try{URL u=new URL(url);return "https".equals(u.getProtocol())&&u.getUserInfo()==null&&u.getPort()==-1&&NativeCatalog.kind(url).equals("Byse")&&u.getPath().matches("/e/[A-Za-z0-9]+(?:/[^?#]*)?")?url:"";}catch(Exception e){return "";}}
+    static String byse(String url){try{URL u=new URL(url);return "https".equals(u.getProtocol())&&u.getUserInfo()==null&&u.getPort()==-1&&NativeCatalog.kind(url).equals("Byse")&&u.getPath().matches("/e/[A-Za-z0-9]+(?:/[^?#]*)?")?u.getProtocol()+"://"+u.getHost()+"/e/"+u.getPath().split("/")[2]:"";}catch(Exception e){return "";}}
     static List<String> searchUrls(Document page){
         Set<String> urls=new LinkedHashSet<>();for(Element a:page.select("main a[href]")){String url=a.absUrl("href");if(titleUrl(url))urls.add(url);}return new ArrayList<>(urls);
     }

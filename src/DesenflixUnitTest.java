@@ -17,6 +17,7 @@ public final class DesenflixUnitTest {
   yes(DesenflixCatalog.player(Jsoup.parse(multi),new JSONObject().put("season",2).put("episode",1)).endsWith("/right"),"Padded exact season/episode; E1 is not E11");
   yes(!DesenflixCatalog.siteUrl("https://desenflix.online.evil.invalid/"),"Host boundary");yes(!DesenflixCatalog.titleUrl("https://desenflix.online/not-subtitrat-in-romana/"),"Subtitle URL excluded");
   yes(DesenflixCatalog.byse("http://byseraguci.com/e/id").isEmpty(),"HTTPS");yes(DesenflixCatalog.byse("https://evil.invalid/e/id").isEmpty(),"Other hosts rejected");
+  yes(DesenflixCatalog.byse("https://byseraguci.com/e/abc123/translated-title").equals("https://byseraguci.com/e/abc123"),"Descriptive suffix removed while video ID is preserved");
   System.out.println("PASS 40 title identities, "+matched+" film/S1E1 embeds, "+missing+" missing S1E1 withheld; wrong IDs/years/types, subtitled content and episode fallbacks rejected");
  }
 }

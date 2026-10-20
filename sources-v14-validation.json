@@ -1,0 +1,8 @@
+{
+  "version": 14,
+  "bytes": 55989,
+  "sha256": "8a04510036074809f53025efc8c61ad429b8a252e9e8952cb2db7a551a54f93b",
+  "fix": "Canonicalize DesenFlix embeds to /e/videoID; supply actual publisher host/referrer and Byse frontend frame through ordinary embed API checks.",
+  "tests": "40 matching regression fixtures; two previously failing samples now return DesenFlix Byse streams on Android TV: Barbie and Stacie to the Rescue; The Adventures of Brer Rabbit.",
+  "playbackTested": false
+}

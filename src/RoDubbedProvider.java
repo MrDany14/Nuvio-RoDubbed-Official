@@ -74,7 +74,7 @@ public final class RoDubbedProvider extends TmdbProvider {
     static ResolvedStream resolve(NativeCatalog.Candidate raw)throws Exception{
         NativeCatalog.Candidate c=NativeCatalog.resolveWrapper(raw);ResolvedStream stream;boolean checked=false;
         if(c.host.equals("Byse")){
-            ByseClient resolver=new ByseClient();JSONObject playback=resolver.resolve(c.embed);JSONArray sources=playback.getJSONArray("sources");
+            ByseClient resolver=new ByseClient();JSONObject playback=resolver.resolve(c.embed,DesenflixCatalog.titleUrl(c.page)?c.page:null);JSONArray sources=playback.getJSONArray("sources");
             JSONObject source=sources.getJSONObject(0);stream=new ResolvedStream("Byse",source.getString("url"),resolver.frameUrl,c.identity(),source.optInt("height",1080));
             System.out.println("[RoDubbed] Byse powMs="+resolver.powMillis);
         }else if(c.host.equals("SeekStreaming")||c.host.equals("StreamP2P")){stream=SharedPlayerClient.resolve(c);checked=true;}

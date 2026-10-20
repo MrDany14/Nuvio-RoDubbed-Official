@@ -22,6 +22,10 @@ This is a native Android extension, tested against Nuvio TV 1.0.0. The mobile ap
 - Checks HLS playlists and an initial media segment; Streamtape and Abyss MP4 links require a full-length duration matching the title page before returning a stream. Publisher labels cannot guarantee the spoken language or every device's decoding compatibility.
 - Playmogo.com and seven verified Dood mirror domains are recognized on DozaAnimata; verified Romanian Dood/Playmogo sources are also supported on DeseneFaine. Netu, Sendvid, dsvplay.com and other unverified mirrors remain excluded. Player4me is not supported. DeseneleDublate supports OK.ru and Streamtape movies and structured series episodes. Vidmoly.to and unverified legacy season mappings remain excluded. Morencius supports explicitly identified Romanian audio/video on FilmeDublate. Abyss is enabled for FilmeDublate.
 
+## Version 14: DesenFlix Byse resolution fix
+
+Removes descriptive title suffixes from Byse embed URLs while preserving the video ID. For DesenFlix, carries the real publisher host/referrer and outer Byse frame exactly as the public player does. Existing host checks, proof-of-work and Romanian-audio guards remain. Two previously failing films now return Byse streams on Android TV without playback tests. See [v14 evidence](sources-v14-validation.json).
+
 ## Version 13: DesenFlix
 
 Adds DesenFlix as the fifth website, reusing the existing native Byse resolver. Discovery requires the page's explicit Romanian-dubbing declaration, exact TMDB identity, media type and release year. Series select only the requested season/episode from labeled cards; the default iframe never substitutes for a missing episode. No individual title URLs are hardcoded.
